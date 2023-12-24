@@ -20,7 +20,7 @@ module.exports = {
         datadark:{
           "primary": "#1F2937", 
           "secondary": "#38BDF8",
-          "accent": "#EA580C",
+          "accent": "#ea580c",
           "neutral": "#607274",
           "base-100": "#292524",
           "info": "#CBE4DE",
@@ -29,6 +29,7 @@ module.exports = {
           "error": "#DC2626",
         },
       },
+      "corporate",
     ],
   },
   plugins: [require('daisyui')],
