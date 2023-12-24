@@ -5,8 +5,7 @@ const Footer = () =>{
     return(
         <footer className="footer p-10 bg-base-200 text-base-content glass">
         <aside>
-        <img src={Logo.src} alt="Data Sapience Lab Logo" />
-          <p>Data Sapience Lab<br/>Providing cutting edge solutions</p>
+        <img className="mask mask-circle" src={Logo.src} alt="Data Sapience Lab Logo" />
         </aside> 
         <nav>
           <header className="footer-title">Services</header> 
