@@ -80,7 +80,7 @@ const NavBar = () => {
       <div className="navbar-end">
         <a
           href="/"
-          className="btn btn-secondary hover:btn-accent hover:shadow-accent hover:shadow-md hover:border-black"
+          className="btn btn-secondary hover:btn-primary hover:border-accent hover:shadow-accent hover:shadow-sm hover:text-accent"
         >
           Contact Us
         </a>
