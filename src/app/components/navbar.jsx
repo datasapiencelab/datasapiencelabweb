@@ -79,7 +79,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-end">
         <a
-          href="/"
+          href="/contactus"
           className="btn btn-secondary hover:btn-primary hover:border-accent hover:shadow-accent hover:shadow-sm hover:text-accent"
         >
           Contact Us
