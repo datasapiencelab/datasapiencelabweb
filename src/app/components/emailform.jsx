@@ -64,7 +64,7 @@ const EmailForm = () => {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="btn btn-base-100 w-1/4 mt-4 hover:btn-accent hover:shadow-accent hover:shadow-md hover:border-black"
+          className="btn btn-black w-1/4  hover:border-accent hover:shadow-accent hover:shadow-md hover:text-accent"
         >
           Send Email
         </button>
