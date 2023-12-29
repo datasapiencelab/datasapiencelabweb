@@ -30,7 +30,7 @@ const EmailForm = () => {
         Unleashed
     </div>
     <div className="text-center font-serif text-3xl p-5">
-        Because we'll build them into reality.
+        Because we will build them into reality.
     </div>
       <div className="mb-4 mt-8">
         <label htmlFor="name" className="font-mono">
