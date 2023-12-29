@@ -21,10 +21,19 @@ const EmailForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 bg-gray-800 shadow-md rounded-md mx-auto"
-    >
-      <div className="mb-4">
-        <label htmlFor="name" className="">
+      className="p-8 bg-black shadow-lg rounded-md mx-auto border m-10 w-2/3 shadow-white hover:shadow-secondary"
+    > 
+    <div className="text-center font-serif text-4xl p-5">
+        Imagine your software dreams...
+    </div>
+    <div className="text-center font-serif text-4xl p-5">
+        Unleashed
+    </div>
+    <div className="text-center font-serif text-3xl p-5">
+        Because we'll build them into reality.
+    </div>
+      <div className="mb-4 mt-8">
+        <label htmlFor="name" className="font-mono">
           Name
         </label>
         <input
@@ -34,7 +43,7 @@ const EmailForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="input input-bordered w-full focus:outline-none focus:shadow-outline"
+          className="input input-bordered w-full focus:outline-none focus:border-secondary focus:shadow-secondary focus:shadow-sm"
         />
       </div>
       <div className="mb-4">
@@ -46,7 +55,7 @@ const EmailForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="input input-bordered w-full focus:outline-none focus:shadow-outline"
+          className="input input-bordered w-full focus:outline-none focus:border-secondary focus:shadow-secondary focus:shadow-sm"
         />
       </div>
       <div className="mb-4">
@@ -58,15 +67,15 @@ const EmailForm = () => {
           onChange={handleChange}
           required
           rows="4"
-          className="textarea textarea-lg w-full focus:outline-none focus:shadow-outline"
+          className="textarea textarea-lg w-full focus:outline-none focus:border-secondary focus:shadow-secondary focus:shadow-sm"
         />
       </div>
       <div className="flex justify-center">
         <button
           type="submit"
-          className="btn btn-black w-1/4  hover:border-accent hover:shadow-accent hover:shadow-md hover:text-accent"
+          className="btn btn-black w-1/4  hover:border-secondary hover:shadow-secondary hover:shadow-md hover:text-secondary"
         >
-          Send Email
+          Send Message
         </button>
       </div>
     </form>

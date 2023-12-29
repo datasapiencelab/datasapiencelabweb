@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "/public/databackground2.jpg";
+import backgroundImage from "/public/databackground2.webp";
 
 const HomePageHeroSection = () => {
   return (
