@@ -21,3 +21,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deployed on Netlify
 
 Catch the live status of the website at [Data Sapience lab Official page](https://datasapiencelab.netlify.app/)
+
+# Live url
+
+Coming soon
+
+----
