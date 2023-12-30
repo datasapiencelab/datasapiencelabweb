@@ -23,13 +23,13 @@ const EmailForm = () => {
       onSubmit={handleSubmit}
       className="p-8 bg-black shadow-lg rounded-md mx-auto border m-10 w-2/3 shadow-white hover:shadow-secondary"
     > 
-    <div className="text-center font-serif text-4xl p-5">
+    <div className="text-center font-serif sm:text-xl md:text-2xl lg:text-4xl p-5">
         Imagine your software dreams...
     </div>
-    <div className="text-center font-serif text-4xl p-5">
+    <div className="text-center font-serif sm:text-xl md:text-2xl lg:text-4xl p-5">
         Unleashed
     </div>
-    <div className="text-center font-serif text-3xl p-5">
+    <div className="text-center font-serif sm:text-lg md:text-2xl lg:text-3xl p-5">
         Because we will build them into reality.
     </div>
       <div className="mb-4 mt-8">

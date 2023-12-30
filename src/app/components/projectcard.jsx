@@ -10,7 +10,7 @@ const ProjectCards = ({ project }) => {
         <h2 className="card-title">{project.title}</h2>
         <p>{project.description}</p>
         <div className="card-actions justify-end">
-            <button className="btn btn-primary hover:btn-secondary">
+            <button className="btn btn-primary hover:btn-secondary ">
                 {project.buttonText}
             </button>
         </div>
