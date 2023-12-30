@@ -12,6 +12,7 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-lazy-load-image-component": "^1.6.0",
     "sharp": "^0.33.1",
     "theme-change": "^2.5.0"
   },

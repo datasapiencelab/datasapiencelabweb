@@ -7,7 +7,7 @@ const ServiceSection = () => {
         Our Services
       </div>
       <div className="flex flex-col w-full lg:flex-row">
-        <div className="grid flex-grow card bg-base-300 rounded-box p-5">
+        <div className="grid flex-grow card bg-base-300 rounded-box p-5 hover:shadow-lg hover:shadow-black">
           <div className="p-3">
             <h2 className="text-lg font-bold mb-3 text-center font-sans hover:underline hover:text-secondary">Data Analytics &amp; Visualization</h2>
             <h3 className="font-semibold mb-3">
@@ -23,7 +23,7 @@ const ServiceSection = () => {
           </div>
         </div>
         <div className="divider lg:divider-horizontal">O</div>
-        <div className="grid flex-grow card bg-base-300 rounded-box p-5">
+        <div className="grid flex-grow card bg-base-300 rounded-box p-5 hover:shadow-lg hover:shadow-black">
           <div className="p-3">
             <h2 className="text-lg font-bold mb-3 text-center font-sans hover:underline hover:text-secondary">Machine Learning &amp; AI</h2>
             <h3 className="font-semibold mb-3">
@@ -42,7 +42,7 @@ const ServiceSection = () => {
           </div>
         </div>
         <div className="divider lg:divider-horizontal">O</div>
-        <div className="grid flex-grow mx-h-10 card bg-base-300 rounded-box p-5">
+        <div className="grid flex-grow mx-h-10 card bg-base-300 rounded-box p-5 hover:shadow-lg hover:shadow-black">
           <div className="p-3">
             <h2 className="text-lg font-bold mb-3 text-center font-sans hover:underline hover:text-secondary">Custom Website</h2>
             <h3 className="font-semibold mb-2">
