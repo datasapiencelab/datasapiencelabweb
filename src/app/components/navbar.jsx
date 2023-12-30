@@ -5,7 +5,7 @@ const NavBar = () => {
     <nav className="navbar bg-black">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-secondary lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -24,7 +24,7 @@ const NavBar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
+          > 
             <li>
               <a>Portfolio</a>
             </li>
@@ -43,6 +43,9 @@ const NavBar = () => {
             </li>
             <li>
               <a>Consultancy</a>
+            </li>
+            <li className="skeleton">
+              <a href="/contactus">Contact us</a>
             </li>
           </ul>
         </div>
@@ -79,12 +82,14 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a
+        <button
           href="/contactus"
-          className="btn btn-secondary hover:btn-primary hover:border-accent hover:shadow-accent hover:shadow-sm hover:text-accent"
+          className="btn btn-secondary btn-outline 
+          hover:btn-secondary hover:btn-full rounded-full hover:shadow-secondary transition-colors duration-300 ease-in-out
+          hidden md:flex"
         >
           Contact Us
-        </a>
+        </button>
       </div>
     </nav>
   );

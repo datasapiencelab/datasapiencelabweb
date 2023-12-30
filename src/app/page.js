@@ -3,6 +3,7 @@ import Footer from './components/footer'
 import HomePageHeroSection from './components/herosection'
 import FeaturedProjectCarousel from './components/featuredprojectcarousel'
 import ServiceSection from './components/servicesection'
+import HomepageFAQ from './components/homepagefaq'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <HomePageHeroSection/>
         <ServiceSection/>
         <FeaturedProjectCarousel/>
+        <HomepageFAQ/>
         <Footer/>
       </main>
   )

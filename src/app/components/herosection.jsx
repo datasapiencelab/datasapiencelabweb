@@ -23,6 +23,7 @@ const HomePageHeroSection = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

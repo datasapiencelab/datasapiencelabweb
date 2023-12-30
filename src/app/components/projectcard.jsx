@@ -2,9 +2,9 @@ import React from "react";
 
 const ProjectCards = ({ project }) => {
   return (
-    <div className="card bg-black shadow-xl hover:shadow-secondary lg:card-side m-5">
+    <div className="card bg-black shadow-lg hover:shadow-gray-700 lg:card-side m-5 hover:scale-105 transition duration-300 ease-in-out">
       <figure>
-        <img src={project.imageSrc} alt={project.altText} />
+        <img loading="lazy" src={project.imageSrc} alt={project.altText} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{project.title}</h2>
