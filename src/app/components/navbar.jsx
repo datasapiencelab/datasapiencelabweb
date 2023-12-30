@@ -52,6 +52,9 @@ const NavBar = () => {
             <li>
               <Link href="">Consultancy</Link>
             </li>
+            <li className="skeleton">
+              <Link href="/contactus">Contact Us</Link>
+            </li>
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl">
