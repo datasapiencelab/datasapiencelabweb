@@ -26,31 +26,32 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <a>Portfolio</a>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <details>
+                <summary>Services</summary>
+                <ul className="p-2">
+                  <li>
+                    <a>Data analysis</a>
+                  </li>
+                  <li>
+                    <a>Custom Website</a>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Consultancy</a>
             </li>
           </ul>
         </div>
         <a href="/" className="btn btn-ghost text-xl">
-        <img
-          className="avatar mask mask-circle w-10 h-10 bg-white" // Adjust width and height as needed
-          src={Logo.src}
-          alt="Data Sapience Lab"
-        />
-        
+          <img
+            className="avatar mask mask-circle w-10 h-10 bg-white" // Adjust width and height as needed
+            src={Logo.src}
+            alt="Data Sapience Lab"
+          />
           Data Sapience Lab
         </a>
       </div>
