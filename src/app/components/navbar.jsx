@@ -35,7 +35,7 @@ const NavBar = () => {
             </li>
             <li>
               <details>
-                <summary>Services</summary>
+                <summary className="dropdown">Services</summary>
                 <ul className="p-2">
                   <li>
                     <Link href="">Data Analytics &amp; Visualization</Link>
@@ -64,7 +64,7 @@ const NavBar = () => {
           Data Sapience Lab
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center z-[1] hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link href="">Portfolio</Link>
@@ -72,15 +72,15 @@ const NavBar = () => {
           <li>
             <details>
               <summary>Services</summary>
-              <ul className="p-2">
+              <ul className="p-1">
                 <li>
-                  <Link href="">Data Analytics &amp; Visualization</Link>
+                  <Link className="text-nowrap" href="">Data Analytics &amp; Visualization</Link>
                 </li>
                 <li>
-                  <Link href="">A.I. &amp; Machine Learning</Link>
+                  <Link className="text-nowrap" href="">A.I. &amp; Machine Learning</Link>
                 </li>
                 <li>
-                  <Link href="">Custom Website &amp; Apps</Link>
+                  <Link className="text-nowrap" href="">Custom Website &amp; Apps</Link>
                 </li>
               </ul>
             </details>
