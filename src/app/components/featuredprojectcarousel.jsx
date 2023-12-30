@@ -29,7 +29,7 @@ const FeaturedProjectCarousel = () => {
   ];
   return (
     <div>
-      <div className="flex justify-center items-center mt-5 text-5xl font-serif font-extrabold">
+      <div className="flex justify-center items-center mt-5 text-5xl font-montseratt font-bold">
         Featured Works
       </div>
 

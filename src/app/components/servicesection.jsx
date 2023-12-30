@@ -3,7 +3,7 @@ import React from "react";
 const ServiceSection = () => {
   return (
     <section className="m-5">
-      <div className="flex justify-center items-center mt-5 mb-5 text-5xl font-serif font-extrabold">
+      <div className="flex justify-center items-center mt-5 mb-5 text-5xl font-montseratt font-bold">
         Our Services
       </div>
       <div className="flex flex-col w-full lg:flex-row">

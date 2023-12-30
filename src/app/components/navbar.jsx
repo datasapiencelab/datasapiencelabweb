@@ -38,25 +38,29 @@ const NavBar = () => {
                 <summary>Services</summary>
                 <ul className="p-2">
                   <li>
-                    <Link href="/">Data analysis</Link>
+                    <Link href="">Data Analytics &amp; Visualization</Link>
                   </li>
                   <li>
-                    <Link href="/">Custom Website</Link>
+                    <Link href="">A.I. &amp; Machine Learning</Link>
+                  </li>
+                  <li>
+                    <Link href="">Custom Website &amp; Apps</Link>
                   </li>
                 </ul>
               </details>
             </li>
-            <li className="skeleton">
-              <Link href="/contactus">Contact us</Link>
+            <li>
+              <Link href="">Consultancy</Link>
             </li>
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl">
-        <img
+          <img
             className="avatar mask mask-circle w-10 h-10 bg-white" // Adjust width and height as needed
-            loading= "lazy"
+            loading="lazy"
             src={Logo.src}
-            alt="Data Sapience Lab" />
+            alt="Data Sapience Lab"
+          />
           Data Sapience Lab
         </Link>
       </div>

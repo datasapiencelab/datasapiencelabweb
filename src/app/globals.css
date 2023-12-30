@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Montseratt";
+    src: url("/public/fonts/Montserrat-VariableFont_wght.ttf");
+  }
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/public/fonts/Roboto-Black.ttf");
+}

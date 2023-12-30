@@ -5,7 +5,7 @@ const HomepageFAQ = () => {
   return (
     <div>
       <div>
-      <div className="flex justify-center items-center mt-5 mb-5 text-5xl font-serif font-extrabold">
+      <div className="flex justify-center items-center mt-5 mb-5 text-5xl font-montseratt font-bold">
         Common Questions
       </div>
       <div className="join-vertical">
