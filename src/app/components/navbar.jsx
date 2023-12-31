@@ -41,10 +41,10 @@ const NavBar = () => {
                     <Link href="/datascience">Data Analytics &amp; Visualization</Link>
                   </li>
                   <li>
-                    <Link href="">A.I. &amp; Machine Learning</Link>
+                    <Link href="/aiml">A.I. &amp; Machine Learning</Link>
                   </li>
                   <li>
-                    <Link href="">Custom Website &amp; Apps</Link>
+                    <Link href="/software">Custom Website &amp; Apps</Link>
                   </li>
                 </ul>
               </details>
@@ -80,10 +80,10 @@ const NavBar = () => {
                   <Link className="text-nowrap" href="/datascience">Data Analytics &amp; Visualization</Link>
                 </li>
                 <li>
-                  <Link className="text-nowrap" href="">A.I. &amp; Machine Learning</Link>
+                  <Link className="text-nowrap" href="/aiml">A.I. &amp; Machine Learning</Link>
                 </li>
                 <li>
-                  <Link className="text-nowrap" href="">Custom Website &amp; Apps</Link>
+                  <Link className="text-nowrap" href="/software">Custom Website &amp; Apps</Link>
                 </li>
               </ul>
             </details>
