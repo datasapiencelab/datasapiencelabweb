@@ -1,31 +1,30 @@
 import React from "react";
 import Logo from "/public/datasapiencelogo.jpg"
+import Link from "next/link";
 const Footer = () =>{
 
     return(
         <footer className="footer p-10 bg-base-200 text-base-content glass">
         <aside>
-        <img className="mask mask-circle" src={Logo.src} alt="Data Sapience Lab Logo" />
+        <img loading="lazy" className="mask mask-circle" src={Logo.src} alt="Data Sapience Lab Logo" />
         </aside> 
         <nav>
           <header className="footer-title underline">Services</header> 
-          <a className="link link-hover hover:text-secondary">Data Analytics & Visualization</a>
-          <a className="link link-hover hover:text-secondary">Machine Learning</a>
-          <a className="link link-hover hover:text-secondary">Mobile App</a>
-          <a className="link link-hover hover:text-secondary">Custom Website</a>
+          <Link href="/datascience" className="link link-hover hover:text-secondary">Data Analytics & Visualization</Link>
+          <Link href="/aiml" className="link link-hover hover:text-secondary">Machine Learning</Link>
+          <Link href="/software"className="link link-hover hover:text-secondary">Custom Website &amp; Mobile App</Link>
         </nav> 
         <nav>
           <header className="footer-title underline">Company</header> 
-          <a className="link link-hover hover:text-secondary">About us</a>
-          <a href="/contactus" className="link link-hover hover:text-secondary">Contact</a>
-          <a className="link link-hover hover:text-secondary">Career</a>
-          <a className="link link-hover hover:text-secondary">Press kit</a>
+          <Link href="/aboutus" className="link link-hover hover:text-secondary">About us</Link>
+          <Link href="/contactus" className="link link-hover hover:text-secondary">Contact</Link>
+          <Link href="career" className="link link-hover hover:text-secondary">Career</Link>
         </nav> 
         <nav>
           <header className="footer-title underline">Legal</header> 
-          <a className="link link-hover hover:text-secondary">Terms of use</a>
-          <a className="link link-hover hover:text-secondary">Privacy policy</a>
-          <a className="link link-hover hover:text-secondary">Cookie policy</a>
+          <Link href="" className="link link-hover hover:text-secondary">Terms of use</Link>
+          <Link href="" className="link link-hover hover:text-secondary">Privacy policy</Link>
+          <Link href="" className="link link-hover hover:text-secondary">Cookie policy</Link>
         </nav>
       </footer>
     )
