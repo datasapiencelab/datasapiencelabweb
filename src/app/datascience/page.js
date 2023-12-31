@@ -1,12 +1,12 @@
 import NavBar from '../components/navbar'
 import Footer from '../components/footer'
-import EmailForm from '../components/emailform'
+import DataHeroSection from '../components/dataherosection'
 
 export default function Page() {
   return (
       <main>
         <NavBar/>
-        <EmailForm/>
+        <DataHeroSection/>
         <Footer/>
       </main>
   )

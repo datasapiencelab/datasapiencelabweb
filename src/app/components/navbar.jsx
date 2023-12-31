@@ -38,7 +38,7 @@ const NavBar = () => {
                 <summary className="dropdown">Services</summary>
                 <ul className="p-2">
                   <li>
-                    <Link href="">Data Analytics &amp; Visualization</Link>
+                    <Link href="/datascience">Data Analytics &amp; Visualization</Link>
                   </li>
                   <li>
                     <Link href="">A.I. &amp; Machine Learning</Link>
@@ -77,7 +77,7 @@ const NavBar = () => {
               <summary>Services</summary>
               <ul className="p-1">
                 <li>
-                  <Link className="text-nowrap" href="">Data Analytics &amp; Visualization</Link>
+                  <Link className="text-nowrap" href="/datascience">Data Analytics &amp; Visualization</Link>
                 </li>
                 <li>
                   <Link className="text-nowrap" href="">A.I. &amp; Machine Learning</Link>
