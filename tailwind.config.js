@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        montseratt:["Montseratt","sans-serif"],
+        roboto:["Roboto","sans-serif"],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -22,7 +26,7 @@ module.exports = {
           "secondary": "#38BDF8",
           "accent": "#ea580c",
           "neutral": "#607274",
-          "base-100": "#292524",
+          "base-100": "#0F202A",
           "info": "#CBE4DE",
           "success": "#65A30D",
           "warning": "#EAB308",      
