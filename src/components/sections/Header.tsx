@@ -144,7 +144,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
                     {/* Menu Items */}
                     <div className="flex flex-col gap-[10px] md:gap-3 lg:gap-4 items-end flex-1">
-                        <div className="w-full h-[0.67px] bg-neutral-50"></div>
+                        <div className="w-full h-px bg-neutral-50"></div>
                         {mainNavItems.map((item) => (
                             <div key={item.path} className="w-full">
                                 <Link
@@ -154,7 +154,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                                 >
                                     {item.label}
                                 </Link>
-                                <div className="w-full h-[0.67px] bg-neutral-50 mt-[10px] md:mt-3 lg:mt-4"></div>
+                                <div className="w-full h-px bg-neutral-50 mt-[10px] md:mt-3 lg:mt-4"></div>
                             </div>
                         ))}
                     </div>
@@ -224,7 +224,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
                         {/* Right: Menu Items */}
                         <div className="w-[350px] 2xl:w-[424px] flex flex-col gap-3 2xl:gap-4 items-end">
-                            <div className="w-full h-[0.67px] bg-neutral-50"></div>
+                            <div className="w-full h-px bg-neutral-50"></div>
                             {mainNavItems.map((item) => (
                                 <div
                                     key={item.path}
@@ -237,7 +237,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                                     >
                                         {item.label}
                                     </Link>
-                                    <div className="w-full h-[0.67px] bg-neutral-50 mt-3 2xl:mt-4"></div>
+                                    <div className="w-full h-px bg-neutral-50 mt-3 2xl:mt-4"></div>
                                 </div>
                             ))}
                         </div>
