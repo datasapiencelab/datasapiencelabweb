@@ -17,7 +17,7 @@ export default function CareerHero({
     image,
 }: CareerHeroProps) {
     return (
-        <section className="bg-white py-10 md:py-16 lg:py-24">
+        <section className="bg-white py-10 mt-12 md:py-16 lg:py-24">
             <div className="px-6 md:px-16 lg:px-28">
                 <div className="max-w-[1216px] mx-auto">
                     <div className="flex flex-col gap-6">
