@@ -4,7 +4,50 @@ import { mainNavItems } from "../../config/navigation";
 
 const logoSrc =
     "data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='21' cy='21' r='21' fill='white'/%3E%3Cpath d='M21 12L29 30H13L21 12Z' fill='%23f2500d'/%3E%3C/svg%3E";
-const menuIconSvg = "assets/images/Menu_expanded.svg";
+
+// Hamburger icons - white for overlay/homepage, black for other pages
+const hamburgerIcons = {
+    white: {
+        default: {
+            mobile: "assets/icons/hamburger/Property 1=Default, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=Default, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
+        },
+        hover: {
+            mobile: "assets/icons/hamburger/Property 1=hover, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=hover, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
+        },
+        clicked: {
+            mobile: "assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
+        },
+    },
+    black: {
+        default: {
+            mobile: "assets/icons/hamburger/Property 1=Default, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=Default, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
+        },
+        hover: {
+            mobile: "assets/icons/hamburger/Property 1=hover, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=hover, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
+        },
+        clicked: {
+            mobile: "assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
+            tablet: "assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
+            desktop:
+                "assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
+        },
+    },
+};
 
 interface HeaderProps {
     isHomePage?: boolean;
@@ -41,7 +84,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
     return (
         <div className="fixed inset-0 z-50 backdrop-blur-[14.75px] bg-[rgba(9,9,11,0.72)] flex flex-col">
             {/* Navigation */}
-            <div className="flex items-center justify-between py-5 md:py-[26px] lg:py-8 xl:py-9 px-4 md:px-8 lg:px-16 xl:px-28">
+            <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
                 <Link to="/" className="flex items-center gap-2">
                     <div className="w-[42px] h-[42px] rounded-full overflow-hidden">
                         <img
@@ -56,13 +99,26 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                 </Link>
                 <button
                     onClick={onClose}
-                    className="w-[23px] h-[13px] md:w-[35px] md:h-5 lg:w-[42px] lg:h-6 cursor-pointer hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded-sm"
+                    className="p-2 cursor-pointer hover:opacity-80 transition-opacity focus:outline-none"
                     aria-label="Close menu"
                 >
+                    {/* Mobile */}
                     <img
-                        src={menuIconSvg}
+                        src={hamburgerIcons.white.clicked.mobile}
                         alt="Close menu"
-                        className="w-full h-full"
+                        className="block md:hidden w-[23.23px] h-[13.22px]"
+                    />
+                    {/* Tablet */}
+                    <img
+                        src={hamburgerIcons.white.clicked.tablet}
+                        alt="Close menu"
+                        className="hidden md:block lg:hidden w-[35px] h-[20px]"
+                    />
+                    {/* Desktop */}
+                    <img
+                        src={hamburgerIcons.white.clicked.desktop}
+                        alt="Close menu"
+                        className="hidden lg:block w-[42.18px] h-[24px]"
                     />
                 </button>
             </div>
@@ -239,6 +295,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
 export default function Header({ isHomePage = false }: HeaderProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -279,16 +336,73 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                             </Link>
                         ))}
 
-                        {/* Hamburger Menu Button - Always Visible - Use Figma Icon */}
+                        {/* Hamburger Menu Button - Always Visible - Responsive Icons */}
                         <button
                             onClick={toggleMenu}
-                            className={`${textColor} p-2 w-[23px] h-[13px] md:w-[35px] md:h-5 lg:w-[42px] lg:h-6`}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            className="p-2 transition-opacity focus:outline-none"
                             aria-label="Toggle menu"
                         >
+                            {/* Mobile */}
                             <img
-                                src={menuIconSvg}
+                                src={
+                                    isMenuOpen
+                                        ? hamburgerIcons.white.clicked.mobile
+                                        : isHovered
+                                        ? hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].hover.mobile
+                                        : hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].default.mobile
+                                }
                                 alt="Menu"
-                                className="w-full h-full"
+                                className={`block md:hidden w-[23.23px] h-[13.22px] transition-all ${
+                                    !isHomePage && !isMenuOpen
+                                        ? "brightness-0"
+                                        : ""
+                                }`}
+                            />
+                            {/* Tablet */}
+                            <img
+                                src={
+                                    isMenuOpen
+                                        ? hamburgerIcons.white.clicked.tablet
+                                        : isHovered
+                                        ? hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].hover.tablet
+                                        : hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].default.tablet
+                                }
+                                alt="Menu"
+                                className={`hidden md:block lg:hidden w-[35px] h-[20px] transition-all ${
+                                    !isHomePage && !isMenuOpen
+                                        ? "brightness-0"
+                                        : ""
+                                }`}
+                            />
+                            {/* Desktop */}
+                            <img
+                                src={
+                                    isMenuOpen
+                                        ? hamburgerIcons.white.clicked.desktop
+                                        : isHovered
+                                        ? hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].hover.desktop
+                                        : hamburgerIcons[
+                                              isHomePage ? "white" : "black"
+                                          ].default.desktop
+                                }
+                                alt="Menu"
+                                className={`hidden lg:block w-[42.18px] h-[24px] transition-all ${
+                                    !isHomePage && !isMenuOpen
+                                        ? "brightness-0"
+                                        : ""
+                                }`}
                             />
                         </button>
                     </div>
