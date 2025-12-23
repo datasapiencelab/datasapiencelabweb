@@ -86,14 +86,14 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             {/* Navigation */}
             <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
                 <Link to="/" className="flex items-center gap-2">
-                    <div className="w-[42px] h-[42px] rounded-full overflow-hidden">
+                    <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden">
                         <img
                             src={logoSrc}
                             alt="Data Sapience Lab"
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <span className="hidden md:block text-lg lg:text-xl font-bold text-white tracking-[0.5px] font-['Geist']">
+                    <span className="hidden lg:block text-base md:text-lg lg:text-xl font-bold text-white tracking-wider">
                         Data Sapience Lab
                     </span>
                 </Link>
@@ -324,13 +324,14 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                         </span>
                     </Link>
 
-                    {/* Navigation Items */}
+                    {/* Navigation Items + Hamburger */}
                     <div className="flex items-center gap-4 md:gap-8 lg:gap-16">
+                        {/* Desktop Nav Items - Only on large desktop (xl+) */}
                         {mainNavItems.map((item) => (
                             <Link
                                 key={item.path}
                                 to={item.path}
-                                className={`${textColor} ${hoverColor} transition-colors text-sm lg:text-base`}
+                                className={`hidden xl:block ${textColor} ${hoverColor} transition-colors text-sm lg:text-base`}
                             >
                                 {item.label}
                             </Link>
@@ -378,7 +379,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                                           ].default.tablet
                                 }
                                 alt="Menu"
-                                className={`hidden md:block lg:hidden w-[35px] h-[20px] transition-all ${
+                                className={`hidden md:block xl:hidden w-[35px] h-[20px] transition-all ${
                                     !isHomePage && !isMenuOpen
                                         ? "brightness-0"
                                         : ""
@@ -398,7 +399,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                                           ].default.desktop
                                 }
                                 alt="Menu"
-                                className={`hidden lg:block w-[42.18px] h-[24px] transition-all ${
+                                className={`hidden xl:block w-[42.18px] h-[24px] transition-all ${
                                     !isHomePage && !isMenuOpen
                                         ? "brightness-0"
                                         : ""
