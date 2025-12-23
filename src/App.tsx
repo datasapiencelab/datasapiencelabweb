@@ -1,34 +1,45 @@
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Services from './components/sections/Services';
-import Projects from './components/sections/Projects';
-import Principles from './components/sections/Principles';
-import { Process } from './components/sections/Process';
-import WhySection from './components/sections/WhySection';
-import PricingSection from './components/sections/PricingSection';
-import StoriesSection from './components/sections/StoriesSection';
-import InquiryFormSection from './components/sections/InquiryFormSection';
-import FAQSection from './components/sections/FAQSection';
-import ContactSocialSection from './components/sections/ContactSocialSection';
-import Footer from './components/sections/Footer';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Header from "./components/sections/Header";
+import Footer from "./components/sections/Footer";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import CareerPage from "./pages/CareerPage";
+import ContactPage from "./pages/ContactPage";
+import ExpertisePage from "./pages/ExpertisePage";
+import PricingPage from "./pages/PricingPage";
+import FAQsPage from "./pages/FAQsPage";
+
+function AppContent() {
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
+
+    return (
+        <div className="w-full">
+            <Header isHomePage={isHomePage} />
+            <Routes>
+                {/* Main Pages */}
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/career" element={<CareerPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+
+                {/* Additional Pages */}
+                <Route path="/expertise" element={<ExpertisePage />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/faqs" element={<FAQsPage />} />
+            </Routes>
+            <Footer />
+        </div>
+    );
+}
 
 function App() {
     return (
-        <div className="w-full">
-            <Hero />
-            <About />
-            <Services />
-            <Projects />
-            <Principles />
-            <Process />
-            <WhySection />
-            <PricingSection />
-            <StoriesSection />
-            <InquiryFormSection />
-            <FAQSection />
-            <ContactSocialSection />
-            <Footer />
-        </div>
+        <BrowserRouter>
+            <AppContent />
+        </BrowserRouter>
     );
 }
 
