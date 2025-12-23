@@ -2,7 +2,7 @@ import CareerHero from "../components/sections/CareerHero";
 import CareerValues from "../components/sections/CareerValues";
 import CareerOpenings from "../components/sections/CareerOpenings";
 import CareerGallery from "../components/sections/CareerGallery";
-import ContactSocialSection from "../components/sections/ContactSocialSection";
+import ContactInfo from "../components/sections/ContactInfo";
 import { CAREER_CONTENT } from "../content/career";
 
 export default function CareerPage() {
@@ -26,7 +26,7 @@ export default function CareerPage() {
 
             <CareerGallery images={CAREER_CONTENT.gallery.images} />
 
-            <ContactSocialSection />
+            <ContactInfo />
         </div>
     );
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { WHY_SECTION_RESOURCES } from './whySectionResources';
+import React from "react";
+import { WHY_SECTION_RESOURCES } from "./whyChooseUsData";
 
-// Destructure resources for easier access  
+// Destructure resources for easier access
 const { images, colors } = WHY_SECTION_RESOURCES;
 
 // Spark icon component
@@ -22,7 +22,13 @@ const SparkIcon = () => (
 // Send icon for chat
 const SendIcon = () => (
     <svg className="w-5 h-5" viewBox="0 0 20 20" fill="none">
-        <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="#d4d4d8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+            d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11"
+            stroke="#d4d4d8"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
     </svg>
 );
 
@@ -44,7 +50,7 @@ const ArrowIcon = () => (
     </svg>
 );
 
-const WhySection: React.FC = () => {
+const WhyChooseUs: React.FC = () => {
     return (
         <div className="whySection bg-zinc-950 w-full">
             {/* Desktop Layout (1024px+) - Exact Figma Implementation */}
@@ -61,10 +67,14 @@ const WhySection: React.FC = () => {
                             </div>
                         </div>
                         <div className="font-geist font-medium text-[60px] leading-[72px] text-zinc-100 tracking-[-2px] text-center">
-                            <p className="leading-[72px] mb-0">Empowering businesses </p>
+                            <p className="leading-[72px] mb-0">
+                                Empowering businesses{" "}
+                            </p>
                             <p className="leading-[72px]">
                                 <span className="text-[60px]">with </span>
-                                <span className="capitalize font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">Data-Driven innovation.</span>
+                                <span className="capitalize font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">
+                                    Data-Driven innovation.
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -94,7 +104,8 @@ const WhySection: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="font-geist font-medium text-2xl leading-9 text-zinc-200 tracking-[-0.25px] text-center min-w-full">
-                                    Pricing plans that adapt to your budget and scope.
+                                    Pricing plans that adapt to your budget and
+                                    scope.
                                 </div>
                             </div>
                         </div>
@@ -117,7 +128,8 @@ const WhySection: React.FC = () => {
                                     Transparency.
                                 </div>
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px] min-w-full">
-                                    You'll always know what we're building, why, and how it benefits your business.
+                                    You'll always know what we're building, why,
+                                    and how it benefits your business.
                                 </div>
                             </div>
                         </div>
@@ -133,7 +145,8 @@ const WhySection: React.FC = () => {
                                     Faster Results
                                 </div>
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px] min-w-full">
-                                    Our clients streamline decision-making and cut project delivery time by up to 70%.
+                                    Our clients streamline decision-making and
+                                    cut project delivery time by up to 70%.
                                 </div>
                             </div>
                         </div>
@@ -146,7 +159,8 @@ const WhySection: React.FC = () => {
                                     Real-time support
                                 </div>
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px] min-w-full">
-                                    Our team is always just a message away — real humans, real answers.
+                                    Our team is always just a message away —
+                                    real humans, real answers.
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full">
@@ -164,19 +178,25 @@ const WhySection: React.FC = () => {
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px] w-[164px]">
-                                            We'll make the changes and send a quick preview
+                                            We'll make the changes and send a
+                                            quick preview
                                         </div>
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px] w-[227px]">
-                                            Just updated. You should be able to see the new version on your side now.
+                                            Just updated. You should be able to
+                                            see the new version on your side
+                                            now.
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                     <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
                                     <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[138px]">
-                                        <p className="mb-0">Amazing, thank you! You guys are fast</p>
+                                        <p className="mb-0">
+                                            Amazing, thank you! You guys are
+                                            fast
+                                        </p>
                                         <p> 🙌</p>
                                     </div>
                                 </div>
@@ -202,8 +222,12 @@ const WhySection: React.FC = () => {
                             <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none" />
                             <div className="font-geist font-normal text-white tracking-[-1px] w-full relative z-10">
                                 <p>
-                                    <span className="font-geist font-normal leading-10 text-[32px] tracking-[-1px]">Strategic solutions for </span>
-                                    <span className="font-engagement leading-12 not-italic text-[48px] tracking-[2px]">long lasting impact.</span>
+                                    <span className="font-geist font-normal leading-10 text-[32px] tracking-[-1px]">
+                                        Strategic solutions for{" "}
+                                    </span>
+                                    <span className="font-engagement leading-12 not-italic text-[48px] tracking-[2px]">
+                                        long lasting impact.
+                                    </span>
                                 </p>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full relative z-10">
@@ -289,10 +313,16 @@ const WhySection: React.FC = () => {
                             </div>
                         </div>
                         <div className="font-geist font-medium text-white tracking-[-1px] text-center w-full">
-                            <p className="font-geist font-semibold text-[40px] leading-12 mb-0">Empowering businesses </p>
+                            <p className="font-geist font-semibold text-[40px] leading-12 mb-0">
+                                Empowering businesses{" "}
+                            </p>
                             <p>
-                                <span className="font-geist font-semibold text-[40px] leading-12 tracking-[-1px]">with</span>
-                                <span className="text-[48px] leading-[52px]"> </span>
+                                <span className="font-geist font-semibold text-[40px] leading-12 tracking-[-1px]">
+                                    with
+                                </span>
+                                <span className="text-[48px] leading-[52px]">
+                                    {" "}
+                                </span>
                                 <span className="capitalize font-engagement not-italic text-[#f2500d] text-[60px] leading-[52px] tracking-[2px]">
                                     Data-Driven innovation.
                                 </span>
@@ -325,7 +355,8 @@ const WhySection: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="font-geist font-medium text-lg leading-7 text-zinc-200 tracking-[0.5px] text-center min-w-full">
-                                    Pricing plans that adapt to your budget and scope.
+                                    Pricing plans that adapt to your budget and
+                                    scope.
                                 </div>
                             </div>
                         </div>
@@ -341,7 +372,8 @@ const WhySection: React.FC = () => {
                                     Faster Results
                                 </div>
                                 <div className="font-geist font-normal text-base leading-6 text-zinc-300 min-w-full">
-                                    Our clients streamline decision-making and cut project delivery time by up to 70%.
+                                    Our clients streamline decision-making and
+                                    cut project delivery time by up to 70%.
                                 </div>
                             </div>
                         </div>
@@ -424,7 +456,8 @@ const WhySection: React.FC = () => {
                                     Real-time support
                                 </div>
                                 <div className="font-geist font-normal text-base leading-6 text-zinc-300 min-w-full">
-                                    Our team is always just a message away — real humans, real answers.
+                                    Our team is always just a message away —
+                                    real humans, real answers.
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full">
@@ -442,19 +475,25 @@ const WhySection: React.FC = () => {
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px] whitespace-pre">
-                                            We'll make the changes and send a quick preview
+                                            We'll make the changes and send a
+                                            quick preview
                                         </div>
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px] whitespace-pre">
-                                            Just updated. You should be able to see the new version on your side now.
+                                            Just updated. You should be able to
+                                            see the new version on your side
+                                            now.
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                     <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
                                     <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] whitespace-pre">
-                                        <p className="mb-0">Amazing, thank you! You guys are fast</p>
+                                        <p className="mb-0">
+                                            Amazing, thank you! You guys are
+                                            fast
+                                        </p>
                                         <p> 🙌</p>
                                     </div>
                                 </div>
@@ -488,7 +527,8 @@ const WhySection: React.FC = () => {
                                     Transparency.
                                 </div>
                                 <div className="font-geist font-normal text-base leading-6 text-zinc-300 min-w-full">
-                                    You'll always know what we're building, why, and how it benefits your business.
+                                    You'll always know what we're building, why,
+                                    and how it benefits your business.
                                 </div>
                             </div>
                         </div>
@@ -522,10 +562,14 @@ const WhySection: React.FC = () => {
                             </div>
                         </div>
                         <div className="font-geist font-semibold not-italic text-zinc-100 tracking-[-0.25px] text-center w-full">
-                            <p className="text-2xl leading-9 mb-0">Empowering businesses </p>
+                            <p className="text-2xl leading-9 mb-0">
+                                Empowering businesses{" "}
+                            </p>
                             <p className="text-2xl leading-9">
                                 <span>with </span>
-                                <span className="font-geist font-semibold text-[#f2500d] tracking-[-0.25px]">Data-Driven </span>
+                                <span className="font-geist font-semibold text-[#f2500d] tracking-[-0.25px]">
+                                    Data-Driven{" "}
+                                </span>
                                 innovation.
                             </p>
                         </div>
@@ -544,7 +588,8 @@ const WhySection: React.FC = () => {
                                     Faster Results
                                 </div>
                                 <div className="font-geist font-normal text-sm leading-5 text-zinc-300 min-w-full">
-                                    Our clients streamline decision-making and cut project delivery time by up to 70%.
+                                    Our clients streamline decision-making and
+                                    cut project delivery time by up to 70%.
                                 </div>
                             </div>
                         </div>
@@ -627,7 +672,8 @@ const WhySection: React.FC = () => {
                                     Real-time support
                                 </div>
                                 <div className="font-geist font-normal text-sm leading-5 text-zinc-300 min-w-full">
-                                    Our team is always just a message away — real humans, real answers.
+                                    Our team is always just a message away —
+                                    real humans, real answers.
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full relative z-10">
@@ -645,19 +691,25 @@ const WhySection: React.FC = () => {
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px] w-[170px]">
-                                            We'll make the changes and send a quick preview
+                                            We'll make the changes and send a
+                                            quick preview
                                         </div>
                                     </div>
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[250px]">
                                         <div className="flex-1 font-geist font-normal text-xs text-right leading-5 text-zinc-200 tracking-[0.5px]">
-                                            Just updated. You should be able to see the new version on your side now.
+                                            Just updated. You should be able to
+                                            see the new version on your side
+                                            now.
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[179px] relative">
                                     <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
                                     <div className="flex-1 font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] relative z-10">
-                                        <p className="mb-0">Amazing, thank you! You guys are fast</p>
+                                        <p className="mb-0">
+                                            Amazing, thank you! You guys are
+                                            fast
+                                        </p>
                                         <p> 🙌</p>
                                     </div>
                                 </div>
@@ -691,7 +743,8 @@ const WhySection: React.FC = () => {
                                     Transparency.
                                 </div>
                                 <div className="font-geist font-normal text-sm leading-5 text-zinc-300 min-w-full">
-                                    You'll always know what we're building, why, and how it benefits your business.
+                                    You'll always know what we're building, why,
+                                    and how it benefits your business.
                                 </div>
                             </div>
                         </div>
@@ -719,7 +772,8 @@ const WhySection: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="font-geist not-italic text-base leading-6 text-zinc-200 tracking-[0.5px] text-center w-[241px]">
-                                    Pricing plans that adapt to your budget and scope.
+                                    Pricing plans that adapt to your budget and
+                                    scope.
                                 </div>
                             </div>
                         </div>
@@ -740,4 +794,4 @@ const WhySection: React.FC = () => {
     );
 };
 
-export default WhySection;
+export default WhyChooseUs;

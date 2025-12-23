@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Spark icon component
 const SparkIcon = () => (
@@ -42,12 +42,21 @@ interface FAQItemProps {
     onToggle: () => void;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer, number, isExpanded, onToggle }) => {
+const FAQItem: React.FC<FAQItemProps> = ({
+    question,
+    answer,
+    number,
+    isExpanded,
+    onToggle,
+}) => {
     return (
         <button
             onClick={onToggle}
-            className={`bg-zinc-900 box-border flex flex-col gap-5 items-start justify-center p-8 w-full text-left transition-all duration-300 relative ${isExpanded ? 'border border-solid border-[#7e2a0c] shadow-[0px_0px_8.3px_0px_#f2500d]' : 'border border-solid border-zinc-800'
-                }`}
+            className={`bg-zinc-900 box-border flex flex-col gap-5 items-start justify-center p-8 w-full text-left transition-all duration-300 relative ${
+                isExpanded
+                    ? "border border-solid border-[#7e2a0c] shadow-[0px_0px_8.3px_0px_#f2500d]"
+                    : "border border-solid border-zinc-800"
+            }`}
         >
             {/* Question Header */}
             <div className="flex gap-2 items-center w-full">
@@ -69,35 +78,35 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, number, isExpanded,
     );
 };
 
-const FAQSection: React.FC = () => {
+const FAQ: React.FC = () => {
     const [expandedIndex, setExpandedIndex] = useState<number>(0); // First FAQ expanded by default
 
     const faqs = [
         {
             question: "Why choose your solutions?",
             answer: "We align every build with your goals — combining strategy, design, and technology to create solutions that actually move the needle.",
-            number: "(01)"
+            number: "(01)",
         },
         {
             question: "What about post-launch support?",
             answer: "We don't disappear after launch. Our team provides continuous updates, improvements, and technical support to keep your system running at its best.",
-            number: "(02)"
+            number: "(02)",
         },
         {
             question: "Are your services startup-friendly?",
             answer: "By using lean, agile methods, we deliver MVPs quickly and scale only when you're ready — so you invest smartly, not heavily.",
-            number: "(03)"
+            number: "(03)",
         },
         {
             question: "What if I dislike the design?",
             answer: "No worries — we offer unlimited revisions during development, ensuring the end product meets your expectations.",
-            number: "(04)"
+            number: "(04)",
         },
         {
             question: "Is AI affordable for small teams?",
             answer: "Yes. We tailor AI to your business case, starting small with high-impact features, then scaling as your needs grow.",
-            number: "(05)"
-        }
+            number: "(05)",
+        },
     ];
 
     const handleToggle = (index: number) => {
@@ -124,10 +133,14 @@ const FAQSection: React.FC = () => {
 
                             {/* Main Heading */}
                             <div className="font-geist font-medium text-[60px] leading-[72px] text-white tracking-[-2px]">
-                                <p className="leading-[72px] mb-0">Your questions</p>
+                                <p className="leading-[72px] mb-0">
+                                    Your questions
+                                </p>
                                 <p className="leading-[72px]">
                                     <span className="text-[60px]">are </span>
-                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">Answered</span>
+                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">
+                                        Answered
+                                    </span>
                                     <span className="text-[60px]"> here.</span>
                                 </p>
                             </div>
@@ -151,7 +164,9 @@ const FAQSection: React.FC = () => {
                             <div className="flex flex-col gap-5 items-start pt-8 w-full">
                                 <div className="font-geist font-normal text-2xl leading-9 text-zinc-100 tracking-[-0.25px] w-full">
                                     <span>Still Have Questions? </span>
-                                    <span className="text-[#9f9fa9]">Let's Talk.</span>
+                                    <span className="text-[#9f9fa9]">
+                                        Let's Talk.
+                                    </span>
                                 </div>
 
                                 <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
@@ -185,10 +200,14 @@ const FAQSection: React.FC = () => {
 
                         {/* Main Heading */}
                         <div className="font-geist font-medium text-[48px] leading-[52px] text-center text-white tracking-[-1px] w-full">
-                            <p className="leading-[52px] mb-0">Your questions</p>
+                            <p className="leading-[52px] mb-0">
+                                Your questions
+                            </p>
                             <p className="leading-[52px]">
                                 <span className="text-[48px]">are </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">Answered</span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">
+                                    Answered
+                                </span>
                                 <span className="text-[48px]"> here.</span>
                             </p>
                         </div>
@@ -211,7 +230,9 @@ const FAQSection: React.FC = () => {
                         <div className="flex flex-col gap-5 items-center pt-8 w-full">
                             <div className="font-geist font-normal text-xl leading-8 text-center text-zinc-100 tracking-[-0.25px] w-full">
                                 <span>Still Have Questions? </span>
-                                <span className="text-[#9f9fa9]">Let's Talk.</span>
+                                <span className="text-[#9f9fa9]">
+                                    Let's Talk.
+                                </span>
                             </div>
 
                             <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
@@ -247,7 +268,9 @@ const FAQSection: React.FC = () => {
                             <p className="leading-8 mb-0">Your questions</p>
                             <p className="leading-8">
                                 <span className="text-2xl">are </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">Answered</span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">
+                                    Answered
+                                </span>
                                 <span className="text-2xl"> here.</span>
                             </p>
                         </div>
@@ -259,8 +282,11 @@ const FAQSection: React.FC = () => {
                             <button
                                 key={index}
                                 onClick={() => handleToggle(index)}
-                                className={`bg-zinc-900 box-border flex flex-col gap-4 items-start justify-center p-4 w-full text-left transition-all duration-300 relative ${expandedIndex === index ? 'border border-solid border-[#7e2a0c] shadow-[0px_0px_8.3px_0px_#f2500d]' : 'border border-solid border-zinc-800'
-                                    }`}
+                                className={`bg-zinc-900 box-border flex flex-col gap-4 items-start justify-center p-4 w-full text-left transition-all duration-300 relative ${
+                                    expandedIndex === index
+                                        ? "border border-solid border-[#7e2a0c] shadow-[0px_0px_8.3px_0px_#f2500d]"
+                                        : "border border-solid border-zinc-800"
+                                }`}
                             >
                                 {/* Question Header */}
                                 <div className="flex gap-2 items-center w-full">
@@ -285,7 +311,9 @@ const FAQSection: React.FC = () => {
                         <div className="flex flex-col gap-4 items-start pt-6 w-full">
                             <div className="font-geist font-normal text-lg leading-7 text-zinc-100 tracking-[-0.25px] w-full">
                                 <span>Still Have Questions? </span>
-                                <span className="text-[#9f9fa9]">Let's Talk.</span>
+                                <span className="text-[#9f9fa9]">
+                                    Let's Talk.
+                                </span>
                             </div>
 
                             <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors w-full">
@@ -304,4 +332,4 @@ const FAQSection: React.FC = () => {
     );
 };
 
-export default FAQSection;
+export default FAQ;

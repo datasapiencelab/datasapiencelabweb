@@ -1,11 +1,11 @@
-import PricingSection from "../components/sections/PricingSection";
-import FAQSection from "../components/sections/FAQSection";
+import Pricing from "../components/sections/Pricing";
+import FAQ from "../components/sections/FAQ";
 
 export default function PricingPage() {
     return (
         <div>
-            <PricingSection />
-            <FAQSection />
+            <Pricing />
+            <FAQ />
         </div>
     );
 }

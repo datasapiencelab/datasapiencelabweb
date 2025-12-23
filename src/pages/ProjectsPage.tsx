@@ -1,11 +1,11 @@
 import Projects from "../components/sections/Projects";
-import StoriesSection from "../components/sections/StoriesSection";
+import Testimonials from "../components/sections/Testimonials";
 
 export default function ProjectsPage() {
     return (
         <div>
             <Projects />
-            <StoriesSection />
+            <Testimonials />
         </div>
     );
 }

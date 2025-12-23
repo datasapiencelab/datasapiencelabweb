@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Spark icon component
 const SparkIcon = () => (
@@ -35,11 +35,7 @@ const ArrowIcon = () => (
 
 // Resize handle icon for textarea
 const ResizeHandle = () => (
-    <svg
-        className="w-4 h-4 text-zinc-400"
-        viewBox="0 0 16 16"
-        fill="none"
-    >
+    <svg className="w-4 h-4 text-zinc-400" viewBox="0 0 16 16" fill="none">
         <path
             d="M16 16L10 10M16 10L10 16M16 6L6 16M16 0L0 16"
             stroke="currentColor"
@@ -55,20 +51,22 @@ interface FormData {
     projectDetails: string;
 }
 
-const InquiryFormSection: React.FC = () => {
+const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
-        fullName: '',
-        email: '',
-        projectDetails: ''
+        fullName: "",
+        email: "",
+        projectDetails: "",
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
+        setFormData((prev) => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }));
     };
 
@@ -77,35 +75,40 @@ const InquiryFormSection: React.FC = () => {
         setIsSubmitting(true);
 
         // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
 
         // Reset form
         setFormData({
-            fullName: '',
-            email: '',
-            projectDetails: ''
+            fullName: "",
+            email: "",
+            projectDetails: "",
         });
 
         setIsSubmitting(false);
-        alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+        alert(
+            "Thank you for your inquiry! We'll get back to you within 24 hours."
+        );
     };
 
     const steps = [
         {
             number: "(01)",
             title: "Quick Response",
-            description: "You'll hear from us within 24 hours with a confirmation and next steps."
+            description:
+                "You'll hear from us within 24 hours with a confirmation and next steps.",
         },
         {
             number: "(02)",
             title: "Discovery Chat",
-            description: "We'll schedule a 30–45 min call to dive deeper into your idea and explore possibilities."
+            description:
+                "We'll schedule a 30–45 min call to dive deeper into your idea and explore possibilities.",
         },
         {
             number: "(03)",
             title: "Roadmap & Kickoff",
-            description: "Once we align on goals, we'll share a tailored roadmap and start bringing your project to life. 🚀"
-        }
+            description:
+                "Once we align on goals, we'll share a tailored roadmap and start bringing your project to life. 🚀",
+        },
     ];
 
     return (
@@ -116,7 +119,7 @@ const InquiryFormSection: React.FC = () => {
                     className="w-full h-full bg-repeat"
                     style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L24 16L40 20L24 24L20 40L16 24L0 20L16 16L20 0Z' fill='%23f2500d'/%3E%3C/svg%3E")`,
-                        backgroundSize: '40px 40px'
+                        backgroundSize: "40px 40px",
                     }}
                 />
             </div>
@@ -140,12 +143,22 @@ const InquiryFormSection: React.FC = () => {
                         <div className="col-span-7 flex flex-col gap-8 items-start justify-center">
                             <div className="font-geist text-zinc-600 tracking-[-1px] w-full">
                                 <p className="mb-0 whitespace-pre-wrap">
-                                    <span className="font-semibold text-[60px] leading-[72px] tracking-[-2px]">Let's</span>
-                                    <span className="font-medium text-[40px] leading-[48px]"> </span>
-                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] leading-[48px] tracking-[2px]">Explore</span>
-                                    <span className="font-medium text-[40px] leading-[48px]"> </span>
+                                    <span className="font-semibold text-[60px] leading-[72px] tracking-[-2px]">
+                                        Let's
+                                    </span>
+                                    <span className="font-medium text-[40px] leading-[48px]">
+                                        {" "}
+                                    </span>
+                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] leading-[48px] tracking-[2px]">
+                                        Explore
+                                    </span>
+                                    <span className="font-medium text-[40px] leading-[48px]">
+                                        {" "}
+                                    </span>
                                 </p>
-                                <p className="font-semibold text-[60px] leading-[72px] tracking-[-2px]">Your Idea Together</p>
+                                <p className="font-semibold text-[60px] leading-[72px] tracking-[-2px]">
+                                    Your Idea Together
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -155,7 +168,10 @@ const InquiryFormSection: React.FC = () => {
                         {/* Left - Steps */}
                         <div className="col-span-3 flex flex-col gap-8 items-start">
                             {steps.map((step, index) => (
-                                <div key={index} className="flex flex-col gap-1 items-start w-full">
+                                <div
+                                    key={index}
+                                    className="flex flex-col gap-1 items-start w-full"
+                                >
                                     {/* Step Header */}
                                     <div className="flex gap-1.5 items-start text-zinc-900">
                                         <div className="font-engagement text-xl leading-7 tracking-[-1px] shrink-0">
@@ -176,7 +192,10 @@ const InquiryFormSection: React.FC = () => {
                         {/* Right - Form */}
                         <div className="col-span-7 col-start-5">
                             <div className="bg-white box-border flex flex-col gap-8 items-start p-5 w-full border border-solid border-zinc-200">
-                                <form onSubmit={handleSubmit} className="flex flex-col gap-8 items-center w-full">
+                                <form
+                                    onSubmit={handleSubmit}
+                                    className="flex flex-col gap-8 items-center w-full"
+                                >
                                     {/* Full Name Field */}
                                     <div className="flex flex-col gap-1.5 items-start w-full">
                                         <label className="font-geist font-medium text-lg leading-7 text-zinc-900 tracking-[0.5px]">
@@ -240,7 +259,9 @@ const InquiryFormSection: React.FC = () => {
                                         className="bg-[#f2500d] box-border flex items-center justify-between px-[18px] py-3 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         <span className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
-                                            {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+                                            {isSubmitting
+                                                ? "Sending..."
+                                                : "Send Inquiry"}
                                         </span>
                                         <div className="w-5 h-5">
                                             <ArrowIcon />
@@ -271,18 +292,29 @@ const InquiryFormSection: React.FC = () => {
                         {/* Main Heading */}
                         <div className="font-geist text-center text-zinc-600 tracking-[-1px] w-full">
                             <p className="mb-0">
-                                <span className="font-semibold text-[48px] leading-[52px] tracking-[-2px]">Let's</span>
-                                <span className="font-medium text-[32px] leading-[36px]"> </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] leading-[36px] tracking-[2px]">Explore</span>
+                                <span className="font-semibold text-[48px] leading-[52px] tracking-[-2px]">
+                                    Let's
+                                </span>
+                                <span className="font-medium text-[32px] leading-[36px]">
+                                    {" "}
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] leading-[36px] tracking-[2px]">
+                                    Explore
+                                </span>
                             </p>
-                            <p className="font-semibold text-[48px] leading-[52px] tracking-[-2px]">Your Idea Together</p>
+                            <p className="font-semibold text-[48px] leading-[52px] tracking-[-2px]">
+                                Your Idea Together
+                            </p>
                         </div>
                     </div>
 
                     {/* Steps */}
                     <div className="flex flex-col gap-6 items-start w-full">
                         {steps.map((step, index) => (
-                            <div key={index} className="flex flex-col gap-1 items-start w-full">
+                            <div
+                                key={index}
+                                className="flex flex-col gap-1 items-start w-full"
+                            >
                                 <div className="flex gap-1.5 items-start text-zinc-900">
                                     <div className="font-engagement text-lg leading-6 tracking-[-1px] shrink-0">
                                         {step.number}
@@ -300,7 +332,10 @@ const InquiryFormSection: React.FC = () => {
 
                     {/* Form */}
                     <div className="bg-white box-border flex flex-col gap-6 items-start p-4 w-full border border-solid border-zinc-200">
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-6 items-center w-full">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flex flex-col gap-6 items-center w-full"
+                        >
                             <div className="flex flex-col gap-1 items-start w-full">
                                 <label className="font-geist font-medium text-base leading-6 text-zinc-900 tracking-[0.5px]">
                                     Full Name
@@ -360,7 +395,9 @@ const InquiryFormSection: React.FC = () => {
                                 className="bg-[#f2500d] box-border flex items-center justify-between px-4 py-2.5 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <span className="font-geist font-semibold text-sm leading-5 text-white tracking-[0.5px]">
-                                    {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+                                    {isSubmitting
+                                        ? "Sending..."
+                                        : "Send Inquiry"}
                                 </span>
                                 <div className="w-4 h-4">
                                     <ArrowIcon />
@@ -389,18 +426,29 @@ const InquiryFormSection: React.FC = () => {
                         {/* Main Heading */}
                         <div className="font-geist text-zinc-600 tracking-[-0.25px] w-full">
                             <p className="mb-0">
-                                <span className="font-semibold text-2xl leading-8">Let's</span>
-                                <span className="font-medium text-xl leading-7"> </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] leading-7 tracking-[1.5px]">Explore</span>
+                                <span className="font-semibold text-2xl leading-8">
+                                    Let's
+                                </span>
+                                <span className="font-medium text-xl leading-7">
+                                    {" "}
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] leading-7 tracking-[1.5px]">
+                                    Explore
+                                </span>
                             </p>
-                            <p className="font-semibold text-2xl leading-8">Your Idea Together</p>
+                            <p className="font-semibold text-2xl leading-8">
+                                Your Idea Together
+                            </p>
                         </div>
                     </div>
 
                     {/* Steps */}
                     <div className="flex flex-col gap-4 items-start w-full">
                         {steps.map((step, index) => (
-                            <div key={index} className="flex flex-col gap-1 items-start w-full">
+                            <div
+                                key={index}
+                                className="flex flex-col gap-1 items-start w-full"
+                            >
                                 <div className="flex gap-1 items-start text-zinc-900">
                                     <div className="font-engagement text-base leading-6 tracking-[-1px] shrink-0">
                                         {step.number}
@@ -418,7 +466,10 @@ const InquiryFormSection: React.FC = () => {
 
                     {/* Form */}
                     <div className="bg-white box-border flex flex-col gap-4 items-start p-3 w-full border border-solid border-zinc-200">
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center w-full">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flex flex-col gap-4 items-center w-full"
+                        >
                             <div className="flex flex-col gap-1 items-start w-full">
                                 <label className="font-geist font-medium text-sm leading-5 text-zinc-900 tracking-[0.5px]">
                                     Full Name
@@ -478,7 +529,9 @@ const InquiryFormSection: React.FC = () => {
                                 className="bg-[#f2500d] box-border flex items-center justify-between px-3 py-2 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <span className="font-geist font-semibold text-xs leading-4 text-white tracking-[0.5px]">
-                                    {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+                                    {isSubmitting
+                                        ? "Sending..."
+                                        : "Send Inquiry"}
                                 </span>
                                 <div className="w-3 h-3">
                                     <ArrowIcon />
@@ -492,4 +545,4 @@ const InquiryFormSection: React.FC = () => {
     );
 };
 
-export default InquiryFormSection;
+export default ContactForm;

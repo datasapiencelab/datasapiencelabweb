@@ -1,13 +1,13 @@
-import About from "../components/sections/About";
+import AboutUs from "../components/sections/AboutUs";
 import Principles from "../components/sections/Principles";
-import StoriesSection from "../components/sections/StoriesSection";
+import Testimonials from "../components/sections/Testimonials";
 
 export default function AboutPage() {
     return (
         <div>
-            <About />
+            <AboutUs />
             <Principles />
-            <StoriesSection />
+            <Testimonials />
         </div>
     );
 }

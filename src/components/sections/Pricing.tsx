@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Spark icon component
 const SparkIcon = () => (
@@ -33,7 +33,7 @@ const ArrowIcon = () => (
     </svg>
 );
 
-const PricingSection: React.FC = () => {
+const Pricing: React.FC = () => {
     return (
         <div className="pricingSection bg-neutral-50 w-full">
             {/* Desktop Layout (1024px+) - Exact Figma Implementation */}
@@ -55,10 +55,14 @@ const PricingSection: React.FC = () => {
 
                         {/* Main Heading */}
                         <div className="[grid-area:1_/_2_/_auto_/_span_2] font-geist font-medium text-[60px] leading-[72px] text-zinc-800 tracking-[-2px]">
-                            <p className="leading-[72px] mb-0">Pricing that adapt to </p>
+                            <p className="leading-[72px] mb-0">
+                                Pricing that adapt to{" "}
+                            </p>
                             <p className="leading-[72px] whitespace-pre-wrap">
-                                <span className="text-[60px]">everyone's  </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">Budget and Scope.</span>
+                                <span className="text-[60px]">everyone's </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">
+                                    Budget and Scope.
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -89,7 +93,9 @@ const PricingSection: React.FC = () => {
                                         Subscription start from
                                     </div>
                                     <div className="font-geist font-normal text-lg leading-7 text-zinc-600 tracking-[0.5px] w-full">
-                                        Perfect for startups, and teams seeking reliable assistance without the cost of full-time hires.
+                                        Perfect for startups, and teams seeking
+                                        reliable assistance without the cost of
+                                        full-time hires.
                                     </div>
                                 </div>
 
@@ -222,10 +228,14 @@ const PricingSection: React.FC = () => {
 
                         {/* Main Heading */}
                         <div className="font-geist font-medium text-[48px] leading-[52px] text-center text-zinc-800 tracking-[-1px] w-full">
-                            <p className="leading-[52px] mb-0">Pricing that adapt to </p>
+                            <p className="leading-[52px] mb-0">
+                                Pricing that adapt to{" "}
+                            </p>
                             <p className="leading-[52px]">
                                 <span className="text-[48px]">everyone's </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">Budget and Scope.</span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">
+                                    Budget and Scope.
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -241,7 +251,9 @@ const PricingSection: React.FC = () => {
                                     Subscription start from
                                 </div>
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-600 tracking-[0.5px] w-full">
-                                    Perfect for startups, and teams seeking reliable assistance without the cost of full-time hires.
+                                    Perfect for startups, and teams seeking
+                                    reliable assistance without the cost of
+                                    full-time hires.
                                 </div>
                             </div>
 
@@ -375,10 +387,14 @@ const PricingSection: React.FC = () => {
 
                         {/* Main Heading */}
                         <div className="font-geist font-medium text-2xl leading-8 text-zinc-800 tracking-[-0.25px] w-full">
-                            <p className="leading-8 mb-0">Pricing that adapt to </p>
+                            <p className="leading-8 mb-0">
+                                Pricing that adapt to{" "}
+                            </p>
                             <p className="leading-8">
                                 <span className="text-2xl">everyone's </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">Budget and Scope.</span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">
+                                    Budget and Scope.
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -409,7 +425,9 @@ const PricingSection: React.FC = () => {
                                         Subscription start from
                                     </div>
                                     <div className="font-geist font-normal text-sm leading-5 text-zinc-600 tracking-[0.5px] w-full">
-                                        Perfect for startups, and teams seeking reliable assistance without the cost of full-time hires.
+                                        Perfect for startups, and teams seeking
+                                        reliable assistance without the cost of
+                                        full-time hires.
                                     </div>
                                 </div>
 
@@ -441,14 +459,17 @@ const PricingSection: React.FC = () => {
                                 {/* Services List */}
                                 <div className="flex flex-col gap-2 w-full">
                                     {[
-                                        'Dedicated hours.',
-                                        'Unlimited revisions.',
-                                        'Weekly check-ins',
-                                        'Priority bug fixes',
-                                        'Access to data insights',
-                                        'Progress & performance tracking.'
+                                        "Dedicated hours.",
+                                        "Unlimited revisions.",
+                                        "Weekly check-ins",
+                                        "Priority bug fixes",
+                                        "Access to data insights",
+                                        "Progress & performance tracking.",
                                     ].map((service, index) => (
-                                        <div key={index} className="flex gap-2 items-center">
+                                        <div
+                                            key={index}
+                                            className="flex gap-2 items-center"
+                                        >
                                             <div className="bg-[#f2500d] w-1.5 h-1.5 shrink-0" />
                                             <div className="font-geist font-normal text-xs leading-4 text-zinc-600 tracking-[0.5px]">
                                                 {service}
@@ -501,4 +522,4 @@ const PricingSection: React.FC = () => {
     );
 };
 
-export default PricingSection;
+export default Pricing;

@@ -1,13 +1,13 @@
 import Services from "../components/sections/Services";
 import { Process } from "../components/sections/Process";
-import WhySection from "../components/sections/WhySection";
+import WhyChooseUs from "../components/sections/WhyChooseUs";
 
 export default function ExpertisePage() {
     return (
         <div>
             <Services />
             <Process />
-            <WhySection />
+            <WhyChooseUs />
         </div>
     );
 }

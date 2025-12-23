@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Spark icon component
 const SparkIcon = () => (
@@ -44,7 +44,11 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
                 <div key={index} className="w-[18px] h-[18px] relative">
                     {index < fullStars ? (
                         // Full star
-                        <svg className="w-full h-full" viewBox="0 0 18 18" fill="none">
+                        <svg
+                            className="w-full h-full"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                        >
                             <path
                                 d="M9 1.5L11.09 5.26L15 5.87L12 8.78L12.68 12.64L9 10.77L5.32 12.64L6 8.78L3 5.87L6.91 5.26L9 1.5Z"
                                 fill="#f2500d"
@@ -54,7 +58,11 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
                         </svg>
                     ) : index === fullStars && hasHalfStar ? (
                         // Half star
-                        <svg className="w-full h-full" viewBox="0 0 18 18" fill="none">
+                        <svg
+                            className="w-full h-full"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                        >
                             <path
                                 d="M9 1.5L11.09 5.26L15 5.87L12 8.78L12.68 12.64L9 10.77L5.32 12.64L6 8.78L3 5.87L6.91 5.26L9 1.5Z"
                                 fill="none"
@@ -64,7 +72,11 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
                         </svg>
                     ) : (
                         // Empty star
-                        <svg className="w-full h-full" viewBox="0 0 18 18" fill="none">
+                        <svg
+                            className="w-full h-full"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                        >
                             <path
                                 d="M9 1.5L11.09 5.26L15 5.87L12 8.78L12.68 12.64L9 10.77L5.32 12.64L6 8.78L3 5.87L6.91 5.26L9 1.5Z"
                                 fill="none"
@@ -106,7 +118,13 @@ interface TestimonialCardProps {
     avatar: string;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, role, rating, testimonial, avatar }) => {
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+    name,
+    role,
+    rating,
+    testimonial,
+    avatar,
+}) => {
     return (
         <div className="bg-white box-border flex flex-col gap-5 items-start p-8 w-full relative border border-solid border-zinc-200 overflow-hidden">
             {/* Quote Decoration */}
@@ -150,36 +168,40 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, role, rating, t
     );
 };
 
-const StoriesSection: React.FC = () => {
+const Testimonials: React.FC = () => {
     const testimonials = [
         {
             name: "Anika P.",
             role: "CTO, FinTech Startup",
             rating: 5.0,
-            testimonial: "Data Sapience Lab turned our messy datasets into clear, actionable insights. Their AI-driven dashboards helped us cut reporting time by 60% while making smarter, faster decisions.",
-            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            testimonial:
+                "Data Sapience Lab turned our messy datasets into clear, actionable insights. Their AI-driven dashboards helped us cut reporting time by 60% while making smarter, faster decisions.",
+            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         },
         {
             name: "Sophia Lee",
             role: "COO, E-commerce Brand",
             rating: 5.0,
-            testimonial: "The team didn't just deliver a solution, they became a true partner. From strategy workshops to deployment, they guided us every step of the way. We now run smarter operations with confidence.",
-            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            testimonial:
+                "The team didn't just deliver a solution, they became a true partner. From strategy workshops to deployment, they guided us every step of the way. We now run smarter operations with confidence.",
+            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         },
         {
             name: "Juan Attwood",
             role: "Head of Operations, Logistics Company",
             rating: 4.8,
-            testimonial: "Working with Data Sapience Lab was seamless. They integrated machine learning into our existing system without disruption, and the results were immediate — higher efficiency and reduced costs.",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            testimonial:
+                "Working with Data Sapience Lab was seamless. They integrated machine learning into our existing system without disruption, and the results were immediate — higher efficiency and reduced costs.",
+            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         },
         {
             name: "Ava Martinez",
             role: "Founder, HealthTech Startup",
             rating: 5.0,
-            testimonial: "Their mix of technical expertise and business understanding is rare. They don't just build AI tools — they build solutions that create real business impact.",
-            avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
-        }
+            testimonial:
+                "Their mix of technical expertise and business understanding is rare. They don't just build AI tools — they build solutions that create real business impact.",
+            avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80",
+        },
     ];
 
     const clientAvatars = [
@@ -187,7 +209,7 @@ const StoriesSection: React.FC = () => {
         "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
     ];
 
     return (
@@ -211,8 +233,12 @@ const StoriesSection: React.FC = () => {
                             {/* Main Heading */}
                             <div className="font-geist font-medium text-[60px] leading-[72px] text-zinc-800 tracking-[-2px] w-full">
                                 <p className="leading-[72px] mb-0 whitespace-pre-wrap">
-                                    <span className="text-[60px]">Reflections from our </span>
-                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">Happy Clients</span>
+                                    <span className="text-[60px]">
+                                        Reflections from our{" "}
+                                    </span>
+                                    <span className="font-engagement not-italic text-[#f2500d] text-[72px] tracking-[2px]">
+                                        Happy Clients
+                                    </span>
                                 </p>
                             </div>
                         </div>
@@ -239,7 +265,11 @@ const StoriesSection: React.FC = () => {
                                         <div
                                             key={index}
                                             className="w-10 h-10 rounded-full overflow-hidden border-2 border-white -mr-3 relative z-10"
-                                            style={{ zIndex: clientAvatars.length - index }}
+                                            style={{
+                                                zIndex:
+                                                    clientAvatars.length -
+                                                    index,
+                                            }}
                                         >
                                             <img
                                                 src={avatar}
@@ -257,10 +287,21 @@ const StoriesSection: React.FC = () => {
 
                                 {/* Description */}
                                 <div className="font-geist font-normal text-2xl leading-9 text-zinc-600 tracking-[-0.25px] w-full">
-                                    <span className="font-geist font-normal text-zinc-900">20+ teams</span>
-                                    <span> who turned their ideas into solutions with </span>
-                                    <span className="font-engagement not-italic text-[#f2500d] text-[32px] tracking-[1px]">Data Sapience Lab</span>
-                                    <span>. Let's explore how we can help shape your next success.</span>
+                                    <span className="font-geist font-normal text-zinc-900">
+                                        20+ teams
+                                    </span>
+                                    <span>
+                                        {" "}
+                                        who turned their ideas into solutions
+                                        with{" "}
+                                    </span>
+                                    <span className="font-engagement not-italic text-[#f2500d] text-[32px] tracking-[1px]">
+                                        Data Sapience Lab
+                                    </span>
+                                    <span>
+                                        . Let's explore how we can help shape
+                                        your next success.
+                                    </span>
                                 </div>
 
                                 {/* CTA Button */}
@@ -296,8 +337,12 @@ const StoriesSection: React.FC = () => {
                         {/* Main Heading */}
                         <div className="font-geist font-medium text-[48px] leading-[52px] text-center text-zinc-800 tracking-[-1px] w-full">
                             <p className="leading-[52px] mb-0 whitespace-pre-wrap">
-                                <span className="text-[48px]">Reflections from our </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">Happy Clients</span>
+                                <span className="text-[48px]">
+                                    Reflections from our{" "}
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[60px] tracking-[2px]">
+                                    Happy Clients
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -323,7 +368,10 @@ const StoriesSection: React.FC = () => {
                                     <div
                                         key={index}
                                         className="w-10 h-10 rounded-full overflow-hidden border-2 border-white -mr-3 relative z-10"
-                                        style={{ zIndex: clientAvatars.length - index }}
+                                        style={{
+                                            zIndex:
+                                                clientAvatars.length - index,
+                                        }}
                                     >
                                         <img
                                             src={avatar}
@@ -341,10 +389,20 @@ const StoriesSection: React.FC = () => {
 
                             {/* Description */}
                             <div className="font-geist font-normal text-xl leading-8 text-center text-zinc-600 tracking-[-0.25px] w-full">
-                                <span className="font-geist font-normal text-zinc-900">20+ teams</span>
-                                <span> who turned their ideas into solutions with </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1px]">Data Sapience Lab</span>
-                                <span>. Let's explore how we can help shape your next success.</span>
+                                <span className="font-geist font-normal text-zinc-900">
+                                    20+ teams
+                                </span>
+                                <span>
+                                    {" "}
+                                    who turned their ideas into solutions with{" "}
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1px]">
+                                    Data Sapience Lab
+                                </span>
+                                <span>
+                                    . Let's explore how we can help shape your
+                                    next success.
+                                </span>
                             </div>
 
                             {/* CTA Button */}
@@ -378,9 +436,13 @@ const StoriesSection: React.FC = () => {
 
                         {/* Main Heading */}
                         <div className="font-geist font-medium text-2xl leading-8 text-zinc-800 tracking-[-0.25px] w-full">
-                            <p className="leading-8 mb-0">Reflections from our</p>
+                            <p className="leading-8 mb-0">
+                                Reflections from our
+                            </p>
                             <p className="leading-8">
-                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">Happy Clients</span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1.5px]">
+                                    Happy Clients
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -388,10 +450,17 @@ const StoriesSection: React.FC = () => {
                     {/* Testimonials */}
                     <div className="flex flex-col gap-4 items-start w-full">
                         {testimonials.map((testimonial, index) => (
-                            <div key={index} className="bg-white box-border flex flex-col gap-4 items-start p-4 w-full relative border border-solid border-zinc-200 overflow-hidden">
+                            <div
+                                key={index}
+                                className="bg-white box-border flex flex-col gap-4 items-start p-4 w-full relative border border-solid border-zinc-200 overflow-hidden"
+                            >
                                 {/* Quote Decoration - Smaller for mobile */}
                                 <div className="absolute -top-2 -right-2 w-[80px] h-[60px] scale-y-[-1] opacity-5">
-                                    <svg viewBox="0 0 160 120" fill="none" className="w-full h-full">
+                                    <svg
+                                        viewBox="0 0 160 120"
+                                        fill="none"
+                                        className="w-full h-full"
+                                    >
                                         <path
                                             d="M40 60C40 26.8629 66.8629 0 100 0C133.137 0 160 26.8629 160 60C160 93.1371 133.137 120 100 120C66.8629 120 40 93.1371 40 60Z"
                                             fill="#f2500d"
@@ -448,7 +517,10 @@ const StoriesSection: React.FC = () => {
                                     <div
                                         key={index}
                                         className="w-8 h-8 rounded-full overflow-hidden border-2 border-white -mr-2 relative z-10"
-                                        style={{ zIndex: clientAvatars.length - index }}
+                                        style={{
+                                            zIndex:
+                                                clientAvatars.length - index,
+                                        }}
                                     >
                                         <img
                                             src={avatar}
@@ -466,10 +538,20 @@ const StoriesSection: React.FC = () => {
 
                             {/* Description */}
                             <div className="font-geist font-normal text-lg leading-7 text-zinc-600 tracking-[-0.25px] w-full">
-                                <span className="font-geist font-normal text-zinc-900">20+ teams</span>
-                                <span> who turned their ideas into solutions with </span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-[22px] tracking-[1px]">Data Sapience Lab</span>
-                                <span>. Let's explore how we can help shape your next success.</span>
+                                <span className="font-geist font-normal text-zinc-900">
+                                    20+ teams
+                                </span>
+                                <span>
+                                    {" "}
+                                    who turned their ideas into solutions with{" "}
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-[22px] tracking-[1px]">
+                                    Data Sapience Lab
+                                </span>
+                                <span>
+                                    . Let's explore how we can help shape your
+                                    next success.
+                                </span>
                             </div>
 
                             {/* CTA Button */}
@@ -489,4 +571,4 @@ const StoriesSection: React.FC = () => {
     );
 };
 
-export default StoriesSection;
+export default Testimonials;

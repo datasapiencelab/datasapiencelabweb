@@ -1,11 +1,11 @@
-import FAQSection from "../components/sections/FAQSection";
-import ContactSocialSection from "../components/sections/ContactSocialSection";
+import FAQ from "../components/sections/FAQ";
+import ContactInfo from "../components/sections/ContactInfo";
 
 export default function FAQsPage() {
     return (
         <div>
-            <FAQSection />
-            <ContactSocialSection />
+            <FAQ />
+            <ContactInfo />
         </div>
     );
 }

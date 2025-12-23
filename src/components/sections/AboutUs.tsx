@@ -2,7 +2,7 @@ import Spark from "../ui/Spark";
 import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
 
-export default function About() {
+export default function AboutUs() {
     const { about } = HOME_CONTENT;
 
     return (

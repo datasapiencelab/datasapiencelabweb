@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Arrow icon for button
 const ArrowIcon = () => (
@@ -83,31 +83,31 @@ const FacebookIcon = () => (
     </svg>
 );
 
-const ContactSocialSection: React.FC = () => {
+const ContactInfo: React.FC = () => {
     const handleGetInTouch = () => {
         // Scroll to the inquiry form section
-        const inquirySection = document.querySelector('.inquiryFormSection');
+        const inquirySection = document.querySelector(".inquiryFormSection");
         if (inquirySection) {
-            inquirySection.scrollIntoView({ behavior: 'smooth' });
+            inquirySection.scrollIntoView({ behavior: "smooth" });
         }
     };
 
     const socialLinks = [
         {
-            name: 'LinkedIn',
+            name: "LinkedIn",
             icon: <LinkedInIcon />,
-            url: 'https://linkedin.com/company/datasapiencelab'
+            url: "https://linkedin.com/company/datasapiencelab",
         },
         {
-            name: 'Github',
+            name: "Github",
             icon: <GitHubIcon />,
-            url: 'https://github.com/datasapiencelab'
+            url: "https://github.com/datasapiencelab",
         },
         {
-            name: 'Facebook',
+            name: "Facebook",
             icon: <FacebookIcon />,
-            url: 'https://facebook.com/datasapiencelab'
-        }
+            url: "https://facebook.com/datasapiencelab",
+        },
     ];
 
     return (
@@ -129,9 +129,19 @@ const ContactSocialSection: React.FC = () => {
                             {/* Description and CTA */}
                             <div className="flex flex-col gap-5 items-start max-w-[522px] w-full">
                                 <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[-0.25px] w-full">
-                                    <span className="font-medium text-zinc-600 tracking-[0.5px]">Whether you need an MVP, a data-driven platform, or enterprise scale AI solutions,</span>
-                                    <span className="font-engagement not-italic text-[#f2500d] text-2xl tracking-[0.24px]"> Data Sapience Lab </span>
-                                    <span className="font-medium text-zinc-600 tracking-[0.5px]">is here to design, build, and scale products for lasting success.</span>
+                                    <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                        Whether you need an MVP, a data-driven
+                                        platform, or enterprise scale AI
+                                        solutions,
+                                    </span>
+                                    <span className="font-engagement not-italic text-[#f2500d] text-2xl tracking-[0.24px]">
+                                        {" "}
+                                        Data Sapience Lab{" "}
+                                    </span>
+                                    <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                        is here to design, build, and scale
+                                        products for lasting success.
+                                    </span>
                                 </div>
 
                                 <button
@@ -222,9 +232,18 @@ const ContactSocialSection: React.FC = () => {
                         {/* Description and CTA */}
                         <div className="flex flex-col gap-4 items-center w-full">
                             <div className="font-geist font-normal text-base leading-6 text-center text-zinc-600 tracking-[-0.25px] w-full">
-                                <span className="font-medium text-zinc-600 tracking-[0.5px]">Whether you need an MVP, a data-driven platform, or enterprise scale AI solutions,</span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-xl tracking-[0.24px]"> Data Sapience Lab </span>
-                                <span className="font-medium text-zinc-600 tracking-[0.5px]">is here to design, build, and scale products for lasting success.</span>
+                                <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                    Whether you need an MVP, a data-driven
+                                    platform, or enterprise scale AI solutions,
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-xl tracking-[0.24px]">
+                                    {" "}
+                                    Data Sapience Lab{" "}
+                                </span>
+                                <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                    is here to design, build, and scale products
+                                    for lasting success.
+                                </span>
                             </div>
 
                             <button
@@ -304,9 +323,18 @@ const ContactSocialSection: React.FC = () => {
                         {/* Description and CTA */}
                         <div className="flex flex-col gap-4 items-center w-full">
                             <div className="font-geist font-normal text-sm leading-5 text-center text-zinc-600 tracking-[-0.25px] w-full">
-                                <span className="font-medium text-zinc-600 tracking-[0.5px]">Whether you need an MVP, a data-driven platform, or enterprise scale AI solutions,</span>
-                                <span className="font-engagement not-italic text-[#f2500d] text-lg tracking-[0.24px]"> Data Sapience Lab </span>
-                                <span className="font-medium text-zinc-600 tracking-[0.5px]">is here to design, build, and scale products for lasting success.</span>
+                                <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                    Whether you need an MVP, a data-driven
+                                    platform, or enterprise scale AI solutions,
+                                </span>
+                                <span className="font-engagement not-italic text-[#f2500d] text-lg tracking-[0.24px]">
+                                    {" "}
+                                    Data Sapience Lab{" "}
+                                </span>
+                                <span className="font-medium text-zinc-600 tracking-[0.5px]">
+                                    is here to design, build, and scale products
+                                    for lasting success.
+                                </span>
                             </div>
 
                             <button
@@ -364,4 +392,4 @@ const ContactSocialSection: React.FC = () => {
     );
 };
 
-export default ContactSocialSection;
+export default ContactInfo;

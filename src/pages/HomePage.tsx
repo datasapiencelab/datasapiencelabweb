@@ -1,31 +1,31 @@
 import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
+import AboutUs from "../components/sections/AboutUs";
 import Services from "../components/sections/Services";
 import Projects from "../components/sections/Projects";
 import Principles from "../components/sections/Principles";
 import { Process } from "../components/sections/Process";
-import WhySection from "../components/sections/WhySection";
-import PricingSection from "../components/sections/PricingSection";
-import StoriesSection from "../components/sections/StoriesSection";
-import InquiryFormSection from "../components/sections/InquiryFormSection";
-import FAQSection from "../components/sections/FAQSection";
-import ContactSocialSection from "../components/sections/ContactSocialSection";
+import WhyChooseUs from "../components/sections/WhyChooseUs";
+import Pricing from "../components/sections/Pricing";
+import Testimonials from "../components/sections/Testimonials";
+import ContactForm from "../components/sections/ContactForm";
+import FAQ from "../components/sections/FAQ";
+import ContactInfo from "../components/sections/ContactInfo";
 
 export default function HomePage() {
     return (
         <div>
             <Hero />
-            <About />
+            <AboutUs />
             <Services />
             <Projects />
             <Principles />
             <Process />
-            <WhySection />
-            <PricingSection />
-            <StoriesSection />
-            <InquiryFormSection />
-            <FAQSection />
-            <ContactSocialSection />
+            <WhyChooseUs />
+            <Pricing />
+            <Testimonials />
+            <ContactForm />
+            <FAQ />
+            <ContactInfo />
         </div>
     );
 }
