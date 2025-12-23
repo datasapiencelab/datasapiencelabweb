@@ -6,7 +6,7 @@ export default function AboutUs() {
     const { about } = HOME_CONTENT;
 
     return (
-        <section className="bg-zinc-100 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28">
+        <section className="relative bg-zinc-100 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row items-start justify-between mb-12 md:mb-16 gap-4 md:gap-0">

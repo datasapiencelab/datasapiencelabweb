@@ -35,7 +35,7 @@ const ArrowIcon = () => (
 
 const Pricing: React.FC = () => {
     return (
-        <div className="pricingSection bg-neutral-50 w-full">
+        <div className="relative pricingSection bg-neutral-50 w-full z-20">
             {/* Desktop Layout (1024px+) - Exact Figma Implementation */}
             <div className="pricingSection-desktop hidden lg:block">
                 <div className="bg-neutral-50 box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">

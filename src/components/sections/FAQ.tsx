@@ -114,7 +114,7 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <div className="faqSection bg-zinc-950 w-full">
+        <div className="relative faqSection bg-zinc-950 w-full z-20">
             {/* Desktop Layout (1024px+) */}
             <div className="faqSection-desktop hidden lg:block">
                 <div className="bg-zinc-950 box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">

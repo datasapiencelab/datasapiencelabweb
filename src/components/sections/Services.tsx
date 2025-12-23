@@ -91,7 +91,7 @@ export default function Services() {
     const { services: servicesContent } = HOME_CONTENT;
 
     return (
-        <section className="bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28">
+        <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">
             <div className="max-w-7xl mx-auto">
                 {/* Services Section */}
                 <div className="mb-16 md:mb-20 lg:mb-24">

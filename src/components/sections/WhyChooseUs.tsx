@@ -52,7 +52,7 @@ const ArrowIcon = () => (
 
 const WhyChooseUs: React.FC = () => {
     return (
-        <div className="whySection bg-zinc-950 w-full">
+        <div className="relative whySection bg-zinc-950 w-full z-20">
             {/* Desktop Layout (1024px+) - Exact Figma Implementation */}
             <div className="whySection-desktop hidden lg:block">
                 <div className="bg-zinc-950 box-border flex flex-col gap-16 items-center px-28 py-32 w-full">

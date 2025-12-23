@@ -258,7 +258,7 @@ const Principles = () => {
     const { principles: principlesContent } = HOME_CONTENT;
 
     return (
-        <section className="bg-zinc-950 relative">
+        <section className="relative bg-zinc-950 z-20">
             {/* Large Desktop Layout (1280px+) */}
             <div className="hidden xl:block">
                 <div className="container mx-auto px-28 py-32 max-w-[1440px]">

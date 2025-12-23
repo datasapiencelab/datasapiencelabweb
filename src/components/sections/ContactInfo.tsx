@@ -111,7 +111,7 @@ const ContactInfo: React.FC = () => {
     ];
 
     return (
-        <div className="contactSocialSection bg-white w-full">
+        <div className="relative contactSocialSection bg-white w-full z-20">
             {/* Desktop Layout (1024px+) */}
             <div className="contactSocialSection-desktop hidden lg:block">
                 <div className="bg-white box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">

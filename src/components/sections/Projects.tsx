@@ -78,7 +78,7 @@ export default function Projects() {
     const { projects } = HOME_CONTENT;
 
     return (
-        <div className="bg-neutral-50 py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-8 lg:py-32 lg:px-28">
+        <div className="relative bg-neutral-50 py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-8 lg:py-32 lg:px-28 z-20">
             <div className="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-12 lg:gap-16">
                 {/* Header Section */}
                 <div className="w-full flex flex-col gap-4 sm:gap-8 lg:gap-12">

@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
     ];
 
     return (
-        <div className="inquiryFormSection bg-white w-full relative overflow-hidden">
+        <div className="relative inquiryFormSection bg-white w-full overflow-hidden z-20">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
                 <div

@@ -13,7 +13,7 @@ import ContactInfo from "../components/sections/ContactInfo";
 
 export default function HomePage() {
     return (
-        <div>
+        <div className="relative">
             <Hero />
             <AboutUs />
             <Services />

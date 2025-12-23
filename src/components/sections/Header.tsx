@@ -82,7 +82,7 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 backdrop-blur-[14.75px] bg-[rgba(9,9,11,0.72)] flex flex-col">
+        <div className="fixed inset-0 z-[9999] backdrop-blur-[14.75px] bg-[rgba(9,9,11,0.72)] flex flex-col">
             {/* Navigation */}
             <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
                 <Link to="/" className="flex items-center gap-2">
@@ -306,7 +306,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
 
     return (
         <>
-            <header className="absolute top-0 left-0 right-0 z-50">
+            <header className="fixed top-0 left-0 right-0 z-[15]">
                 <nav className="flex items-center justify-between px-6 md:px-16 lg:px-28 py-4 md:py-6">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">

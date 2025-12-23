@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative w-full h-screen flex flex-col bg-black text-white overflow-hidden"
+            className="sticky top-0 w-full h-screen flex flex-col bg-black text-white overflow-hidden z-10"
         >
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
