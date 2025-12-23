@@ -5,7 +5,7 @@ export default function AboutCTA() {
     const { about } = HOME_CONTENT;
 
     return (
-        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 py-16 md:py-24 lg:py-32">
+        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-12 md:gap-16">
                     {/* Team Image */}

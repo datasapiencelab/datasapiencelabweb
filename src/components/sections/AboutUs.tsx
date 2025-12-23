@@ -89,31 +89,27 @@ export default function AboutUs() {
 
     const headerOpacity = useTransform(
         scrollYProgress,
-        [0.05, 0.15, 0.75, 0.85],
-        [1, 1, 1, 0]
+        [0.05, 0.15],
+        [1, 1]
     );
 
     // Phase 2-5: Paragraph positioning
     // Controls the paragraph's vertical position relative to its sticky container
     const paragraphScale = useTransform(
         scrollYProgress,
-        [0.1, 0.2, 0.7, 0.8],
-        [0.95, 1, 1, 0.98]
+        [0.1, 0.2],
+        [0.95, 1]
     );
 
-    // Phase 4: Text color fill progress (25% to 70% of scroll)
+    // Phase 4: Text color fill progress
     const textColorProgress = useTransform(
         scrollYProgress,
-        [0.25, 0.7],
+        [0.25, 0.95],
         [0, 1]
     );
 
-    // Phase 5: Paragraph fade out on exit
-    const paragraphOpacity = useTransform(
-        scrollYProgress,
-        [0.7, 0.85],
-        [1, 0]
-    );
+    // Phase 5: Paragraph stays visible
+    const paragraphOpacity = 1;
 
     // Phase 6: CTA is in normal document flow below the sticky section
     // No animation needed - it scrolls naturally
@@ -145,7 +141,7 @@ export default function AboutUs() {
         <section
             ref={sectionRef}
             className="relative bg-zinc-100 z-20"
-            style={{ height: "500vh" }}
+            style={{ height: "350vh" }}
         >
             {/* Sticky container that holds all animated content - z-10 to stay above CTA */}
             <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center z-10">
@@ -154,21 +150,21 @@ export default function AboutUs() {
 
                 {/* Header Section - positioned at top */}
                 <motion.div
-                    className="absolute top-0 left-0 right-0 pt-16 md:pt-24 lg:pt-32 px-6 md:px-16 lg:px-28"
+                    className="absolute top-0 left-0 right-0 pt-32 md:pt-24 lg:pt-32 px-6 md:px-16 lg:px-28"
                     style={{
                         y: headerY,
                         opacity: headerOpacity,
                     }}
                 >
                     {/* Kicker row */}
-                    <div className="flex flex-col md:flex-row items-start justify-between mb-8 md:mb-12 gap-4 md:gap-0 max-w-7xl mx-auto w-full">
-                        <div className="flex items-center gap-2.5">
+                    <div className="flex flex-row items-center justify-between mb-8 md:mb-12 gap-4 max-w-7xl mx-auto w-full">
+                        <div className="flex items-center gap-2 md:gap-2.5">
                             <Spark />
-                            <span className="text-base md:text-lg lg:text-body-xl text-neutral-secondary">
+                            <span className="text-sm md:text-lg lg:text-body-xl text-neutral-secondary whitespace-nowrap">
                                 {about.kicker}
                             </span>
                         </div>
-                        <div className="text-sm md:text-base lg:text-body-lg text-neutral-secondary">
+                        <div className="text-xs md:text-base lg:text-body-lg text-neutral-secondary whitespace-nowrap">
                             {about.yearRange}
                         </div>
                     </div>
