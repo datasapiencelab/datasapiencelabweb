@@ -1,8 +1,11 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
 
 export default function AboutCTA() {
     const { about } = HOME_CONTENT;
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32">
@@ -18,7 +21,17 @@ export default function AboutCTA() {
                             />
                             {/* CTA Button Overlay */}
                             <div className="flex justify-center mt-3 md:mt-5">
-                                <div className="bg-white rounded-full p-2 md:p-3 flex items-center gap-2 md:gap-3 shadow-lg max-w-full">
+                                <motion.div
+                                    className="bg-white rounded-full p-2 md:p-3 flex items-center shadow-lg max-w-full cursor-pointer overflow-hidden"
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                    initial={false}
+                                    animate={{ 
+                                        paddingLeft: isHovered ? "12px" : "8px",
+                                        paddingRight: isHovered ? "24px" : "12px"
+                                    }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }}
+                                >
                                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-200 rounded-full overflow-hidden flex-shrink-0">
                                         <img
                                             src={about.callToAction.avatar}
@@ -26,15 +39,34 @@ export default function AboutCTA() {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <div className="pr-2 md:pr-4">
-                                        <h3 className="text-sm md:text-lg lg:text-h6 font-semibold text-neutral-primary">
+
+                                    <AnimatePresence>
+                                        {isHovered && (
+                                            <motion.div
+                                                initial={{ width: 0, opacity: 0, margin: 0 }}
+                                                animate={{ width: "auto", opacity: 1, margin: "0 12px" }}
+                                                exit={{ width: 0, opacity: 0, margin: 0 }}
+                                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                                className="flex-shrink-0 flex items-center"
+                                            >
+                                                <img 
+                                                    src="/assets/icons/phone-circlular.svg" 
+                                                    alt="Phone Icon"
+                                                    className="w-12 h-12 md:w-16 md:h-16"
+                                                />
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+
+                                    <div className={`${!isHovered ? "ml-2 md:ml-3" : ""} pr-2 md:pr-4`}>
+                                        <h3 className="text-sm md:text-lg lg:text-h6 font-semibold text-neutral-primary whitespace-nowrap">
                                             {about.callToAction.title}
                                         </h3>
-                                        <p className="text-xs md:text-base lg:text-body-lg text-neutral-tertiary">
+                                        <p className="text-xs md:text-base lg:text-body-lg text-neutral-tertiary whitespace-nowrap">
                                             {about.callToAction.subtitle}
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
