@@ -1,4 +1,6 @@
 // Icon components using inline SVG instead of localhost assets
+import { HOME_CONTENT } from "../../content/home";
+
 const SparkIcon = () => (
     <svg
         className="w-7 h-7"
@@ -20,12 +22,47 @@ const DataDrivenIcon = () => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
     >
-        <rect x="10" y="20" width="12" height="60" fill="#f2500d" opacity="0.8" />
-        <rect x="30" y="30" width="12" height="50" fill="#f2500d" opacity="0.6" />
+        <rect
+            x="10"
+            y="20"
+            width="12"
+            height="60"
+            fill="#f2500d"
+            opacity="0.8"
+        />
+        <rect
+            x="30"
+            y="30"
+            width="12"
+            height="50"
+            fill="#f2500d"
+            opacity="0.6"
+        />
         <rect x="50" y="10" width="12" height="70" fill="#f2500d" />
-        <rect x="70" y="25" width="12" height="55" fill="#f2500d" opacity="0.7" />
-        <rect x="90" y="35" width="12" height="45" fill="#f2500d" opacity="0.5" />
-        <line x1="5" y1="85" x2="110" y2="85" stroke="#f2500d" strokeWidth="2" />
+        <rect
+            x="70"
+            y="25"
+            width="12"
+            height="55"
+            fill="#f2500d"
+            opacity="0.7"
+        />
+        <rect
+            x="90"
+            y="35"
+            width="12"
+            height="45"
+            fill="#f2500d"
+            opacity="0.5"
+        />
+        <line
+            x1="5"
+            y1="85"
+            x2="110"
+            y2="85"
+            stroke="#f2500d"
+            strokeWidth="2"
+        />
         <circle cx="16" cy="15" r="2" fill="#f2500d" />
         <circle cx="36" cy="25" r="2" fill="#f2500d" />
         <circle cx="56" cy="5" r="2" fill="#f2500d" />
@@ -41,12 +78,47 @@ const ScalableArchIcon = () => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
     >
-        <rect x="20" y="20" width="80" height="80" fill="none" stroke="#f2500d" strokeWidth="2" />
-        <rect x="30" y="30" width="60" height="60" fill="none" stroke="#f2500d" strokeWidth="1.5" />
-        <rect x="40" y="40" width="40" height="40" fill="none" stroke="#f2500d" strokeWidth="1" />
+        <rect
+            x="20"
+            y="20"
+            width="80"
+            height="80"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="2"
+        />
+        <rect
+            x="30"
+            y="30"
+            width="60"
+            height="60"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="1.5"
+        />
+        <rect
+            x="40"
+            y="40"
+            width="40"
+            height="40"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="1"
+        />
         <circle cx="60" cy="60" r="8" fill="#f2500d" />
-        <path d="M10 10L20 20M100 20L110 10M20 100L10 110M100 100L110 110" stroke="#f2500d" strokeWidth="2" strokeLinecap="round" />
-        <path d="M35 15L35 25M85 15L85 25M15 35L25 35M95 35L105 35M35 95L35 105M85 95L85 105M15 85L25 85M95 85L105 85" stroke="#f2500d" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+        <path
+            d="M10 10L20 20M100 20L110 10M20 100L10 110M100 100L110 110"
+            stroke="#f2500d"
+            strokeWidth="2"
+            strokeLinecap="round"
+        />
+        <path
+            d="M35 15L35 25M85 15L85 25M15 35L25 35M95 35L105 35M35 95L35 105M85 95L85 105M15 85L25 85M95 85L105 85"
+            stroke="#f2500d"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.6"
+        />
     </svg>
 );
 
@@ -57,7 +129,14 @@ const UnlimitedRevisionsIcon = () => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
     >
-        <circle cx="60" cy="60" r="45" fill="none" stroke="#f2500d" strokeWidth="3" />
+        <circle
+            cx="60"
+            cy="60"
+            r="45"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="3"
+        />
         <path
             d="M40 50L55 65L85 35"
             fill="none"
@@ -84,8 +163,22 @@ const HumanCenteredIcon = () => (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
     >
-        <circle cx="60" cy="60" r="50" fill="none" stroke="#f2500d" strokeWidth="2" />
-        <circle cx="60" cy="60" r="30" fill="none" stroke="#f2500d" strokeWidth="1.5" />
+        <circle
+            cx="60"
+            cy="60"
+            r="50"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="2"
+        />
+        <circle
+            cx="60"
+            cy="60"
+            r="30"
+            fill="none"
+            stroke="#f2500d"
+            strokeWidth="1.5"
+        />
         <circle cx="60" cy="45" r="8" fill="#f2500d" />
         <path
             d="M45 70C45 65 50 60 60 60C70 60 75 65 75 70V85H45V70Z"
@@ -112,19 +205,21 @@ const LongTermPartnershipIcon = () => (
             stroke="#f2500d"
             strokeWidth="2"
         />
-        <path
-            d="M20 40L60 60L100 40"
-            stroke="#f2500d"
-            strokeWidth="1.5"
-        />
-        <path
-            d="M60 60V100"
-            stroke="#f2500d"
-            strokeWidth="1.5"
-        />
+        <path d="M20 40L60 60L100 40" stroke="#f2500d" strokeWidth="1.5" />
+        <path d="M60 60V100" stroke="#f2500d" strokeWidth="1.5" />
         <circle cx="60" cy="50" r="6" fill="#f2500d" />
-        <path d="M40 30L60 40L80 30" stroke="#f2500d" strokeWidth="1" opacity="0.6" />
-        <path d="M30 70L60 80L90 70" stroke="#f2500d" strokeWidth="1" opacity="0.6" />
+        <path
+            d="M40 30L60 40L80 30"
+            stroke="#f2500d"
+            strokeWidth="1"
+            opacity="0.6"
+        />
+        <path
+            d="M30 70L60 80L90 70"
+            stroke="#f2500d"
+            strokeWidth="1"
+            opacity="0.6"
+        />
     </svg>
 );
 
@@ -151,35 +246,17 @@ interface PrincipleCard {
     description: string;
 }
 
-const principles: PrincipleCard[] = [
-    {
-        icon: DataDrivenIcon,
-        title: "Data-Driven Decisions",
-        description: "Every solution is grounded in insights, not assumptions."
-    },
-    {
-        icon: ScalableArchIcon,
-        title: "Scalable Architecture",
-        description: "Future-ready systems that evolve with your growth."
-    },
-    {
-        icon: UnlimitedRevisionsIcon,
-        title: "Unlimited Revisions",
-        description: "We offer continuous iteration to ensure your satisfaction."
-    },
-    {
-        icon: HumanCenteredIcon,
-        title: "Human-Centered Design",
-        description: "Products built with empathy and accessibility at the core."
-    },
-    {
-        icon: LongTermPartnershipIcon,
-        title: "Long-Term Partnership",
-        description: "We don't just build and leave, we stay invested in your success."
-    }
-];
+const iconMap: Record<string, React.ComponentType> = {
+    "data-driven": DataDrivenIcon,
+    scalable: ScalableArchIcon,
+    revisions: UnlimitedRevisionsIcon,
+    "human-centered": HumanCenteredIcon,
+    partnership: LongTermPartnershipIcon,
+};
 
 const Principles = () => {
+    const { principles: principlesContent } = HOME_CONTENT;
+
     return (
         <section className="bg-zinc-950 relative">
             {/* Large Desktop Layout (1280px+) */}
@@ -190,24 +267,24 @@ const Principles = () => {
                         <div className="flex items-center gap-2.5">
                             <SparkIcon />
                             <span className="font-geist text-lg text-zinc-100 tracking-wide">
-                                How We Stay Aligned
+                                {principlesContent.kicker}
                             </span>
                         </div>
                         <div className="font-geist font-medium text-white tracking-tight max-w-2xl">
                             <h2 className="text-[60px] leading-[72px]">
-                                Every choice is backed by{' '}
+                                {principlesContent.heading.prefix}{" "}
                                 <span className="font-engagement text-[#f2500d] text-[72px] tracking-[1.44px]">
-                                    Insights,
-                                </span>
-                                {' '}not guesswork.
+                                    {principlesContent.heading.accent}
+                                </span>{" "}
+                                not guesswork.
                             </h2>
                         </div>
                     </div>
 
                     {/* Grid */}
                     <div className="grid grid-cols-3 gap-8">
-                        {principles.map((principle, index) => {
-                            const IconComponent = principle.icon;
+                        {principlesContent.cards.map((card, index) => {
+                            const IconComponent = iconMap[card.key];
                             return (
                                 <div
                                     key={index}
@@ -218,10 +295,10 @@ const Principles = () => {
                                     </div>
                                     <div className="space-y-2">
                                         <h3 className="font-geist font-medium text-2xl text-zinc-100 tracking-tight">
-                                            {principle.title}
+                                            {card.title}
                                         </h3>
                                         <p className="font-geist text-xl text-zinc-300 tracking-wide">
-                                            {principle.description}
+                                            {card.description}
                                         </p>
                                     </div>
                                 </div>
@@ -252,19 +329,19 @@ const Principles = () => {
                         </div>
                         <h2 className="font-geist font-medium text-white tracking-tight">
                             <span className="text-[44px] leading-[56px]">
-                                Every choice is backed by{' '}
+                                Every choice is backed by{" "}
                                 <span className="font-engagement text-[#f2500d] text-[52px] tracking-[1.1px]">
                                     Insights,
-                                </span>
-                                {' '}not guesswork.
+                                </span>{" "}
+                                not guesswork.
                             </span>
                         </h2>
                     </div>
 
                     {/* Grid */}
                     <div className="grid grid-cols-3 gap-6 items-start">
-                        {principles.map((principle, index) => {
-                            const IconComponent = principle.icon;
+                        {principlesContent.cards.map((card, index) => {
+                            const IconComponent = iconMap[card.key];
                             return (
                                 <div
                                     key={index}
@@ -275,10 +352,10 @@ const Principles = () => {
                                     </div>
                                     <div className="space-y-2">
                                         <h3 className="font-geist font-medium text-xl text-zinc-100 tracking-tight">
-                                            {principle.title}
+                                            {card.title}
                                         </h3>
                                         <p className="font-geist text-lg text-zinc-300 tracking-wide">
-                                            {principle.description}
+                                            {card.description}
                                         </p>
                                     </div>
                                 </div>
@@ -311,19 +388,19 @@ const Principles = () => {
                         </div>
                         <h2 className="font-geist font-medium text-white tracking-tight">
                             <span className="text-[48px] leading-[60px]">
-                                Every choice is backed by{' '}
+                                Every choice is backed by{" "}
                                 <span className="font-engagement text-[#f2500d] text-[56px] tracking-[1.2px]">
                                     Insights,
-                                </span>
-                                {' '}not guesswork.
+                                </span>{" "}
+                                not guesswork.
                             </span>
                         </h2>
                     </div>
 
                     {/* Grid - 2 columns for tablet */}
                     <div className="grid grid-cols-2 gap-6">
-                        {principles.map((principle, index) => {
-                            const IconComponent = principle.icon;
+                        {principlesContent.cards.map((card, index) => {
+                            const IconComponent = iconMap[card.key];
                             return (
                                 <div
                                     key={index}
@@ -334,10 +411,10 @@ const Principles = () => {
                                     </div>
                                     <div className="space-y-2">
                                         <h3 className="font-geist font-medium text-xl text-zinc-100 tracking-tight">
-                                            {principle.title}
+                                            {card.title}
                                         </h3>
                                         <p className="font-geist text-lg text-zinc-300 tracking-wide">
-                                            {principle.description}
+                                            {card.description}
                                         </p>
                                     </div>
                                 </div>
@@ -370,19 +447,19 @@ const Principles = () => {
                         </div>
                         <h2 className="font-geist font-semibold text-zinc-100 tracking-tight">
                             <span className="text-2xl leading-9">
-                                Every choice is backed by{' '}
+                                Every choice is backed by{" "}
                                 <span className="font-engagement text-[#f2500d] text-[32px] tracking-[1px]">
                                     Insights,
-                                </span>
-                                {' '}no guesswork.
+                                </span>{" "}
+                                no guesswork.
                             </span>
                         </h2>
                     </div>
 
                     {/* Stacked Cards */}
                     <div className="space-y-3.5">
-                        {principles.map((principle, index) => {
-                            const IconComponent = principle.icon;
+                        {principlesContent.cards.map((card, index) => {
+                            const IconComponent = iconMap[card.key];
                             return (
                                 <div
                                     key={index}
@@ -395,10 +472,10 @@ const Principles = () => {
                                     </div>
                                     <div className="space-y-2">
                                         <h3 className="font-geist text-base text-zinc-300 tracking-wide">
-                                            {principle.title}
+                                            {card.title}
                                         </h3>
                                         <p className="font-geist text-sm text-[#9f9fa9] text-center">
-                                            {principle.description}
+                                            {card.description}
                                         </p>
                                     </div>
                                 </div>

@@ -1,14 +1,5 @@
 import Spark from "../ui/Spark";
-
-// Project images - using placeholder images for now
-const projectImage01 =
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80";
-const projectImage02 =
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80";
-const projectImage03 =
-    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80";
-const projectImage04 =
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80";
+import { HOME_CONTENT } from "../../content/home";
 
 // Carl character SVG
 const carlCharacter = "assets/icons/Carl.svg";
@@ -84,33 +75,7 @@ function ProjectCard({ title, tags, image, className = "" }: ProjectCardProps) {
 }
 
 export default function Projects() {
-    const projects = [
-        {
-            title: "NovaAi",
-            tags: ["Machine Learning & AI", "UI/UX Strategy"],
-            image: projectImage01,
-        },
-        {
-            title: "Mastership",
-            tags: ["UI/UX Strategy"],
-            image: projectImage02,
-        },
-        {
-            title: "NovaAi",
-            tags: ["Machine Learning & AI", "UI/UX Strategy"],
-            image: projectImage03,
-        },
-        {
-            title: "Mastership",
-            tags: ["UI/UX Strategy"],
-            image: projectImage04,
-        },
-        {
-            title: "NovaAi",
-            tags: ["ML Models", "AI Chatbots", "Mobile App", "Data Insights"],
-            image: projectImage01,
-        },
-    ];
+    const { projects } = HOME_CONTENT;
 
     return (
         <div className="bg-neutral-50 py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-8 lg:py-32 lg:px-28">
@@ -125,19 +90,19 @@ export default function Projects() {
                                 <Spark />
                             </div>
                             <span className="text-xs leading-5 text-zinc-900 tracking-[0.5px] font-['Geist']">
-                                Our Work in Action
+                                {projects.kicker}
                             </span>
                         </div>
                         {/* Mobile Title - Insight & always together, Innovation can wrap */}
                         <div className="flex flex-wrap items-center justify-center">
                             <h1 className="font-semibold text-[40px] leading-12 text-zinc-900 tracking-[-1px] font-['Geist']">
-                                Insight
+                                {projects.heading.word1}
                             </h1>
                             <span className="font-['Engagement'] text-[60px] leading-12 text-brand-primary mx-5">
-                                &
+                                {projects.heading.accent}
                             </span>
                             <h2 className="font-semibold text-[40px] leading-12 text-zinc-900 tracking-[-1px] font-['Geist']">
-                                Innovation
+                                {projects.heading.word2}
                             </h2>
                         </div>
                     </div>
@@ -151,7 +116,7 @@ export default function Projects() {
                                     <Spark />
                                 </div>
                                 <span className="text-base lg:text-lg leading-6 lg:leading-7 text-zinc-900 tracking-[0.5px] font-['Geist']">
-                                    Our Work in Action
+                                    {projects.kicker}
                                 </span>
                             </div>
                         </div>
@@ -160,7 +125,7 @@ export default function Projects() {
                         <div className="w-full flex items-center justify-between relative">
                             {/* Insight */}
                             <h1 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] 2xl:text-[144px] leading-[0.9] text-zinc-900 tracking-[-3px] sm:tracking-[-4px] md:tracking-[-6px] lg:tracking-[-8px] xl:tracking-[-10px] font-['Geist'] flex-shrink-0">
-                                Insight
+                                {projects.heading.word1}
                             </h1>
 
                             {/* Carl Character - Always show between titles */}
@@ -174,7 +139,7 @@ export default function Projects() {
 
                             {/* Innovation */}
                             <h2 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] 2xl:text-[144px] leading-[0.9] text-zinc-900 tracking-[-3px] sm:tracking-[-4px] md:tracking-[-6px] lg:tracking-[-8px] xl:tracking-[-10px] font-['Geist'] flex-shrink-0">
-                                Innovation
+                                {projects.heading.word2}
                             </h2>
                         </div>
                     </div>
@@ -220,7 +185,7 @@ export default function Projects() {
                 <div className="w-full">
                     {/* Mobile: Single column */}
                     <div className="flex flex-col gap-3.5 sm:hidden">
-                        {projects.map((project, index) => (
+                        {projects.items.map((project, index) => (
                             <ProjectCard
                                 key={index}
                                 title={project.title}
@@ -234,52 +199,54 @@ export default function Projects() {
                     <div className="hidden sm:grid sm:grid-cols-2 gap-6 lg:gap-8 auto-rows-max">
                         {/* Project 1 */}
                         <ProjectCard
-                            title={projects[0].title}
-                            tags={projects[0].tags}
-                            image={projects[0].image}
+                            title={projects.items[0].title}
+                            tags={projects.items[0].tags}
+                            image={projects.items[0].image}
                         />
 
                         {/* Project 2 */}
                         <ProjectCard
-                            title={projects[1].title}
-                            tags={projects[1].tags}
-                            image={projects[1].image}
+                            title={projects.items[1].title}
+                            tags={projects.items[1].tags}
+                            image={projects.items[1].image}
                         />
 
                         {/* Project 3 */}
                         <ProjectCard
-                            title={projects[3].title}
-                            tags={projects[3].tags}
-                            image={projects[3].image}
+                            title={projects.items[3].title}
+                            tags={projects.items[3].tags}
+                            image={projects.items[3].image}
                         />
 
                         {/* Project 4 */}
                         <ProjectCard
-                            title={projects[2].title}
-                            tags={projects[2].tags}
-                            image={projects[2].image}
+                            title={projects.items[2].title}
+                            tags={projects.items[2].tags}
+                            image={projects.items[2].image}
                         />
 
                         {/* Project 5 - Large featured project spanning full width */}
                         <div className="col-span-2 bg-white border border-zinc-200 p-3 sm:p-5 flex flex-col gap-3 sm:gap-5">
                             <div className="w-full h-[400px] sm:h-[500px] lg:h-[667px] overflow-hidden flex gap-2 items-center justify-center">
                                 <img
-                                    src={projects[4].image}
-                                    alt={projects[4].title}
+                                    src={projects.items[4].image}
+                                    alt={projects.items[4].title}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 items-start sm:items-end">
                                 <div className="flex-1 flex flex-col gap-1">
                                     <h3 className="font-semibold text-lg leading-7 sm:font-medium sm:text-2xl sm:leading-9 text-zinc-800 tracking-[0.5px] sm:tracking-[-0.25px] font-['Geist']">
-                                        {projects[4].title}
+                                        {projects.items[4].title}
                                     </h3>
                                     <div className="flex flex-wrap gap-2 sm:gap-4 py-1">
-                                        {projects[4].tags.map((tag, index) => (
-                                            <ProjectTag key={index}>
-                                                {tag}
-                                            </ProjectTag>
-                                        ))}
+                                        {projects.items[4].tags.map(
+                                            (tag, index) => (
+                                                <ProjectTag key={index}>
+                                                    {tag}
+                                                </ProjectTag>
+                                            )
+                                        )}
                                     </div>
                                 </div>
                                 <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
