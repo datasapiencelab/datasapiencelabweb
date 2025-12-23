@@ -1,5 +1,6 @@
 import Hero from "../components/sections/Hero";
 import AboutUs from "../components/sections/AboutUs";
+import AboutCTA from "../components/sections/AboutCTA";
 import Services from "../components/sections/Services";
 import Projects from "../components/sections/Projects";
 import Principles from "../components/sections/Principles";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <div className="relative">
             <Hero />
             <AboutUs />
+            <AboutCTA />
             <Services />
             <Projects />
             <Principles />

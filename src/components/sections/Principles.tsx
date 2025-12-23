@@ -240,13 +240,7 @@ const ArrowIcon = () => (
     </svg>
 );
 
-interface PrincipleCard {
-    icon: React.ComponentType;
-    title: string;
-    description: string;
-}
-
-const iconMap: Record<string, React.ComponentType> = {
+const iconMap: Record<string, React.FC> = {
     "data-driven": DataDrivenIcon,
     scalable: ScalableArchIcon,
     revisions: UnlimitedRevisionsIcon,
