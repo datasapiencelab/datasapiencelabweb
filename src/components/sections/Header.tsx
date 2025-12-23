@@ -305,7 +305,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-[15]">
+            <header className="absolute top-0 left-0 right-0 z-[15]">
                 <nav className="flex items-center justify-between px-6 md:px-16 lg:px-28 py-4 md:py-6">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
