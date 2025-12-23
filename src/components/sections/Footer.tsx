@@ -35,11 +35,19 @@ const Footer: React.FC<FooterProps> = () => {
                 <div className="max-w-7xl mx-auto">
                     {/* Top Section - Brand and Newsletter */}
                     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-16 mb-8">
-                        {/* Brand Section */}
                         <div className="flex-1 max-w-md lg:max-w-lg">
-                            <h2 className="font-['Geist'] font-bold text-2xl md:text-3xl lg:text-[32px] text-white mb-2 leading-tight tracking-[-1px]">
-                                Data Sapience Lab
-                            </h2>
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-10 h-10 rounded-full overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="/assets/images/logo-transparent.png"
+                                        alt="Data Sapience Lab Logo"
+                                        className="w-[70%] h-[70%] object-contain"
+                                    />
+                                </div>
+                                <h2 className="font-['Geist'] font-bold text-2xl md:text-3xl lg:text-[32px] text-white leading-tight tracking-[-1px]">
+                                    Data Sapience Lab
+                                </h2>
+                            </div>
                             <p className="font-['Geist'] font-normal text-sm md:text-base text-zinc-200 leading-relaxed tracking-[0.5px]">
                                 We transform Complex Data into Intelligent Applications, driving growth, efficiency, and long-term impact.
                             </p>

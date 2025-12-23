@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { mainNavItems } from "../../config/navigation";
 
-const logoSrc =
-    "data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='21' cy='21' r='21' fill='white'/%3E%3Cpath d='M21 12L29 30H13L21 12Z' fill='%23f2500d'/%3E%3C/svg%3E";
+const logoSrc = "/assets/images/logo-transparent.png";
 
 // Hamburger icons - white for overlay/homepage, black for other pages
 const hamburgerIcons = {
@@ -86,11 +85,11 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             {/* Navigation */}
             <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
                 <Link to="/" className="flex items-center gap-2">
-                    <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden">
+                    <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden bg-white flex items-center justify-center">
                         <img
                             src={logoSrc}
                             alt="Data Sapience Lab"
-                            className="w-full h-full object-cover"
+                            className="w-[70%] h-[70%] object-contain"
                         />
                     </div>
                     <span className="hidden lg:block text-base md:text-lg lg:text-xl font-bold text-white tracking-wider">
@@ -310,11 +309,11 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                 <nav className="flex items-center justify-between px-6 md:px-16 lg:px-28 py-4 md:py-6">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden">
+                        <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden bg-white flex items-center justify-center">
                             <img
                                 src={logoSrc}
                                 alt="Data Sapience Lab"
-                                className="w-full h-full object-cover"
+                                className="w-[70%] h-[70%] object-contain"
                             />
                         </div>
                         <span
