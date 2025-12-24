@@ -164,13 +164,15 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full">
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-full">
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                     <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
-                                    <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[154px]">
-                                        Can we update the layout before launch?
+                                    <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[138px]">
+                                        <p>
+                                            Can we update the layout before launch?
+                                        </p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-1 items-end w-full">
+                                <div className="flex flex-col gap-1 items-end w-full overflow-hidden">
                                     <div className="bg-[#7e2a0c] box-border flex gap-1.5 h-9 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
                                         <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[55px]">
                                             Hi there

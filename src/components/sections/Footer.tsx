@@ -193,20 +193,14 @@ const Footer: React.FC<FooterProps> = () => {
             {/* Large Brand Text at Bottom */}
             <div className="relative overflow-hidden">
                 {/* Brand Text */}
-                <div className="px-4 md:px-12 lg:px-13 pb-8 md:pb-12">
+                {/* <div className="px-4 md:px-12 lg:px-13 pb-8 md:pb-12">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="font-['Geist'] font-bold text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white opacity-20 leading-tight tracking-tight text-center md:text-left">
                             Data Sapience Lab
                         </h2>
                     </div>
-                </div>
+                </div> */}
 
-                {/* Decorative Line Pattern */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 lg:h-24 overflow-hidden opacity-30">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-600 to-transparent transform -skew-y-1"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-700 to-transparent transform skew-y-1 translate-y-4"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-500 to-transparent transform -skew-y-2 translate-y-8"></div>
-                </div>
             </div>
         </footer>
     );

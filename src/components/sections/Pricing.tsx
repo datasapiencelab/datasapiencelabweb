@@ -76,7 +76,7 @@ const Pricing: React.FC = () => {
                                 <img
                                     alt="Pricing consultation image"
                                     className="absolute max-w-none object-center object-cover w-full h-full"
-                                    src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    src="assets/images/home/handshaking.jpg"
                                 />
                             </div>
                             <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
@@ -177,34 +177,34 @@ const Pricing: React.FC = () => {
                                     Subscription start from
                                 </div>
 
-                                <div className="bg-neutral-50 box-border flex flex-col items-start p-4 w-full relative">
-                                    <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
-                                    <div className="flex items-center w-full">
-                                        <div className="flex-1 flex items-end">
-                                            <div className="font-engagement text-[60px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
-                                                $
-                                            </div>
-                                            <div className="font-geist font-medium text-[60px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
-                                                330
-                                            </div>
-                                            <div className="box-border flex gap-2 items-center justify-center px-0 py-0.5">
-                                                <div className="font-geist font-medium text-xl leading-8 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                                    /Project
-                                                </div>
-                                            </div>
+                                <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative">
+                                <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
+                                <div className="flex items-center w-full">
+                                    <div className="flex-1 flex items-center">
+                                        <div className="font-engagement text-[48px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
+                                            $
                                         </div>
-
-                                        {/* CTA Button */}
-                                        <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                                            <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
-                                                Let's Discuss
-                                            </div>
-                                            <div className="w-5 h-5">
-                                                <ArrowIcon />
+                                        <div className="font-geist font-medium text-[48px] leading-[52px] text-zinc-900 tracking-[-1px] whitespace-pre">
+                                            330
+                                        </div>
+                                        <div className="box-border flex gap-2 items-center justify-center px-0 py-1">
+                                            <div className="font-geist font-medium text-lg leading-7 text-zinc-600 tracking-[0.5px] whitespace-pre">
+                                                /Project
                                             </div>
                                         </div>
                                     </div>
+
+                                    {/* CTA Button */}
+                                    <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors">
+                                        <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
+                                            Let's Discuss
+                                        </div>
+                                        <div className="w-5 h-5">
+                                            <ArrowIcon />
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -338,7 +338,7 @@ const Pricing: React.FC = () => {
                             <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative">
                                 <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
                                 <div className="flex items-center w-full">
-                                    <div className="flex-1 flex items-end">
+                                    <div className="flex-1 flex items-center">
                                         <div className="font-engagement text-[48px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
                                             $
                                         </div>
@@ -355,7 +355,7 @@ const Pricing: React.FC = () => {
                                     {/* CTA Button */}
                                     <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors">
                                         <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
-                                            Subscribe
+                                            Let's Discuss
                                         </div>
                                         <div className="w-5 h-5">
                                             <ArrowIcon />
@@ -374,7 +374,7 @@ const Pricing: React.FC = () => {
                     {/* Header Section */}
                     <div className="flex flex-col gap-6 items-start w-full">
                         {/* Flexible Pricing Label */}
-                        <div className="flex gap-1.5 items-center w-full">
+                        <div className="flex gap-1.5 items-center justify-center w-full">
                             <div className="flex flex-row items-center h-full">
                                 <div className="w-6 h-6">
                                     <SparkIcon />
@@ -386,7 +386,7 @@ const Pricing: React.FC = () => {
                         </div>
 
                         {/* Main Heading */}
-                        <div className="font-geist font-medium text-2xl leading-8 text-zinc-800 tracking-[-0.25px] w-full">
+                        <div className="font-geist font-medium text-center text-2xl leading-8 text-zinc-800 tracking-[-0.25px] w-full">
                             <p className="leading-8 mb-0">
                                 Pricing that adapt to{" "}
                             </p>
@@ -402,7 +402,7 @@ const Pricing: React.FC = () => {
                     {/* Pricing Content */}
                     <div className="flex flex-col gap-6 items-start w-full">
                         {/* Intro Image */}
-                        <div className="relative overflow-hidden h-[200px] w-full">
+                        {/* <div className="relative overflow-hidden h-[200px] w-full">
                             <div className="absolute inset-0">
                                 <div className="absolute bg-white inset-0" />
                                 <img
@@ -412,7 +412,7 @@ const Pricing: React.FC = () => {
                                 />
                             </div>
                             <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
-                        </div>
+                        </div> */}
 
                         {/* Pricing Card */}
                         <div className="bg-white box-border flex flex-col gap-6 items-start p-4 w-full relative">
