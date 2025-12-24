@@ -247,22 +247,22 @@ export const HOME_CONTENT: HomePageContent = {
             {
                 title: "NovaAi",
                 tags: ["Machine Learning & AI", "UI/UX Strategy"],
-                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+                image: "assets/images/home/p-image3.png",
             },
             {
                 title: "Mastership",
                 tags: ["UI/UX Strategy"],
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+                image: "assets/images/home/p-image2.png",
             },
             {
                 title: "NovaAi",
                 tags: ["Machine Learning & AI", "UI/UX Strategy"],
-                image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+                image: "assets/images/home/p-image3.png",
             },
             {
                 title: "Mastership",
                 tags: ["UI/UX Strategy"],
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+                image: "assets/images/home/p-image2.png",
             },
             {
                 title: "NovaAi",
@@ -272,7 +272,7 @@ export const HOME_CONTENT: HomePageContent = {
                     "Mobile App",
                     "Data Insights",
                 ],
-                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+                image: "assets/images/home/p-image4.png",
             },
         ],
         cta: {

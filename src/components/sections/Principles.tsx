@@ -16,211 +16,53 @@ const SparkIcon = () => (
 );
 
 const DataDrivenIcon = () => (
-    <svg
+    <img
         className="w-[120px] h-[120px]"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <rect
-            x="10"
-            y="20"
-            width="12"
-            height="60"
-            fill="#f2500d"
-            opacity="0.8"
-        />
-        <rect
-            x="30"
-            y="30"
-            width="12"
-            height="50"
-            fill="#f2500d"
-            opacity="0.6"
-        />
-        <rect x="50" y="10" width="12" height="70" fill="#f2500d" />
-        <rect
-            x="70"
-            y="25"
-            width="12"
-            height="55"
-            fill="#f2500d"
-            opacity="0.7"
-        />
-        <rect
-            x="90"
-            y="35"
-            width="12"
-            height="45"
-            fill="#f2500d"
-            opacity="0.5"
-        />
-        <line
-            x1="5"
-            y1="85"
-            x2="110"
-            y2="85"
-            stroke="#f2500d"
-            strokeWidth="2"
-        />
-        <circle cx="16" cy="15" r="2" fill="#f2500d" />
-        <circle cx="36" cy="25" r="2" fill="#f2500d" />
-        <circle cx="56" cy="5" r="2" fill="#f2500d" />
-        <circle cx="76" cy="20" r="2" fill="#f2500d" />
-        <circle cx="96" cy="30" r="2" fill="#f2500d" />
-    </svg>
+        src="/assets/icons/data-driven.svg"
+        alt="Data-driven"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const ScalableArchIcon = () => (
-    <svg
+    <img
         className="w-[120px] h-[120px]"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <rect
-            x="20"
-            y="20"
-            width="80"
-            height="80"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="2"
-        />
-        <rect
-            x="30"
-            y="30"
-            width="60"
-            height="60"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="1.5"
-        />
-        <rect
-            x="40"
-            y="40"
-            width="40"
-            height="40"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="1"
-        />
-        <circle cx="60" cy="60" r="8" fill="#f2500d" />
-        <path
-            d="M10 10L20 20M100 20L110 10M20 100L10 110M100 100L110 110"
-            stroke="#f2500d"
-            strokeWidth="2"
-            strokeLinecap="round"
-        />
-        <path
-            d="M35 15L35 25M85 15L85 25M15 35L25 35M95 35L105 35M35 95L35 105M85 95L85 105M15 85L25 85M95 85L105 85"
-            stroke="#f2500d"
-            strokeWidth="1"
-            strokeLinecap="round"
-            opacity="0.6"
-        />
-    </svg>
+        src="/assets/icons/scaleable-architechture.svg"
+        alt="Scalable architecture"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const UnlimitedRevisionsIcon = () => (
-    <svg
+    <img
         className="w-[120px] h-[120px]"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <circle
-            cx="60"
-            cy="60"
-            r="45"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="3"
-        />
-        <path
-            d="M40 50L55 65L85 35"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        <path
-            d="M30 30C40 20 50 20 60 30M90 30C80 20 70 20 60 30M30 90C40 100 50 100 60 90M90 90C80 100 70 100 60 90"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="2"
-            strokeLinecap="round"
-            opacity="0.6"
-        />
-    </svg>
+        src="/assets/icons/unlimited-revision.svg"
+        alt="Unlimited revisions"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const HumanCenteredIcon = () => (
-    <svg
+    <img
         className="w-[120px] h-[120px]"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <circle
-            cx="60"
-            cy="60"
-            r="50"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="2"
-        />
-        <circle
-            cx="60"
-            cy="60"
-            r="30"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="1.5"
-        />
-        <circle cx="60" cy="45" r="8" fill="#f2500d" />
-        <path
-            d="M45 70C45 65 50 60 60 60C70 60 75 65 75 70V85H45V70Z"
-            fill="#f2500d"
-            opacity="0.6"
-        />
-        <circle cx="25" cy="75" r="6" fill="#f2500d" opacity="0.4" />
-        <circle cx="95" cy="35" r="5" fill="#f2500d" opacity="0.5" />
-        <circle cx="35" cy="25" r="3" fill="#f2500d" opacity="0.3" />
-        <circle cx="85" cy="85" r="4" fill="#f2500d" opacity="0.4" />
-    </svg>
+        src="/assets/icons/human-centered-design.svg"
+        alt="Human-centered design"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const LongTermPartnershipIcon = () => (
-    <svg
+    <img
         className="w-[120px] h-[120px]"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M20 40L60 20L100 40V80L60 100L20 80V40Z"
-            fill="none"
-            stroke="#f2500d"
-            strokeWidth="2"
-        />
-        <path d="M20 40L60 60L100 40" stroke="#f2500d" strokeWidth="1.5" />
-        <path d="M60 60V100" stroke="#f2500d" strokeWidth="1.5" />
-        <circle cx="60" cy="50" r="6" fill="#f2500d" />
-        <path
-            d="M40 30L60 40L80 30"
-            stroke="#f2500d"
-            strokeWidth="1"
-            opacity="0.6"
-        />
-        <path
-            d="M30 70L60 80L90 70"
-            stroke="#f2500d"
-            strokeWidth="1"
-            opacity="0.6"
-        />
-    </svg>
+        src="/assets/icons/long-term-partner.svg"
+        alt="Long-term partner"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const ArrowIcon = () => (

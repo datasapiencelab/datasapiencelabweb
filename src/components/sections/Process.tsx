@@ -2,103 +2,45 @@ import React from "react";
 import Spark from "../ui/Spark";
 import Button from "../ui/Button";
 
-// Icon SVG assets matching Figma design
+// Icon SVG assets referenced from public/
 const LightbulbIcon = () => (
-    <svg
-        className="w-12 h-12 text-[#f2500d]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M24 6c6.627 0 12 5.373 12 12 0 4.418-2.39 8.291-5.955 10.386-.474.278-.895.632-1.245 1.048C27.6 30.8 27 32.3 27 34v4a2 2 0 01-2 2h-2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2h-2a2 2 0 01-2-2v-4c0-1.7-.6-3.2-1.8-4.566-.35-.416-.771-.77-1.245-1.048C8.39 26.291 6 22.418 6 18c0-6.627 5.373-12 12-12z"
-        />
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 38h10M21 42h6"
-        />
-    </svg>
+    <img
+        className="w-full h-full"
+        src="/assets/icons/lightbulb.svg"
+        alt="Lightbulb"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const ToolsIcon = () => (
-    <svg
-        className="w-12 h-12 text-[#f2500d]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1 7.94 0l.47.47a1 1 0 0 1 0 1.41L26.5 10.9a1 1 0 0 0 0 1.41l1.6 1.6a1 1 0 0 0 1.41 0l3.77-3.77a6 6 0 0 1 7.94 0l.47.47a1 1 0 0 1 0 1.41L37.3 16a1 1 0 0 1-1.4 0L32 12.1a6 6 0 0 0-8.49 0l-.47.47a1 1 0 0 1-1.41 0l-1.6-1.6a1 1 0 0 1 0-1.41l3.77-3.77a6 6 0 0 0 0-8.49l-.47-.47a1 1 0 0 0-1.41 0z"
-        />
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20 25.86L9.14 36.7a1 1 0 0 1-1.41 0l-1.4-1.4a1 1 0 0 1 0-1.42L17.15 23"
-        />
-    </svg>
+    <img
+        className="w-full h-full"
+        src="/assets/icons/tools.svg"
+        alt="Tools"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const PuzzleIcon = () => (
-    <svg
-        className="w-12 h-12 text-[#f2500d]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M6 12a6 6 0 0 1 12 0v6h6a6 6 0 0 1 0 12h-6v6a6 6 0 0 1-12 0v-6H6a6 6 0 0 1 0-12h0V12Z"
-        />
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M24 18h6a6 6 0 0 1 0 12h-6"
-        />
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M18 24v6a6 6 0 0 0 12 0v-6"
-        />
-    </svg>
+    <img
+        className="w-full h-full"
+        src="/assets/icons/puzzle.svg"
+        alt="Puzzle"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const RocketIcon = () => (
-    <svg
-        className="w-12 h-12 text-[#f2500d]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4.5 16.5c-1.5 1.5-1.5 4 0 5.5l7 7c1.5 1.5 4 1.5 5.5 0l.5-.5m6.5-10.5L30.5 12c6-6 13.5-8 20.5-5 3 7-1 14.5-7 20.5L37.5 34m-19-19L12 21.5m6.5-6.5L25 8.5m12.5 25L31 40m6.5-6.5l7-7"
-        />
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M29 29l3.5 3.5M30 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"
-        />
-    </svg>
+    <img
+        className="w-full h-full"
+        src="/assets/icons/rocket.svg"
+        alt="Rocket"
+        loading="lazy"
+        decoding="async"
+    />
 );
 
 const processSteps = [

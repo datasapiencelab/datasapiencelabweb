@@ -3,8 +3,7 @@ import Spark from "../ui/Spark";
 import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
 
-const brainIconSrc =
-    "data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12C8 8.686 10.686 6 14 6C17.314 6 20 8.686 20 12V16C20 19.314 22.686 22 26 22' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M24 12C24 8.686 21.314 6 18 6C14.686 6 12 8.686 12 12V16C12 19.314 9.314 22 6 22' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E";
+const brainIconSrc = "assets/icons/brain-icon.svg"
 
 interface ServiceItemProps {
     number: string;
