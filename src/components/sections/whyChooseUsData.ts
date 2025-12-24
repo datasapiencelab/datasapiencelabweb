@@ -5,10 +5,10 @@ export const WHY_SECTION_RESOURCES = {
     // Images - using high-quality stock photos from Unsplash
     images: {
         // Human-centered design background - represents collaboration and user focus
-        humanCenteredDesign: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=600&fit=crop&crop=center",
+        humanCenteredDesign: "assets/images/home/Human-Centered Design.jpg",
 
         // Data analytics background - represents charts and data visualization
-        dataAnalytics: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
+        dataAnalytics: "assets/images/home/Data-Driven Decisions.jpg",
 
         // Alternative options (uncomment to use):
         // humanCenteredDesign: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=600&fit=crop&crop=center", // team collaboration

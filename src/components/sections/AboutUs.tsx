@@ -85,21 +85,17 @@ export default function AboutUs() {
     });
 
     // Phase 2: Header animation - moves up and becomes sticky
-    const headerY = useTransform(scrollYProgress, [0.05, 0.2], ["0vh", "-10vh"]);
-
-    const headerOpacity = useTransform(
+    const headerY = useTransform(
         scrollYProgress,
-        [0.05, 0.15],
-        [1, 1]
+        [0.05, 0.2],
+        ["0vh", "-10vh"]
     );
+
+    const headerOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 1]);
 
     // Phase 2-5: Paragraph positioning
     // Controls the paragraph's vertical position relative to its sticky container
-    const paragraphScale = useTransform(
-        scrollYProgress,
-        [0.1, 0.2],
-        [0.95, 1]
-    );
+    const paragraphScale = useTransform(scrollYProgress, [0.1, 0.2], [0.95, 1]);
 
     // Phase 4: Text color fill progress
     const textColorProgress = useTransform(
@@ -140,8 +136,7 @@ export default function AboutUs() {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-zinc-100 z-20"
-            style={{ height: "350vh" }}
+            className="relative bg-zinc-100 z-20 h-[220vh] sm:h-[260vh] md:h-[320vh] lg:h-[350vh]"
         >
             {/* Sticky container that holds all animated content - z-10 to stay above CTA */}
             <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center z-10">
@@ -157,7 +152,7 @@ export default function AboutUs() {
                     }}
                 >
                     {/* Kicker row */}
-                    <div className="flex flex-row items-center justify-between mb-8 md:mb-12 gap-4 max-w-7xl mx-auto w-full">
+                    <div className="flex flex-row items-center justify-between md:mt-12 lg:mt-12 mb-8 md:mb-12 gap-4 max-w-7xl mx-auto w-full">
                         <div className="flex items-center gap-2 md:gap-2.5">
                             <Spark />
                             <span className="text-sm md:text-lg lg:text-body-xl text-neutral-secondary whitespace-nowrap">
@@ -178,37 +173,33 @@ export default function AboutUs() {
                         opacity: paragraphOpacity,
                     }}
                 >
-
-
                     <div className="text-center max-w-5xl mx-auto">
-                            <h2 className="text-2xl md:text-4xl lg:text-h1 font-medium leading-tight">
-                                {segmentsWithProgress.map((segment, index) => {
-                                    if (segment.isRed) {
-                                        // Red text - always stays red
-                                        return (
-                                            <span
-                                                key={index}
-                                                className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide"
-                                            >
-                                                {segment.text}
-                                            </span>
-                                        );
-                                    }
-
-                                    // Animated text - transitions from gray to black
+                        <h2 className="text-2xl md:text-4xl lg:text-h1 font-medium leading-tight">
+                            {segmentsWithProgress.map((segment, index) => {
+                                if (segment.isRed) {
+                                    // Red text - always stays red
                                     return (
-                                        <AnimatedText
+                                        <span
                                             key={index}
-                                            text={segment.text}
-                                            progress={textColorProgress}
-                                            startProgress={
-                                                segment.startProgress
-                                            }
-                                            isHighlight={segment.isHighlight}
-                                        />
+                                            className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide"
+                                        >
+                                            {segment.text}
+                                        </span>
                                     );
-                                })}
-                            </h2>
+                                }
+
+                                // Animated text - transitions from gray to black
+                                return (
+                                    <AnimatedText
+                                        key={index}
+                                        text={segment.text}
+                                        progress={textColorProgress}
+                                        startProgress={segment.startProgress}
+                                        isHighlight={segment.isHighlight}
+                                    />
+                                );
+                            })}
+                        </h2>
                     </div>
                 </motion.div>
             </div>

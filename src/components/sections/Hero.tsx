@@ -1,9 +1,30 @@
+import { useEffect, useState } from "react";
 import Button from "../ui/Button";
 import Spark from "../ui/Spark";
 import { HOME_CONTENT } from "../../content/home";
 
 export default function Hero() {
     const { hero } = HOME_CONTENT;
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            // Calculate scroll progress with faster transition (0 to 1) over 60% of viewport
+            const progress = Math.min(scrollY / (windowHeight * 0.6), 1);
+            setScrollProgress(progress);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Calculate transforms and opacity with more aggressive movement
+    const headingTransform = `translateX(${-scrollProgress * 200}px)`;
+    const headingOpacity = 1 - scrollProgress * 1.2;
+    const contentTransform = `translateX(${scrollProgress * 200}px)`;
+    const contentOpacity = 1 - scrollProgress * 1.2;
 
     return (
         <section
@@ -26,10 +47,17 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col h-full w-full px-6 md:px-16 lg:px-28 py-0">
-                <div className="flex-1 flex flex-col items-start justify-center md:justify-between min-h-0 pb-8 md:pb-12 lg:pb-16 pt-20 gap-8 md:gap-0">
+                <div className="flex-1 flex flex-col items-start justify-center md:justify-between min-h-0 pb-8 md:pb-12 lg:pb-16 pt-12 gap-8 md:gap-0">
                     {/* Main Heading */}
-                    <div className="flex flex-col items-start justify-end w-full flex-initial md:flex-1 min-h-0">
-                        <div className="mb-4 md:mb-6 lg:mb-8">
+                    <div
+                        className="flex flex-col items-start justify-end w-full flex-initial md:flex-1 min-h-0"
+                        style={{
+                            transform: headingTransform,
+                            opacity: headingOpacity,
+                            willChange: "transform, opacity",
+                        }}
+                    >
+                        <div className="md:mb-6 lg:mb-8">
                             <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-[120px] 2xl:text-[144px] font-bold text-white leading-none lg:leading-[0.9] xl:leading-[0.85] tracking-tight lg:tracking-[-6px] xl:tracking-[-8px] 2xl:tracking-[-10px] mb-0">
                                 {hero.title.line1}
                             </h1>
@@ -47,11 +75,18 @@ export default function Hero() {
                     {/* Bottom Section */}
                     <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8 w-full">
                         {/* Description */}
-                        <div className="flex flex-col items-center relative flex-shrink-0">
+                        <div
+                            className="flex flex-col items-center relative flex-shrink-0"
+                            style={{
+                                transform: headingTransform,
+                                opacity: headingOpacity,
+                                willChange: "transform, opacity",
+                            }}
+                        >
                             <div className="absolute left-1 top-0.5">
                                 <Spark />
                             </div>
-                            <div className="text-left pl-8">
+                            <div className="text-left pl-8 mb-12 md:mb-20">
                                 <p className="text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px] mb-0">
                                     {hero.description.line1}
                                 </p>
@@ -65,7 +100,14 @@ export default function Hero() {
                         </div>
 
                         {/* Services List + CTA */}
-                        <div className="flex flex-col items-end gap-4 lg:gap-6 w-full lg:w-auto flex-1 lg:flex-initial">
+                        <div
+                            className="flex flex-col items-end gap-4 lg:gap-6 w-full lg:w-auto flex-1 lg:flex-initial"
+                            style={{
+                                transform: contentTransform,
+                                opacity: contentOpacity,
+                                willChange: "transform, opacity",
+                            }}
+                        >
                             <div className="flex flex-col items-end gap-2 lg:gap-3">
                                 {hero.services.map((service) => (
                                     <div

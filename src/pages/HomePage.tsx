@@ -24,9 +24,9 @@ export default function HomePage() {
             <Process />
             <WhyChooseUs />
             <Pricing />
+            <FAQ />
             <Testimonials />
             <ContactForm />
-            <FAQ />
             <ContactInfo />
         </div>
     );
