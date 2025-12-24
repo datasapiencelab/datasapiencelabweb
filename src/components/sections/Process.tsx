@@ -80,11 +80,11 @@ export const Process: React.FC = () => {
     return (
         <>
             {/* Desktop Layout (1280px+) */}
-            <section className="relative hidden xl:block bg-neutral-50 py-32 z-20">
+            <section className="relative hidden xl:block bg-neutral-50 py-48 z-20">
                 <div className="max-w-[1280px] mx-auto px-28">
                     <div className="grid grid-cols-2 gap-16">
                         {/* Left Column - Header */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 sticky top-1/3 self-start h-fit">
                             <div className="flex items-center gap-2.5">
                                 <Spark />
                                 <span className="text-lg text-zinc-800 font-normal tracking-[0.5px]">
@@ -169,11 +169,11 @@ export const Process: React.FC = () => {
             </section>
 
             {/* Desktop Layout (1024px - 1279px) */}
-            <section className="relative hidden lg:block xl:hidden bg-neutral-50 py-24 z-20">
+            <section className="relative hidden lg:block xl:hidden bg-neutral-50 py-40 z-20">
                 <div className="max-w-[1024px] mx-auto px-20">
                     <div className="grid grid-cols-2 gap-12">
                         {/* Left Column - Header */}
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 sticky top-1/3 self-start h-fit">
                             <div className="flex items-center gap-2.5">
                                 <Spark />
                                 <span className="text-base text-zinc-800 font-normal tracking-[0.5px]">
