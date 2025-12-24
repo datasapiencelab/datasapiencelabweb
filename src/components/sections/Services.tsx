@@ -23,8 +23,8 @@ function ServiceItem({
     onClick,
 }: ServiceItemProps) {
     return (
-        <div className="group cursor-pointer pb-8" onClick={onClick}>
-            <div className="flex items-center gap-3 mb-8">
+        <div className="group cursor-pointer pb-4 lg:pb-6" onClick={onClick}>
+            <div className="flex items-center gap-3 mb-4 lg:mb-6">
                 <span
                     className={`font-engagement text-2xl leading-9 tracking-tight transition-colors ${
                         isActive
@@ -182,9 +182,9 @@ export default function Services() {
                     ref={scrollAreaRef}
                     className="relative mb-16 md:mb-20 lg:mb-24 lg:h-[400vh]"
                 >
-                    <div className="lg:sticky lg:top-24">
+                    <div className="lg:sticky lg:top-12 lg:max-h-[calc(100vh-6rem)]">
                         {/* Header */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24 mb-16 md:mb-20 lg:mb-24">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-20 lg:mb-12">
                             <div className="flex items-center gap-2.5">
                                 <Spark />
                                 <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
@@ -204,7 +204,7 @@ export default function Services() {
                         </div>
 
                         {/* Services Content */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
                             {/* Services List */}
                             <div className="space-y-0 lg:self-start">
                                 {servicesContent.items.map((service, index) => (
@@ -235,9 +235,9 @@ export default function Services() {
                             <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden">
                                 <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                                     {/* Content */}
-                                    <div className="p-6 md:p-8 flex flex-col justify-between">
+                                    <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between">
                                         <div>
-                                            <div className="w-8 h-8 mb-6">
+                                            <div className="w-8 h-8 mb-4">
                                                 <img
                                                     src={brainIconSrc}
                                                     alt="AI Brain"
@@ -245,7 +245,7 @@ export default function Services() {
                                                 />
                                             </div>
 
-                                            <p className="text-base md:text-lg text-neutral-disable mb-8 leading-relaxed">
+                                            <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
                                                 {
                                                     servicesContent
                                                         .serviceDetail
@@ -253,7 +253,7 @@ export default function Services() {
                                                 }
                                             </p>
 
-                                            <div className="flex flex-wrap gap-3 md:gap-4 mb-6">
+                                            <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
                                                 {servicesContent.serviceDetail.tags.map(
                                                     (tag, index) => (
                                                         <ServiceTag
@@ -298,7 +298,7 @@ export default function Services() {
                         </div>
 
                         {/* Separator/timeline */}
-                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-24">
+                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-8">
                             <Spark />
                             <div className="flex-1 h-px bg-neutral-tertiary relative overflow-hidden">
                                 <div
