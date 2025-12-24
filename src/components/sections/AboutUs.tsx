@@ -152,7 +152,7 @@ export default function AboutUs() {
                     }}
                 >
                     {/* Kicker row */}
-                    <div className="flex flex-row items-center justify-between mb-8 md:mb-12 gap-4 max-w-7xl mx-auto w-full">
+                    <div className="flex flex-row items-center justify-between md:mt-12 lg:mt-12 mb-8 md:mb-12 gap-4 max-w-7xl mx-auto w-full">
                         <div className="flex items-center gap-2 md:gap-2.5">
                             <Spark />
                             <span className="text-sm md:text-lg lg:text-body-xl text-neutral-secondary whitespace-nowrap">
