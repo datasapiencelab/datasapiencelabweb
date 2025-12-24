@@ -22,7 +22,7 @@ export default function AboutCTA() {
                             {/* CTA Button Overlay */}
                             <div className="flex justify-center mt-3 md:mt-5">
                                 <motion.div
-                                    className="bg-white rounded-full p-2 md:p-3 flex items-center shadow-lg max-w-full cursor-pointer overflow-hidden"
+                                    className="bg-white rounded-full p-2 md:p-3 flex items-center gap-2 md:gap-3 shadow-lg max-w-full cursor-pointer overflow-hidden"
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                     initial={false}
@@ -33,7 +33,7 @@ export default function AboutCTA() {
                                             : "12px",
                                     }}
                                     transition={{
-                                        duration: 0.3,
+                                        duration: 0.1,
                                         ease: "easeOut",
                                     }}
                                 >
@@ -51,17 +51,14 @@ export default function AboutCTA() {
                                                 initial={{
                                                     width: 0,
                                                     opacity: 0,
-                                                    margin: 0,
                                                 }}
                                                 animate={{
                                                     width: "auto",
                                                     opacity: 1,
-                                                    margin: "0 12px",
                                                 }}
                                                 exit={{
                                                     width: 0,
                                                     opacity: 0,
-                                                    margin: 0,
                                                 }}
                                                 transition={{
                                                     duration: 0.3,
@@ -78,11 +75,7 @@ export default function AboutCTA() {
                                         )}
                                     </AnimatePresence>
 
-                                    <div
-                                        className={`${
-                                            !isHovered ? "ml-2 md:ml-3" : ""
-                                        } pr-2 md:pr-4`}
-                                    >
+                                    <div className="pr-2 md:pr-4">
                                         <h3 className="text-sm md:text-lg lg:text-h6 font-semibold text-neutral-primary whitespace-nowrap">
                                             {about.callToAction.title}
                                         </h3>
