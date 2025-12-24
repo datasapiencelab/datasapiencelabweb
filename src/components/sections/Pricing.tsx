@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Spark icon component
 const SparkIcon = () => (
@@ -34,6 +34,46 @@ const ArrowIcon = () => (
 );
 
 const Pricing: React.FC = () => {
+    const [pricingMode, setPricingMode] = useState<"hourly" | "project">(
+        "project"
+    );
+
+    const pricingData = {
+        hourly: {
+            title: "Adaptive Pricing",
+            description:
+                "Perfect for short-term needs, quick iterations, or specialized tasks, flexible engagement.",
+            price: "7",
+            period: "/Hour",
+            subscriptionLabel: "Subscription include",
+            features: [
+                "Perfect for short-term needs",
+                "Quick iterations & adjustments",
+                "Flexible engagement for teams",
+                "Specialized task support",
+                "No long-term commitment required",
+            ],
+        },
+        project: {
+            title: "All-in-One Package",
+            description:
+                "Perfect for startups, and teams seeking reliable assistance without the cost of full-time hires.",
+            price: "330",
+            period: "/Project",
+            subscriptionLabel: "Subscription start from",
+            features: [
+                "Dedicated hours.",
+                "Weekly check-ins",
+                "Access to data insights",
+                "Progress & performance tracking.",
+                "Unlimited revisions.",
+                "Priority bug fixes",
+            ],
+        },
+    };
+
+    const currentPricing = pricingData[pricingMode];
+
     return (
         <div className="relative pricingSection bg-neutral-50 w-full z-20">
             {/* Desktop Layout (1024px+) - Exact Figma Implementation */}
@@ -87,31 +127,57 @@ const Pricing: React.FC = () => {
                             <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
 
                             {/* Header with Toggle */}
-                            <div className="flex gap-16 items-start w-full">
-                                <div className="flex-1 flex flex-col gap-1.5 items-start">
+                            <div className="flex gap-16 items-start w-full transition-all duration-300 ease-in-out">
+                                <div className="flex-1 flex flex-col gap-1.5 items-start transition-all duration-300 ease-in-out">
                                     <div className="font-geist font-semibold text-2xl leading-9 text-zinc-800 tracking-[-0.25px] w-full">
-                                        Subscription start from
+                                        {currentPricing.title}
                                     </div>
                                     <div className="font-geist font-normal text-lg leading-7 text-zinc-600 tracking-[0.5px] w-full">
-                                        Perfect for startups, and teams seeking
-                                        reliable assistance without the cost of
-                                        full-time hires.
+                                        {currentPricing.description}
                                     </div>
                                 </div>
 
                                 {/* Toggle */}
                                 <div className="bg-neutral-50 box-border flex items-center justify-center p-1.5 rounded-full shrink-0 relative">
                                     <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none rounded-full" />
-                                    <div className="box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full">
-                                        <div className="font-geist text-base leading-6 text-zinc-800 tracking-[0.5px] whitespace-pre">
+                                    <button
+                                        onClick={() => setPricingMode("hourly")}
+                                        className={`box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full transition-colors ${
+                                            pricingMode === "hourly"
+                                                ? "bg-zinc-800"
+                                                : "bg-transparent"
+                                        }`}
+                                    >
+                                        <div
+                                            className={`font-geist text-base leading-6 tracking-[0.5px] whitespace-pre ${
+                                                pricingMode === "hourly"
+                                                    ? "text-white"
+                                                    : "text-zinc-800"
+                                            }`}
+                                        >
                                             Hourly
                                         </div>
-                                    </div>
-                                    <div className="bg-zinc-800 box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full">
-                                        <div className="font-geist text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
+                                    </button>
+                                    <button
+                                        onClick={() =>
+                                            setPricingMode("project")
+                                        }
+                                        className={`box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full transition-colors ${
+                                            pricingMode === "project"
+                                                ? "bg-zinc-800"
+                                                : "bg-transparent"
+                                        }`}
+                                    >
+                                        <div
+                                            className={`font-geist text-base leading-6 tracking-[0.5px] whitespace-pre ${
+                                                pricingMode === "project"
+                                                    ? "text-white"
+                                                    : "text-zinc-800"
+                                            }`}
+                                        >
                                             Project-based
                                         </div>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
 
@@ -119,92 +185,68 @@ const Pricing: React.FC = () => {
                             <div className="bg-zinc-200 h-px w-full" />
 
                             {/* What's Included */}
-                            <div className="flex flex-col gap-1.5 items-start w-full">
+                            <div className="flex flex-col gap-1.5 items-start w-full transition-all duration-300 ease-in-out">
                                 <div className="font-geist font-medium text-lg leading-7 text-zinc-800 tracking-[0.5px] whitespace-pre">
                                     What's Included
                                 </div>
 
                                 {/* Services Grid */}
-                                <div className="gap-2 grid grid-cols-2 grid-rows-4 h-[120px] min-w-[296px] w-full">
-                                    <div className="[grid-area:1_/_1] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Dedicated hours.
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:1_/_2] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Unlimited revisions.
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:2_/_1] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Weekly check-ins
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:2_/_2] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Priority bug fixes
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:3_/_1] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Access to data insights
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:3_/_2] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Access to data insights
-                                        </div>
-                                    </div>
-                                    <div className="[grid-area:4_/_1] flex gap-4 items-center">
-                                        <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                        <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                            Progress & performance tracking.
-                                        </div>
-                                    </div>
+                                <div className="gap-2 grid grid-cols-2 w-full transition-all duration-300 ease-in-out">
+                                    {currentPricing.features.map(
+                                        (feature, index) => (
+                                            <div
+                                                key={`desktop-${pricingMode}-${index}`}
+                                                className="flex gap-4 items-center animate-fadeIn"
+                                                style={{
+                                                    animationDelay: `${
+                                                        index * 50
+                                                    }ms`,
+                                                }}
+                                            >
+                                                <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
+                                                <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px]">
+                                                    {feature}
+                                                </div>
+                                            </div>
+                                        )
+                                    )}
                                 </div>
                             </div>
 
                             {/* Pricing */}
-                            <div className="flex flex-col gap-1.5 items-start w-full">
+                            <div className="flex flex-col gap-1.5 items-start w-full transition-all duration-300 ease-in-out">
                                 <div className="font-geist font-medium text-lg leading-7 text-zinc-800 tracking-[0.5px] whitespace-pre">
-                                    Subscription start from
+                                    {currentPricing.subscriptionLabel}
                                 </div>
 
-                                <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative">
-                                <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
-                                <div className="flex items-center w-full">
-                                    <div className="flex-1 flex items-center">
-                                        <div className="font-engagement text-[48px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
-                                            $
+                                <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative transition-all duration-300 ease-in-out">
+                                    <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
+                                    <div className="flex items-center w-full">
+                                        <div className="flex-1 flex items-center">
+                                            <div className="font-engagement text-[48px] leading-12 text-zinc-900 tracking-[-1px] whitespace-pre">
+                                                $
+                                            </div>
+                                            <div className="font-geist font-medium text-[48px] leading-[52px] text-zinc-900 tracking-[-1px] whitespace-pre">
+                                                {currentPricing.price}
+                                            </div>
+                                            <div className="box-border flex gap-2 items-center justify-center px-0 py-1">
+                                                <div className="font-geist font-medium text-lg leading-7 text-zinc-600 tracking-[0.5px] whitespace-pre">
+                                                    {currentPricing.period}
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="font-geist font-medium text-[48px] leading-[52px] text-zinc-900 tracking-[-1px] whitespace-pre">
-                                            330
-                                        </div>
-                                        <div className="box-border flex gap-2 items-center justify-center px-0 py-1">
-                                            <div className="font-geist font-medium text-lg leading-7 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                                /Project
+
+                                        {/* CTA Button */}
+                                        <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors">
+                                            <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
+                                                Let's Discuss
+                                            </div>
+                                            <div className="w-5 h-5">
+                                                <ArrowIcon />
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* CTA Button */}
-                                    <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                                        <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px] whitespace-pre">
-                                            Let's Discuss
-                                        </div>
-                                        <div className="w-5 h-5">
-                                            <ArrowIcon />
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -245,31 +287,55 @@ const Pricing: React.FC = () => {
                         <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
 
                         {/* Header with Toggle */}
-                        <div className="flex gap-16 items-start w-full">
-                            <div className="flex-1 flex flex-col gap-1.5 items-start">
+                        <div className="flex gap-16 items-start w-full transition-all duration-300 ease-in-out">
+                            <div className="flex-1 flex flex-col gap-1.5 items-start transition-all duration-300 ease-in-out">
                                 <div className="font-geist font-semibold text-2xl leading-9 text-zinc-800 tracking-[-0.25px] w-full">
-                                    Subscription start from
+                                    {currentPricing.title}
                                 </div>
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-600 tracking-[0.5px] w-full">
-                                    Perfect for startups, and teams seeking
-                                    reliable assistance without the cost of
-                                    full-time hires.
+                                    {currentPricing.description}
                                 </div>
                             </div>
 
                             {/* Toggle */}
                             <div className="bg-neutral-50 box-border flex items-center justify-center p-1 rounded-full shrink-0 relative">
                                 <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none rounded-full" />
-                                <div className="box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full">
-                                    <div className="font-geist font-medium text-sm leading-5 text-zinc-800 tracking-[0.5px] whitespace-pre">
+                                <button
+                                    onClick={() => setPricingMode("hourly")}
+                                    className={`box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full transition-colors ${
+                                        pricingMode === "hourly"
+                                            ? "bg-zinc-800"
+                                            : "bg-transparent"
+                                    }`}
+                                >
+                                    <div
+                                        className={`font-geist font-medium text-sm leading-5 tracking-[0.5px] whitespace-pre ${
+                                            pricingMode === "hourly"
+                                                ? "text-white"
+                                                : "text-zinc-800"
+                                        }`}
+                                    >
                                         Hourly
                                     </div>
-                                </div>
-                                <div className="bg-zinc-800 box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full">
-                                    <div className="font-geist font-medium text-sm leading-5 text-white tracking-[0.5px] whitespace-pre">
+                                </button>
+                                <button
+                                    onClick={() => setPricingMode("project")}
+                                    className={`box-border flex gap-2 items-center justify-center px-4 py-2 rounded-full transition-colors ${
+                                        pricingMode === "project"
+                                            ? "bg-zinc-800"
+                                            : "bg-transparent"
+                                    }`}
+                                >
+                                    <div
+                                        className={`font-geist font-medium text-sm leading-5 tracking-[0.5px] whitespace-pre ${
+                                            pricingMode === "project"
+                                                ? "text-white"
+                                                : "text-zinc-800"
+                                        }`}
+                                    >
                                         Project-based
                                     </div>
-                                </div>
+                                </button>
                             </div>
                         </div>
 
@@ -277,65 +343,41 @@ const Pricing: React.FC = () => {
                         <div className="bg-zinc-200 h-px w-full" />
 
                         {/* What's Included */}
-                        <div className="flex flex-col gap-1.5 items-start w-full">
+                        <div className="flex flex-col gap-1.5 items-start w-full transition-all duration-300 ease-in-out">
                             <div className="font-geist font-medium text-lg leading-7 text-zinc-800 tracking-[0.5px] whitespace-pre">
                                 What's Included
                             </div>
 
                             {/* Services Grid */}
-                            <div className="gap-2 grid grid-cols-2 grid-rows-4 h-[120px] min-w-[296px] w-full">
-                                <div className="[grid-area:1_/_1] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Dedicated hours.
-                                    </div>
-                                </div>
-                                <div className="[grid-area:1_/_2] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Unlimited revisions.
-                                    </div>
-                                </div>
-                                <div className="[grid-area:2_/_1] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Weekly check-ins
-                                    </div>
-                                </div>
-                                <div className="[grid-area:2_/_2] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Priority bug fixes
-                                    </div>
-                                </div>
-                                <div className="[grid-area:3_/_1] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Access to data insights
-                                    </div>
-                                </div>
-                                <div className="[grid-area:3_/_2] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Access to data insights
-                                    </div>
-                                </div>
-                                <div className="[grid-area:4_/_1] flex gap-4 items-center">
-                                    <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
-                                    <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                        Progress & performance tracking.
-                                    </div>
-                                </div>
+                            <div className="gap-2 grid grid-cols-2 w-full transition-all duration-300 ease-in-out">
+                                {currentPricing.features.map(
+                                    (feature, index) => (
+                                        <div
+                                            key={`tablet-${pricingMode}-${index}`}
+                                            className="flex gap-4 items-center animate-fadeIn"
+                                            style={{
+                                                animationDelay: `${
+                                                    index * 50
+                                                }ms`,
+                                            }}
+                                        >
+                                            <div className="bg-[#f2500d] w-2 h-2 shrink-0" />
+                                            <div className="font-geist font-normal text-base leading-6 text-zinc-600 tracking-[0.5px]">
+                                                {feature}
+                                            </div>
+                                        </div>
+                                    )
+                                )}
                             </div>
                         </div>
 
                         {/* Pricing */}
-                        <div className="flex flex-col gap-1.5 items-start w-full">
+                        <div className="flex flex-col gap-1.5 items-start w-full transition-all duration-300 ease-in-out">
                             <div className="font-geist font-medium text-lg leading-7 text-zinc-800 tracking-[0.5px] whitespace-pre">
-                                Subscription start from
+                                {currentPricing.subscriptionLabel}
                             </div>
 
-                            <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative">
+                            <div className="bg-neutral-50 box-border flex flex-col items-start p-2 w-full relative transition-all duration-300 ease-in-out">
                                 <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
                                 <div className="flex items-center w-full">
                                     <div className="flex-1 flex items-center">
@@ -343,11 +385,11 @@ const Pricing: React.FC = () => {
                                             $
                                         </div>
                                         <div className="font-geist font-medium text-[48px] leading-[52px] text-zinc-900 tracking-[-1px] whitespace-pre">
-                                            330
+                                            {currentPricing.price}
                                         </div>
                                         <div className="box-border flex gap-2 items-center justify-center px-0 py-1">
                                             <div className="font-geist font-medium text-lg leading-7 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                                /Project
+                                                {currentPricing.period}
                                             </div>
                                         </div>
                                     </div>
@@ -419,31 +461,57 @@ const Pricing: React.FC = () => {
                             <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
 
                             {/* Header with Toggle */}
-                            <div className="flex flex-col gap-4 items-start w-full">
-                                <div className="flex flex-col gap-2 items-start w-full">
+                            <div className="flex flex-col gap-4 items-start w-full transition-all duration-300 ease-in-out">
+                                <div className="flex flex-col gap-2 items-start w-full transition-all duration-300 ease-in-out">
                                     <div className="font-geist font-semibold text-lg leading-7 text-zinc-800 tracking-[-0.25px] w-full">
-                                        Subscription start from
+                                        {currentPricing.title}
                                     </div>
                                     <div className="font-geist font-normal text-sm leading-5 text-zinc-600 tracking-[0.5px] w-full">
-                                        Perfect for startups, and teams seeking
-                                        reliable assistance without the cost of
-                                        full-time hires.
+                                        {currentPricing.description}
                                     </div>
                                 </div>
 
                                 {/* Toggle */}
                                 <div className="bg-neutral-50 box-border flex items-center justify-center p-1 rounded-full w-fit relative">
                                     <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none rounded-full" />
-                                    <div className="box-border flex gap-1 items-center justify-center px-3 py-1.5 rounded-full">
-                                        <div className="font-geist text-xs leading-4 text-zinc-800 tracking-[0.5px] whitespace-pre">
+                                    <button
+                                        onClick={() => setPricingMode("hourly")}
+                                        className={`box-border flex gap-1 items-center justify-center px-3 py-1.5 rounded-full transition-colors ${
+                                            pricingMode === "hourly"
+                                                ? "bg-zinc-800"
+                                                : "bg-transparent"
+                                        }`}
+                                    >
+                                        <div
+                                            className={`font-geist text-xs leading-4 tracking-[0.5px] whitespace-pre ${
+                                                pricingMode === "hourly"
+                                                    ? "text-white"
+                                                    : "text-zinc-800"
+                                            }`}
+                                        >
                                             Hourly
                                         </div>
-                                    </div>
-                                    <div className="bg-zinc-800 box-border flex gap-1 items-center justify-center px-3 py-1.5 rounded-full">
-                                        <div className="font-geist text-xs leading-4 text-white tracking-[0.5px] whitespace-pre">
+                                    </button>
+                                    <button
+                                        onClick={() =>
+                                            setPricingMode("project")
+                                        }
+                                        className={`box-border flex gap-1 items-center justify-center px-3 py-1.5 rounded-full transition-colors ${
+                                            pricingMode === "project"
+                                                ? "bg-zinc-800"
+                                                : "bg-transparent"
+                                        }`}
+                                    >
+                                        <div
+                                            className={`font-geist text-xs leading-4 tracking-[0.5px] whitespace-pre ${
+                                                pricingMode === "project"
+                                                    ? "text-white"
+                                                    : "text-zinc-800"
+                                            }`}
+                                        >
                                             Project-based
                                         </div>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
 
@@ -451,41 +519,41 @@ const Pricing: React.FC = () => {
                             <div className="bg-zinc-200 h-px w-full" />
 
                             {/* What's Included */}
-                            <div className="flex flex-col gap-3 items-start w-full">
+                            <div className="flex flex-col gap-3 items-start w-full transition-all duration-300 ease-in-out">
                                 <div className="font-geist font-medium text-sm leading-5 text-zinc-800 tracking-[0.5px] whitespace-pre">
                                     What's Included
                                 </div>
 
                                 {/* Services List */}
-                                <div className="flex flex-col gap-2 w-full">
-                                    {[
-                                        "Dedicated hours.",
-                                        "Unlimited revisions.",
-                                        "Weekly check-ins",
-                                        "Priority bug fixes",
-                                        "Access to data insights",
-                                        "Progress & performance tracking.",
-                                    ].map((service, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex gap-2 items-center"
-                                        >
-                                            <div className="bg-[#f2500d] w-1.5 h-1.5 shrink-0" />
-                                            <div className="font-geist font-normal text-xs leading-4 text-zinc-600 tracking-[0.5px]">
-                                                {service}
+                                <div className="flex flex-col gap-2 w-full transition-all duration-300 ease-in-out">
+                                    {currentPricing.features.map(
+                                        (feature, index) => (
+                                            <div
+                                                key={`mobile-${pricingMode}-${index}`}
+                                                className="flex gap-2 items-center animate-fadeIn"
+                                                style={{
+                                                    animationDelay: `${
+                                                        index * 50
+                                                    }ms`,
+                                                }}
+                                            >
+                                                <div className="bg-[#f2500d] w-1.5 h-1.5 shrink-0" />
+                                                <div className="font-geist font-normal text-xs leading-4 text-zinc-600 tracking-[0.5px]">
+                                                    {feature}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        )
+                                    )}
                                 </div>
                             </div>
 
                             {/* Pricing */}
-                            <div className="flex flex-col gap-3 items-start w-full">
+                            <div className="flex flex-col gap-3 items-start w-full transition-all duration-300 ease-in-out">
                                 <div className="font-geist font-medium text-sm leading-5 text-zinc-800 tracking-[0.5px] whitespace-pre">
-                                    Subscription start from
+                                    {currentPricing.subscriptionLabel}
                                 </div>
 
-                                <div className="bg-neutral-50 box-border flex flex-col items-start p-3 w-full relative">
+                                <div className="bg-neutral-50 box-border flex flex-col items-start p-3 w-full relative transition-all duration-300 ease-in-out">
                                     <div className="absolute border border-solid border-zinc-200 inset-0 pointer-events-none" />
                                     <div className="flex flex-col gap-3 items-start w-full">
                                         <div className="flex items-end">
@@ -493,11 +561,11 @@ const Pricing: React.FC = () => {
                                                 $
                                             </div>
                                             <div className="font-geist font-medium text-[32px] leading-8 text-zinc-900 tracking-[-1px] whitespace-pre">
-                                                330
+                                                {currentPricing.price}
                                             </div>
                                             <div className="box-border flex gap-1 items-center justify-center px-0 py-0.5">
                                                 <div className="font-geist font-medium text-sm leading-5 text-zinc-600 tracking-[0.5px] whitespace-pre">
-                                                    /Project
+                                                    {currentPricing.period}
                                                 </div>
                                             </div>
                                         </div>
