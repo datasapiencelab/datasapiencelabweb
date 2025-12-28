@@ -22,7 +22,7 @@ export default function AboutMission() {
 
                     {/* Description */}
                     <div className="lg:col-span-8">
-                        <p className="text-xl md:text-2xl lg:text-3xl text-white font-geist leading-relaxed">
+                        <p className="text-xl font-semibold md:text-2xl lg:text-3xl text-white font-geist leading-relaxed">
                             {mission.description}
                             <span className="text-[#f2500d] font-engagement">
                                 {mission.descriptionAccent}

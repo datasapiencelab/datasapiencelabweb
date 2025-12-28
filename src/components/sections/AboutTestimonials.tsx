@@ -98,16 +98,12 @@ export default function AboutTestimonials() {
                         </span>
                     </div>
 
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl text-zinc-900 mb-6 font-geist">
+                    <h2 className="text-2xl font-semibold md:text-4xl lg:text-5xl text-zinc-900 mb-6 font-geist">
                         {testimonials.heading}
                         <span className="text-[#f2500d] font-engagement">
                             {testimonials.headingAccent}
                         </span>
                     </h2>
-
-                    <p className="text-base md:text-lg text-zinc-600 font-geist max-w-3xl mx-auto">
-                        {testimonials.description}
-                    </p>
                 </div>
 
                 {/* Scroll-based Velocity Testimonials */}

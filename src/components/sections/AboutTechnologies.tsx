@@ -21,7 +21,7 @@ export default function AboutTechnologies() {
 
                     {/* Description */}
                     <div className="lg:col-span-8">
-                        <p className="text-xl md:text-2xl lg:text-3xl text-zinc-900 font-geist leading-relaxed">
+                        <p className="text-xl font-semibold md:text-2xl lg:text-3xl text-zinc-900 font-geist leading-relaxed">
                             {technologies.description}
                             <span className="text-[#f2500d] font-engagement">
                                 {technologies.descriptionAccent}

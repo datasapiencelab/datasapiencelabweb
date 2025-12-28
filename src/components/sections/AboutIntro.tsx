@@ -22,7 +22,7 @@ export default function AboutIntro() {
 
                     {/* Description */}
                     <div className="lg:col-span-8">
-                        <p className="text-2xl md:text-3xl lg:text-4xl text-zinc-900 font-geist leading-relaxed">
+                        <p className="text-xl font-semibold md:text-3xl lg:text-4xl text-zinc-900 font-geist leading-relaxed">
                             {intro.description}
                             <span className="text-[#f2500d] font-engagement">
                                 {intro.descriptionAccent}

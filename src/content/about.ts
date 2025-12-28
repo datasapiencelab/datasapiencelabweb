@@ -116,7 +116,7 @@ export const ABOUT_CONTENT = {
     technologies: {
         kicker: "Our Stack",
         description: "We use a ",
-        descriptionAccent: "modern, battle-tested toolkit,",
+        descriptionAccent: "Modern, Battle-Tested Toolkit,",
         descriptionEnd:
             " ensuring every product we build is scalable, reliable, and future-ready.",
         logos: [
@@ -158,7 +158,7 @@ export const ABOUT_CONTENT = {
             },
             {
                 name: "FastAPI",
-                src: "https://www.vectorlogo.zone/logos/fastapi/fastapi-icon.svg",
+                src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/FastAPI_logo.svg",
             },
             {
                 name: "Docker",

@@ -22,7 +22,7 @@ export default function AboutHero() {
                 <div className="max-w-[1440px] mx-auto">
                     <div className="max-w-4xl flex flex-col gap-8">
                         {/* Title */}
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl mb-8 md:mb-12">
+                        <h1 className="text-4xl md:text-6xl lg:text-8xl mb-8 md:mb-12">
                             <span className="text-zinc-900 font-geist font-bold">
                                 {hero.title.line1}{" "}
                             </span>
