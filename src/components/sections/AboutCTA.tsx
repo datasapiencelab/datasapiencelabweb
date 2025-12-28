@@ -1,22 +1,37 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/Button";
-import { HOME_CONTENT } from "../../content/home";
+import Spark from "../ui/Spark";
+import { ABOUT_CONTENT } from "../../content/about";
 
 export default function AboutCTA() {
-    const { about } = HOME_CONTENT;
+    const { hero } = ABOUT_CONTENT;
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-12 md:gap-16">
+                    {/* Description with Spark */}
+                    <div className="text-center max-w-4xl px-4">
+                        <div className="flex items-start justify-center gap-3 mb-8">
+                            <Spark />
+                            <p className="text-lg md:text-xl lg:text-2xl font-geist text-zinc-900 leading-relaxed text-left max-w-2xl">
+                                We help businesses move from
+                                <br />
+                                Raw Datasets to powerful, intuitive applications
+                                <br />
+                                designed to grow with confidence.
+                            </p>
+                        </div>
+                    </div>
+
                     {/* Team Image */}
                     <div className="relative max-w-4xl w-full">
                         <div className="bg-zinc-100 p-4 md:p-7 border-4 md:border-8 border-white">
                             <img
-                                src={about.image.src}
-                                alt={about.image.alt}
+                                src={hero.heroImage}
+                                alt="Data Sapience Lab Team"
                                 className="w-full h-64 md:h-96 lg:h-[652px] object-cover"
                             />
                             {/* CTA Button Overlay */}
@@ -77,10 +92,10 @@ export default function AboutCTA() {
 
                                     <div className="pr-2 md:pr-4">
                                         <h3 className="text-sm md:text-lg lg:text-h6 font-semibold text-neutral-primary whitespace-nowrap">
-                                            {about.callToAction.title}
+                                            {hero.cta.text}
                                         </h3>
                                         <p className="text-xs md:text-base lg:text-body-lg text-neutral-tertiary whitespace-nowrap">
-                                            {about.callToAction.subtitle}
+                                            Let's discuss your project
                                         </p>
                                     </div>
                                 </motion.div>
@@ -88,30 +103,7 @@ export default function AboutCTA() {
                         </div>
                     </div>
 
-                    {/* Description and CTA */}
-                    <div className="text-center max-w-4xl px-4">
-                        <p className="text-lg md:text-xl lg:text-h5 font-medium text-neutral-primary mb-6 md:mb-8 leading-relaxed">
-                            <span className="text-neutral-disable">
-                                {about.description.prefix}
-                            </span>
-                            <span className="text-neutral-primary">
-                                {about.description.highlight1}
-                            </span>
-                            <span className="text-neutral-disable">
-                                {about.description.middle}
-                            </span>
-                            <span className="text-neutral-primary">
-                                {about.description.highlight2}
-                            </span>
-                            <span className="text-neutral-disable">
-                                {about.description.suffix}
-                            </span>
-                        </p>
-
-                        <Button variant="primary" size="large">
-                            {about.cta.text}
-                        </Button>
-                    </div>
+                    {/* Description and CTA removed from bottom */}
                 </div>
             </div>
         </section>

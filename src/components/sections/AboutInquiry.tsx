@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import Button from "../ui/Button";
 import { ABOUT_CONTENT } from "../../content/about";
@@ -32,33 +31,19 @@ export default function AboutInquiry() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left Column - Info */}
                     <div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
+                        <div>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-engagement text-zinc-900 mb-6">
                                 {inquiry.heading}
                             </h2>
                             <p className="text-base md:text-lg text-zinc-600 font-geist mb-8">
                                 {inquiry.kicker}
                             </p>
-                        </motion.div>
+                        </div>
 
                         {/* Steps */}
                         <div className="space-y-8">
                             {inquiry.steps.map((step, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: index * 0.1,
-                                    }}
-                                >
+                                <div key={index}>
                                     <div className="flex items-start gap-3 mb-2">
                                         <span className="text-lg font-geist text-[#f2500d]">
                                             {step.number}
@@ -70,19 +55,13 @@ export default function AboutInquiry() {
                                     <p className="text-base text-zinc-600 font-geist pl-11">
                                         {step.description}
                                     </p>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>
 
                     {/* Right Column - Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="bg-zinc-50 rounded-lg p-6 md:p-8"
-                    >
+                    <div className="bg-zinc-50 rounded-lg p-6 md:p-8">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Name Field */}
                             <div>
@@ -90,7 +69,7 @@ export default function AboutInquiry() {
                                     htmlFor="name"
                                     className="block text-sm font-geist text-zinc-700 mb-2"
                                 >
-                                    Your name
+                                    Full Name
                                 </label>
                                 <input
                                     type="text"
@@ -110,7 +89,7 @@ export default function AboutInquiry() {
                                     htmlFor="email"
                                     className="block text-sm font-geist text-zinc-700 mb-2"
                                 >
-                                    Your email address
+                                    Email Address
                                 </label>
                                 <input
                                     type="email"
@@ -130,7 +109,7 @@ export default function AboutInquiry() {
                                     htmlFor="message"
                                     className="block text-sm font-geist text-zinc-700 mb-2"
                                 >
-                                    Tell us about your project
+                                    Share a few words about your idea
                                 </label>
                                 <textarea
                                     id="message"
@@ -153,10 +132,10 @@ export default function AboutInquiry() {
                                 size="large"
                                 fullWidth
                             >
-                                {inquiry.form.submitText}
+                                Send Inquiry
                             </Button>
                         </form>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

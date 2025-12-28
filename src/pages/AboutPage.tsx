@@ -5,8 +5,8 @@ import AboutTechnologies from "../components/sections/AboutTechnologies";
 import AboutBreakImage from "../components/sections/AboutBreakImage";
 import AboutTeam from "../components/sections/AboutTeam";
 import AboutTestimonials from "../components/sections/AboutTestimonials";
-import AboutInquiry from "../components/sections/AboutInquiry";
-import AboutContact from "../components/sections/AboutContact";
+import ContactForm from "@/components/sections/ContactForm";
+import ContactInfo from "@/components/sections/ContactInfo";
 
 export default function AboutPage() {
     return (
@@ -18,8 +18,8 @@ export default function AboutPage() {
             <AboutBreakImage />
             <AboutTeam />
             <AboutTestimonials />
-            <AboutInquiry />
-            <AboutContact />
+            <ContactForm />
+            <ContactInfo />
         </div>
     );
 }

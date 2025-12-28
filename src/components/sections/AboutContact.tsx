@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Button from "../ui/Button";
 import { ABOUT_CONTENT } from "../../content/about";
 
@@ -9,24 +8,13 @@ export default function AboutContact() {
         <section className="bg-zinc-900 text-white py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28">
             <div className="max-w-7xl mx-auto">
                 {/* Heading */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-engagement text-center mb-12 md:mb-16"
-                >
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-engagement text-center mb-12 md:mb-16">
                     {contact.heading}
-                </motion.h2>
+                </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left Column - Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <div>
                         {/* Description */}
                         <p className="text-lg md:text-xl text-zinc-300 font-geist mb-8 leading-relaxed">
                             {contact.description}
@@ -35,7 +23,7 @@ export default function AboutContact() {
                         {/* CTA Button */}
                         <div className="mb-12">
                             <Button variant="primary" size="large">
-                                {contact.cta.text}
+                                Start A Project
                             </Button>
                         </div>
 
@@ -45,14 +33,25 @@ export default function AboutContact() {
                         {/* Contact Details */}
                         <div className="space-y-6 mb-8">
                             <div>
-                                <h3 className="text-2xl md:text-3xl font-engagement text-white mb-2">
-                                    Email us
-                                </h3>
+                                <p className="text-sm text-zinc-500 mb-2">
+                                    Email
+                                </p>
                                 <a
                                     href={`mailto:${contact.email}`}
                                     className="text-base md:text-lg text-zinc-400 hover:text-[#f2500d] transition-colors font-geist"
                                 >
                                     {contact.email}
+                                </a>
+                            </div>
+                            <div>
+                                <p className="text-sm text-zinc-500 mb-2">
+                                    Phone
+                                </p>
+                                <a
+                                    href={`tel:${contact.phone}`}
+                                    className="text-base md:text-lg text-zinc-400 hover:text-[#f2500d] transition-colors font-geist"
+                                >
+                                    +880 (756) 349827
                                 </a>
                             </div>
                         </div>
@@ -63,18 +62,11 @@ export default function AboutContact() {
                         {/* Social Links */}
                         <div className="space-y-4">
                             {contact.socials.map((social, index) => (
-                                <motion.a
+                                <a
                                     key={index}
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: index * 0.1,
-                                    }}
                                     className="flex items-center gap-3 text-base md:text-lg text-zinc-400 hover:text-[#f2500d] transition-colors font-geist group"
                                 >
                                     <div className="w-5 h-5">
@@ -95,39 +87,20 @@ export default function AboutContact() {
                                         </svg>
                                     </div>
                                     <span>{social.label}</span>
-                                    <svg
-                                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M9 5l7 7-7 7"
-                                        />
-                                    </svg>
-                                </motion.a>
+                                </a>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right Column - Image */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="relative aspect-square rounded-lg overflow-hidden"
-                    >
+                    <div className="relative aspect-square rounded-lg overflow-hidden">
                         <img
                             src={contact.image.src}
                             alt={contact.image.alt}
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

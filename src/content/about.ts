@@ -28,36 +28,42 @@ export const ABOUT_CONTENT = {
         },
         kicker: "Where data meets intelligence",
         description:
-            "At the core of every innovation lies curiosity and a vision for the future. Our journey started with a simple belief: that data, when combined with intelligence and creativity, can solve any challenge.",
+            "We help businesses move from Raw Datasets to powerful, intuitive applications designed to grow with confidence.",
+        yearRange: "(2023 - 2025)",
+        heroImage: "/assets/images/home/hero-image.jpg",
         cta: {
-            text: "Get in touch",
+            text: "Book a Free Call",
         },
         video: {
             src: "/assets/videos/home/hero-video.mp4",
         },
     },
     intro: {
-        kicker: "About us",
+        kicker: "Introduction",
         description:
-            "At Data Sapience Lab, we specialize in turning data into strategy and AI into action. Our team builds intelligent, scalable solutions that help businesses make faster, smarter decisions.",
+            "At our core, we solve one challenge: turning overwhelming data into ",
+        descriptionAccent: "Clear, Intelligent Systems",
+        descriptionEnd: " that people actually want to use.",
         stats: [
             {
                 description:
-                    "At our core, we do one thing exceptionally well: simplify complexity. Whether it's unstructured data, scattered workflows, or underperforming systems.",
+                    "We don't believe in building technology for technology's sake. Every solution we craft from AI models to scalable platforms and design with purpose, clarity, and users in mind.",
             },
             {
                 description:
-                    "We cut through the noise to deliver clarity, efficiency, and results that last. Every project is different, but our approach stays the same—insight-led, human-centered, and built to scale.",
+                    "Our strength comes from a diverse team of problem-solvers: data scientists, engineers, and designers who share a passion for making complex ideas simple and actionable.",
             },
         ],
-        cta: {
-            text: "Discover what we can build together",
+        result: {
+            part1: "The result? Products that don't just perform today, but continue to ",
+            part2: "grow, adapt, and create impact tomorrow.",
         },
     },
     mission: {
-        kicker: "What drives us",
-        description:
-            "We don't just build systems—we solve problems. By combining insight, empathy, and engineering excellence, we create solutions that perform where it matters most.",
+        kicker: "Decisions That Matter",
+        description: "Not just build systems, we ",
+        descriptionAccent: "Drive Growth",
+        descriptionEnd: " for business.",
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop",
         mission: {
             title: "Mission",
@@ -101,14 +107,18 @@ export const ABOUT_CONTENT = {
         },
         cta: {
             text: "Let's build together",
-            description:
-                "At Data Sapience Lab, Every breakthrough starts with collaboration. we believe in partnering closely with clients to transform raw ideas into meaningful outcomes.",
+            description: {
+                part1: "At Data Sapience Lab, ",
+                part2: "Every breakthrough starts with collaboration. we believe in partnering closely with clients to transform raw ideas into meaningful outcomes.",
+            },
         },
     },
     technologies: {
         kicker: "Our Stack",
-        description:
-            "We leverage cutting-edge tools and frameworks to build scalable, high-performance solutions tailored to your unique business needs.",
+        description: "We use a ",
+        descriptionAccent: "modern, battle-tested toolkit,",
+        descriptionEnd:
+            " ensuring every product we build is scalable, reliable, and future-ready.",
         logos: [
             {
                 name: "TensorFlow",
@@ -161,15 +171,16 @@ export const ABOUT_CONTENT = {
         ],
     },
     breakImage: {
-        src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop",
+        src: "assets/images/about/brain-behind-dsl.jpg",
         alt: "Data Sapience Lab workspace",
     },
     team: {
-        kicker: "Our Team",
-        description:
-            "Meet the minds behind the mission—talented, driven, and committed to delivering excellence.",
+        kicker: "The Team",
+        heading: "The Minds ",
+        headingAccent: "Behind",
+        headingEnd: " the Lab",
         cta: {
-            text: "Join the team",
+            text: "Join With Us",
         },
         members: [
             {
@@ -205,8 +216,9 @@ export const ABOUT_CONTENT = {
         ],
     },
     testimonials: {
-        kicker: "Success Stories",
-        heading: "What our clients say about working with us",
+        kicker: "Client Success Stories",
+        heading: "Reflections from our ",
+        headingAccent: "Happy Clients",
         avatars: [
             "https://i.pravatar.cc/150?img=16",
             "https://i.pravatar.cc/150?img=17",
@@ -296,9 +308,8 @@ export const ABOUT_CONTENT = {
         ],
     },
     inquiry: {
-        kicker: "Let's talk",
-        heading:
-            "Have a project in mind? Reach out and let's turn your vision into reality.",
+        kicker: "A simple 3-step journey",
+        heading: "Let's Explore Your Idea Together",
         steps: [
             {
                 number: "(01)",
