@@ -101,7 +101,11 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         >
             {/* Navigation */}
             <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
-                <Link to="/" onClick={onClose} className="flex items-center gap-2">
+                <Link
+                    to="/"
+                    onClick={onClose}
+                    className="flex items-center gap-2"
+                >
                     <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden bg-white flex items-center justify-center">
                         <img
                             src={logoSrc}
