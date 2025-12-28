@@ -1,5 +1,4 @@
 import Spark from "../ui/Spark";
-import Button from "../ui/Button";
 import { ABOUT_CONTENT } from "../../content/about";
 
 export default function AboutIntro() {

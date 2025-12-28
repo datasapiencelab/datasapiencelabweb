@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Button from "../ui/Button";
 import Spark from "../ui/Spark";
 import { ABOUT_CONTENT } from "../../content/about";
 
