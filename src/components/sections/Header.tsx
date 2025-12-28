@@ -58,6 +58,9 @@ interface MenuOverlayProps {
 }
 
 function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
+    const [isVisible, setIsVisible] = useState(false);
+    const [shouldRender, setShouldRender] = useState(false);
+
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === "Escape" && isOpen) {
@@ -66,25 +69,43 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         };
 
         if (isOpen) {
+            setShouldRender(true);
             document.addEventListener("keydown", handleEscape);
             document.body.style.overflow = "hidden";
+            // Force browser reflow before triggering animation
+            const timer = setTimeout(() => {
+                setIsVisible(true);
+            }, 50); // Slightly longer delay for reliability across all devices
+            return () => {
+                clearTimeout(timer);
+                document.removeEventListener("keydown", handleEscape);
+            };
         } else {
+            setIsVisible(false);
             document.body.style.overflow = "unset";
+            // Delay unmounting until animation completes
+            const timer = setTimeout(() => {
+                setShouldRender(false);
+            }, 450); // Slightly longer than transition duration
+            return () => clearTimeout(timer);
         }
-
-        return () => {
-            document.removeEventListener("keydown", handleEscape);
-            document.body.style.overflow = "unset";
-        };
     }, [isOpen, onClose]);
 
-    if (!isOpen) return null;
+    if (!shouldRender) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] backdrop-blur-[14.75px] bg-[rgba(9,9,11,0.72)] flex flex-col">
+        <div
+            className={`fixed inset-0 z-[9999] backdrop-blur-[14.75px] bg-[rgba(9,9,11,0.72)] flex flex-col transition-opacity duration-400 ease-in-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+            }`}
+        >
             {/* Navigation */}
             <div className="flex items-center justify-between py-4 md:py-6 px-6 md:px-16 lg:px-28">
-                <Link to="/" className="flex items-center gap-2">
+                <Link
+                    to="/"
+                    onClick={onClose}
+                    className="flex items-center gap-2"
+                >
                     <div className="w-8 h-8 md:w-[42px] md:h-[42px] rounded-full overflow-hidden bg-white flex items-center justify-center">
                         <img
                             src={logoSrc}
@@ -123,7 +144,13 @@ function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col px-4 md:px-8 lg:px-16 xl:px-28 pb-4 md:pb-8 lg:pb-16 xl:pb-28">
+            <div
+                className={`flex-1 flex flex-col px-4 md:px-8 lg:px-16 xl:px-28 pb-4 md:pb-8 lg:pb-16 xl:pb-28 transition-all duration-400 ease-in-out delay-100 ${
+                    isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-8 opacity-0"
+                }`}
+            >
                 {/* Mobile & Tablet: Vertical Layout (up to 1279px) */}
                 <div className="flex flex-col xl:hidden">
                     {/* Heading */}
