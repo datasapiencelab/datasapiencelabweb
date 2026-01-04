@@ -54,7 +54,7 @@ export const CAREER_CONTENT: CareerPageContent = {
         kicker: "A Place to Grow",
         headingPrefix:
             "At Data Sapience Lab, we believe innovation happens when",
-        headingAccent: "smart, curious people come together.",
+        headingAccent: "Smart, Curious People Come Together.",
         icons: {
             growth: "/assets/icons/battery-plus.svg",
             collaboration: "/assets/icons/handshake.svg",

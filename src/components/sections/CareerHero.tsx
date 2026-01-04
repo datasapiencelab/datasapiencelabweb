@@ -22,7 +22,7 @@ export default function CareerHero({
                 <div className="max-w-[1216px] mx-auto">
                     <div className="flex flex-col gap-6">
                         <div>
-                            <div className="flex flex-wrap items-baseline gap-3">
+                            <div className="pt-10 flex flex-wrap items-baseline gap-3">
                                 <h1 className="font-geist font-semibold text-[48px] leading-[52px] md:text-[72px] md:leading-[76px] lg:text-[96px] lg:leading-[96px] tracking-[-3px] text-neutral-primary">
                                     {titleLines.line1}
                                 </h1>
@@ -35,7 +35,7 @@ export default function CareerHero({
                             </h2>
                         </div>
 
-                        <p className="font-geist font-medium text-h6 tracking-[0.5px] text-neutral-tertiary max-w-[800px] md:ml-auto">
+                        <p className="font-geist font-thin sm:font-semibold text-h7 sm:text-h6 tracking-[0.5px] text-neutral-tertiary py-10 max-w-[800px] md:ml-auto">
                             {description}
                         </p>
 
