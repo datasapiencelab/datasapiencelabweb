@@ -1,10 +1,10 @@
-import ContactForm from "../components/sections/ContactForm";
+import ContactPageForm from "../components/sections/ContactPageForm";
 import ContactInfo from "../components/sections/ContactInfo";
 
 export default function ContactPage() {
     return (
         <div>
-            <ContactForm />
+            <ContactPageForm />
             <ContactInfo />
         </div>
     );
