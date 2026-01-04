@@ -23,14 +23,14 @@ export default function AboutHero() {
                     <div className="max-w-4xl flex flex-col gap-8">
                         {/* Title */}
                         <h1 className="text-4xl md:text-6xl lg:text-8xl mb-8 md:mb-12">
-                            <span className="text-zinc-900 font-geist font-bold">
+                            <span className="text-zinc-900 font-geist font-semibold">
                                 {hero.title.line1}{" "}
                             </span>
                             <span className="text-[#f2500d] font-engagement">
                                 {hero.title.accent}
                             </span>
                             <br />
-                            <span className="text-zinc-900 font-geist font-bold">
+                            <span className="text-zinc-900 font-geist font-semibold">
                                 {hero.title.line2}
                             </span>
                         </h1>

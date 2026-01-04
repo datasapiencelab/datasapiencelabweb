@@ -4,11 +4,11 @@ export default function ProjectsHero() {
             <div className="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
                 {/* Heading - Center Aligned */}
                 <div className="w-full flex flex-col items-center gap-4 sm:gap-6">
-                    <h1 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[0.9] text-zinc-900 tracking-[-2px] sm:tracking-[-3px] md:tracking-[-4px] lg:tracking-[-6px] xl:tracking-[-8px] font-['Geist'] text-center">
+                    <h1 className="font-semibold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[0.9] text-zinc-900 tracking-[-2px] sm:tracking-[-3px] md:tracking-[-4px] lg:tracking-[-6px] xl:tracking-[-8px] font-['Geist'] text-center">
                         Where Innovation
                     </h1>
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                        <h2 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[0.9] text-zinc-900 tracking-[-2px] sm:tracking-[-3px] md:tracking-[-4px] lg:tracking-[-6px] xl:tracking-[-8px] font-['Geist']">
+                        <h2 className="font-semibold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[0.9] text-zinc-900 tracking-[-2px] sm:tracking-[-3px] md:tracking-[-4px] lg:tracking-[-6px] xl:tracking-[-8px] font-['Geist']">
                             Meets
                         </h2>
                         <span className="font-['Engagement'] text-[60px] sm:text-[84px] md:text-[108px] lg:text-[144px] xl:text-[180px] leading-[0.9] text-brand-primary">
