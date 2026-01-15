@@ -140,3 +140,6 @@ build/Release
 .vscode-test
 
 .github
+
+# Netlify folder
+.netlify
