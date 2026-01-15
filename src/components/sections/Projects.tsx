@@ -23,10 +23,17 @@ interface ProjectCardProps {
     title: string;
     tags: string[];
     image: string;
+    slug: string;
     className?: string;
 }
 
-function ProjectCard({ title, tags, image, className = "" }: ProjectCardProps) {
+function ProjectCard({
+    title,
+    tags,
+    image,
+    slug,
+    className = "",
+}: ProjectCardProps) {
     return (
         <div
             className={`bg-white border border-zinc-200 p-3 sm:p-5 flex flex-col gap-3 sm:gap-5 ${className}`}
@@ -49,7 +56,12 @@ function ProjectCard({ title, tags, image, className = "" }: ProjectCardProps) {
                         ))}
                     </div>
                 </div>
-                <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
+                <button
+                    className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto"
+                    onClick={() => {
+                        window.location.href = `/projects/${slug}`;
+                    }}
+                >
                     <span className="text-brand-primary text-sm leading-5 sm:text-base sm:leading-6 font-semibold tracking-[0.5px] font-['Geist']">
                         View Details
                     </span>
@@ -76,6 +88,19 @@ function ProjectCard({ title, tags, image, className = "" }: ProjectCardProps) {
 
 export default function Projects() {
     const { projects } = HOME_CONTENT;
+
+    // Mapping project titles to slugs
+    const titleToSlugMap: Record<string, string> = {
+        Mastership: "mastership",
+        NovaAi: "novaai",
+    };
+
+    // Helper function to get slug from title
+    const getSlugFromTitle = (title: string): string => {
+        return (
+            titleToSlugMap[title] || title.toLowerCase().replace(/\s+/g, "-")
+        );
+    };
 
     return (
         <div className="relative bg-neutral-50 py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-8 lg:py-32 lg:px-28 z-20">
@@ -191,6 +216,7 @@ export default function Projects() {
                                 title={project.title}
                                 tags={project.tags}
                                 image={project.image}
+                                slug={getSlugFromTitle(project.title)}
                             />
                         ))}
                     </div>
@@ -202,6 +228,7 @@ export default function Projects() {
                             title={projects.items[0].title}
                             tags={projects.items[0].tags}
                             image={projects.items[0].image}
+                            slug={getSlugFromTitle(projects.items[0].title)}
                         />
 
                         {/* Project 2 */}
@@ -209,6 +236,7 @@ export default function Projects() {
                             title={projects.items[1].title}
                             tags={projects.items[1].tags}
                             image={projects.items[1].image}
+                            slug={getSlugFromTitle(projects.items[1].title)}
                         />
 
                         {/* Project 3 */}
@@ -216,6 +244,7 @@ export default function Projects() {
                             title={projects.items[3].title}
                             tags={projects.items[3].tags}
                             image={projects.items[3].image}
+                            slug={getSlugFromTitle(projects.items[3].title)}
                         />
 
                         {/* Project 4 */}
@@ -223,6 +252,7 @@ export default function Projects() {
                             title={projects.items[2].title}
                             tags={projects.items[2].tags}
                             image={projects.items[2].image}
+                            slug={getSlugFromTitle(projects.items[2].title)}
                         />
 
                         {/* Project 5 - Large featured project spanning full width */}
@@ -249,7 +279,14 @@ export default function Projects() {
                                         )}
                                     </div>
                                 </div>
-                                <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
+                                <button
+                                    className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto"
+                                    onClick={() => {
+                                        window.location.href = `/projects/${getSlugFromTitle(
+                                            projects.items[4].title
+                                        )}`;
+                                    }}
+                                >
                                     <span className="text-brand-primary text-sm leading-5 sm:text-base sm:leading-6 font-semibold tracking-[0.5px] font-['Geist']">
                                         View Details
                                     </span>

@@ -21,9 +21,10 @@ interface ProjectCardProps {
     title: string;
     tags: string[];
     image: string;
+    slug: string;
 }
 
-function ProjectCard({ title, tags, image }: ProjectCardProps) {
+function ProjectCard({ title, tags, image, slug }: ProjectCardProps) {
     return (
         <div className="bg-white border border-zinc-200 p-3 sm:p-5 flex flex-col gap-3 sm:gap-5 w-full">
             <div className="aspect-[640/442] sm:aspect-[16/9] w-full relative overflow-hidden">
@@ -44,7 +45,12 @@ function ProjectCard({ title, tags, image }: ProjectCardProps) {
                         ))}
                     </div>
                 </div>
-                <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
+                <button
+                    className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto"
+                    onClick={() => {
+                        window.location.href = `/projects/${slug}`;
+                    }}
+                >
                     <span className="text-brand-primary text-sm leading-5 sm:text-base sm:leading-6 font-semibold tracking-[0.5px] font-['Geist']">
                         View Details
                     </span>
@@ -72,6 +78,19 @@ function ProjectCard({ title, tags, image }: ProjectCardProps) {
 export default function ProjectsList() {
     const { projects } = HOME_CONTENT;
 
+    // Mapping project titles to slugs
+    const titleToSlugMap: Record<string, string> = {
+        Mastership: "mastership",
+        NovaAi: "novaai",
+    };
+
+    // Helper function to get slug from title
+    const getSlugFromTitle = (title: string): string => {
+        return (
+            titleToSlugMap[title] || title.toLowerCase().replace(/\s+/g, "-")
+        );
+    };
+
     // Project order for the page:
     // 1. Mastership item[1]
     // 2. NovaAI item[4]
@@ -93,6 +112,7 @@ export default function ProjectsList() {
                         title={project.title}
                         tags={project.tags}
                         image={project.image}
+                        slug={getSlugFromTitle(project.title)}
                     />
                 ))}
             </div>

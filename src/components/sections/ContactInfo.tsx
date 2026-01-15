@@ -163,7 +163,7 @@ const ContactInfo: React.FC = () => {
                         {/* Right Side - AI Brain Image */}
                         <div className="flex-1 bg-zinc-900 relative border border-solid border-zinc-800 min-h-[400px] overflow-hidden">
                             <img
-                                src="assets/images/home/hero-image.jpg"
+                                src="/assets/images/home/hero-image.jpg"
                                 alt="AI Brain Technology"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
@@ -188,7 +188,7 @@ const ContactInfo: React.FC = () => {
                         {/* AI Brain Image */}
                         <div className="bg-zinc-900 relative border border-solid border-zinc-800 w-full h-[300px] overflow-hidden">
                             <img
-                                src="assets/images/home/hero-image.jpg"
+                                src="/assets/images/home/hero-image.jpg"
                                 alt="AI Brain Technology"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

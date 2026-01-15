@@ -1,0 +1,250 @@
+{
+    "novaai": {
+        "id": "novaai",
+        "slug": "novaai",
+        "title": "NovaAi",
+        "description": "An AI-powered eCommerce assistant designed to help businesses boost engagement, streamline operations, and unlock higher conversion rates with intelligent automation.",
+        "kicker": "Introduction",
+        "year": "2025",
+        "industry": "E-Commerce",
+        "services": ["Machine Learning & AI", "UI/UX Strategy"],
+        "timeline": "12 Weeks",
+        "hero": {
+            "images": [
+                "/assets/images/project_details/novaai-hero-1.jpg",
+                "/assets/images/project_details/novaai-hero-2.jpg"
+            ]
+        },
+        "challenge": {
+            "kicker": "Challenge",
+            "title": "Building smarter shopping experiences",
+            "description": [
+                "E-commerce platforms faced mounting pressure to personalize shopping experiences at scale. Generic product recommendations led to low conversion rates, abandoned carts, and missed revenue opportunities. Customer support teams struggled to respond to complex queries instantly.",
+                "The challenge was building an AI assistant that could understand customer intent, provide accurate product recommendations, handle complex queries, and seamlessly integrate with existing e-commerce infrastructure while maintaining a natural conversational experience."
+            ],
+            "image": "/assets/images/project_details/novaai-challenge.jpg"
+        },
+        "keyFeatures": {
+            "kicker": "Key Features",
+            "features": [
+                {
+                    "number": "(01)",
+                    "title": "Intelligent Product Recommendations",
+                    "description": "ML-powered recommendation engine that analyzes browsing behavior, purchase history, and customer preferences to suggest the most relevant products in real-time."
+                },
+                {
+                    "number": "(02)",
+                    "title": "Natural Language Processing",
+                    "description": "Advanced NLP capabilities that understand complex customer queries, extract intent, and provide accurate responses in natural conversation."
+                },
+                {
+                    "number": "(03)",
+                    "title": "Smart Inventory Management",
+                    "description": "Predictive analytics that forecast demand, optimize stock levels, and prevent out-of-stock situations through intelligent data analysis."
+                },
+                {
+                    "number": "(04)",
+                    "title": "Seamless Platform Integration",
+                    "description": "Easy integration with major e-commerce platforms including Shopify, WooCommerce, and custom solutions through robust APIs."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/novaai-gallery.jpg"
+        },
+        "result": {
+            "kicker": "Result",
+            "title": "35% increase in conversion rate",
+            "description": [
+                "The AI assistant was successfully deployed across multiple e-commerce stores, handling over 500,000 customer interactions monthly. Average order value increased by 28%, while cart abandonment decreased by 42%.",
+                "Customer satisfaction scores improved to 4.6/5, and support ticket volume decreased by 60% as the AI handled routine queries autonomously. The platform generated $1.2M in additional revenue within the first quarter."
+            ]
+        }
+    },
+    "mastership": {
+        "id": "mastership",
+        "slug": "mastership",
+        "title": "Mastership",
+        "description": "A comprehensive learning management system that leverages artificial intelligence to personalize education and improve student outcomes through data-driven insights.",
+        "kicker": "Case Study",
+        "year": "2024",
+        "industry": "Education",
+        "services": ["Machine Learning & AI", "UI/UX Strategy"],
+        "timeline": "8 Months",
+        "hero": {
+            "images": [
+                "/assets/images/project_details/mastership-hero-1.jpg",
+                "/assets/images/project_details/mastership-hero-2.jpg"
+            ]
+        },
+        "challenge": {
+            "kicker": "Challenge",
+            "title": "Making Learning Personal at Scale",
+            "description": [
+                "Traditional learning management systems offer a one-size-fits-all approach that fails to address individual student needs, learning pace, and comprehension levels. Educational institutions struggled with:",
+                "Low student engagement, inability to track individual progress effectively, limited personalization capabilities, and difficulty identifying at-risk students early enough to intervene."
+            ],
+            "image": "/assets/images/project_details/mastership-challenge.jpg"
+        },
+        "keyFeatures": {
+            "kicker": "Key Features",
+            "features": [
+                {
+                    "number": "(01)",
+                    "title": "AI-Powered Personalization Engine",
+                    "description": "Dynamic content adaptation based on student performance, learning style, and engagement patterns."
+                },
+                {
+                    "number": "(02)",
+                    "title": "Real-Time Analytics Dashboard",
+                    "description": "Comprehensive insights for educators to track student progress and identify intervention opportunities."
+                },
+                {
+                    "number": "(03)",
+                    "title": "Adaptive Assessment System",
+                    "description": "Intelligent testing that adjusts difficulty based on student responses to accurately measure knowledge."
+                },
+                {
+                    "number": "(04)",
+                    "title": "Collaborative Learning Spaces",
+                    "description": "Interactive environments that foster peer-to-peer learning and knowledge sharing."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/mastership-gallery.jpg"
+        },
+        "result": {
+            "kicker": "Result",
+            "title": "40% improvement in student engagement metrics",
+            "description": [
+                "The platform was successfully deployed across 50+ educational institutions, serving over 100,000 students. Key outcomes included improved student engagement, better learning outcomes, and enhanced teacher efficiency.",
+                "Student satisfaction scores increased by 65%, while teacher productivity improved by 35% through automated grading and progress tracking."
+            ]
+        }
+    },
+    "datainsight": {
+        "id": "datainsight",
+        "slug": "datainsight",
+        "title": "DataInsight",
+        "description": "A powerful analytics platform that converts complex datasets into actionable insights through advanced visualization and predictive modeling.",
+        "kicker": "Case Study",
+        "year": "2024",
+        "industry": "Retail",
+        "services": ["ML Models", "AI Chatbots", "Mobile App", "Data Insights"],
+        "timeline": "7 Months",
+        "hero": {
+            "images": [
+                "/assets/images/project_details/datainsight-hero-1.jpg",
+                "/assets/images/project_details/datainsight-hero-2.jpg"
+            ]
+        },
+        "challenge": {
+            "kicker": "Challenge",
+            "title": "Bridging the Gap Between Data and Decisions",
+            "description": [
+                "Organizations collected massive amounts of data but struggled to extract meaningful insights. Data silos across departments prevented holistic analysis, while complex tools required specialized expertise.",
+                "Business stakeholders couldn't access insights in real-time, leading to delayed decisions and missed opportunities. The challenge was democratizing data access while maintaining accuracy and security."
+            ],
+            "image": "/assets/images/project_details/datainsight-challenge.jpg"
+        },
+        "keyFeatures": {
+            "kicker": "Key Features",
+            "features": [
+                {
+                    "number": "(01)",
+                    "title": "Unified Data Integration Layer",
+                    "description": "Connects disparate data sources into a single source of truth with automated cleaning and normalization."
+                },
+                {
+                    "number": "(02)",
+                    "title": "Predictive Analytics Engine",
+                    "description": "Machine learning models that forecast trends, identify patterns, and recommend actions."
+                },
+                {
+                    "number": "(03)",
+                    "title": "Interactive Visualization Suite",
+                    "description": "Intuitive dashboards and charts that make complex data accessible to non-technical users."
+                },
+                {
+                    "number": "(04)",
+                    "title": "Natural Language Query Interface",
+                    "description": "Ask questions in plain English and receive instant insights without writing complex queries."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/datainsight-gallery.jpg"
+        },
+        "result": {
+            "kicker": "Result",
+            "title": "3x faster data-driven decision making",
+            "description": [
+                "The platform enabled real-time business intelligence across all organizational levels. Data analysis time decreased from days to minutes, while the number of users accessing analytics increased by 400%.",
+                "Strategic decisions now backed by data insights led to a 28% improvement in operational efficiency and identified $2.5M in annual cost savings."
+            ]
+        }
+    },
+    "healthtrack": {
+        "id": "healthtrack",
+        "slug": "healthtrack",
+        "title": "HealthTrack",
+        "description": "An intelligent health monitoring system that uses machine learning to predict patient risks and optimize care delivery.",
+        "kicker": "Case Study",
+        "year": "2024",
+        "industry": "Healthcare",
+        "services": ["Machine Learning & AI", "UI/UX Strategy"],
+        "timeline": "12 Months",
+        "hero": {
+            "images": [
+                "/assets/images/project_details/healthtrack-hero-1.jpg",
+                "/assets/images/project_details/healthtrack-hero-2.jpg"
+            ]
+        },
+        "challenge": {
+            "kicker": "Challenge",
+            "title": "Proactive Healthcare Through Predictive Intelligence",
+            "description": [
+                "Healthcare providers operated reactively, treating conditions after symptoms appeared. Patient data was fragmented across systems, making it difficult to identify risk patterns early.",
+                "Care teams lacked tools to prioritize high-risk patients, leading to preventable complications and hospital readmissions. The goal was shifting from reactive treatment to proactive prevention through intelligent data analysis."
+            ],
+            "image": "/assets/images/project_details/healthtrack-challenge.jpg"
+        },
+        "keyFeatures": {
+            "kicker": "Key Features",
+            "features": [
+                {
+                    "number": "(01)",
+                    "title": "Risk Prediction Algorithm",
+                    "description": "ML models that analyze patient data to predict potential health complications before they occur."
+                },
+                {
+                    "number": "(02)",
+                    "title": "Patient Journey Mapping",
+                    "description": "Comprehensive view of patient history, treatments, and outcomes for informed care decisions."
+                },
+                {
+                    "number": "(03)",
+                    "title": "Care Coordination Dashboard",
+                    "description": "Centralized platform for care teams to collaborate and track patient progress in real-time."
+                },
+                {
+                    "number": "(04)",
+                    "title": "Automated Alert System",
+                    "description": "Intelligent notifications that flag critical changes in patient conditions requiring immediate attention."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/healthtrack-gallery.jpg"
+        },
+        "result": {
+            "kicker": "Result",
+            "title": "45% reduction in preventable readmissions",
+            "description": [
+                "The system is now actively used by 200+ healthcare providers, monitoring over 500,000 patients. Early intervention alerts prevented thousands of complications, while care coordination improved significantly.",
+                "Patient outcomes improved with a 35% reduction in emergency visits, and care teams reported 50% better efficiency in managing high-risk patient populations."
+            ]
+        }
+    }
+}
