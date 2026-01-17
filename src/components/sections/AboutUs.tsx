@@ -136,7 +136,7 @@ export default function AboutUs() {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-zinc-100 z-20 h-[220vh] sm:h-[260vh] md:h-[320vh] lg:h-[350vh]"
+            className="relative bg-zinc-100 z-20 h-[220vh] sm:h-[240vh] md:h-[260vh] lg:h-[280vh]"
         >
             {/* Sticky container that holds all animated content - z-10 to stay above CTA */}
             <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center z-10">
