@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Spark from "../ui/Spark";
 import { ABOUT_CONTENT } from "../../content/about";
 
 export default function AboutCTA() {
@@ -8,24 +7,10 @@ export default function AboutCTA() {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32">
+        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32 -mt-48 lg:-mt-28">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-12 md:gap-16">
-                    {/* Description with Spark */}
-                    <div className="text-center max-w-4xl px-4">
-                        <div className="flex items-start justify-center gap-3 mb-8">
-                            <Spark />
-                            <p className="text-lg md:text-xl lg:text-2xl font-geist text-zinc-900 leading-relaxed text-left max-w-2xl">
-                                We help businesses move from
-                                <br />
-                                Raw Datasets to powerful, intuitive applications
-                                <br />
-                                designed to grow with confidence.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Team Image */}
+                    {/* Image with cta button card */}
                     <div className="relative max-w-4xl w-full">
                         <div className="bg-zinc-100 p-4 md:p-7 border-4 md:border-8 border-white">
                             <img
