@@ -51,7 +51,7 @@ export default function Button({
                     height="20"
                     viewBox="0 0 20 20"
                     fill="none"
-                    className="rotate-45"
+                    className="-rotate-45"
                 >
                     <path
                         d="M4 10h12m-6-6l6 6-6 6"
