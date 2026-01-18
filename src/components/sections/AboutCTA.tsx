@@ -7,7 +7,7 @@ export default function AboutCTA() {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32 -mt-48 lg:-mt-28">
+        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32 -mt-80 lg:-mt-28">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-12 md:gap-16">
                     {/* Image with cta button card */}
