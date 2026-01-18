@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ABOUT_CONTENT } from "../../content/about";
 
@@ -87,7 +88,27 @@ export default function AboutCTA() {
                         </div>
                     </div>
 
-                    {/* Description and CTA removed from bottom */}
+                    {/* Description and CTA */}
+                    <div className="max-w-4xl w-full flex flex-col items-center gap-6 md:gap-8">
+                        <p className="text-center text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+                            <span className="text-[#AAAAB3]">
+                                We solve the right problems, not just build
+                                products by{" "}
+                            </span>
+                            <span className="text-[#18181B]">
+                                Combining Research, Strategy , & Design
+                            </span>
+                            <span className="text-[#AAAAB3]">
+                                , we ensure your solutions are not only
+                                intuitive and scalable, but also aligned with
+                                your{" "}
+                            </span>
+                            <span className="text-[#18181B]">
+                                Business Goals.
+                            </span>
+                        </p>
+                        <Button>View Our Works</Button>
+                    </div>
                 </div>
             </div>
         </section>
