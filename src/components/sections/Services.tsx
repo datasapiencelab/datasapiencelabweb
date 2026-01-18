@@ -192,8 +192,8 @@ export default function Services() {
                                 </span>
                             </div>
                             <div className="lg:col-span-2">
-                                <h2 className="text-2xl md:text-4xl lg:text-h1 font-medium text-zinc-100 leading-tight">
-                                    <span>
+                                <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium text-zinc-100 leading-tight">
+                                    <span className="font-semibold font-geist">
                                         {servicesContent.heading.prefix}
                                     </span>
                                     <span className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide">
@@ -334,7 +334,7 @@ export default function Services() {
                 {/* Partners Section */}
                 <div>
                     {/* Partners Header */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24 mb-12 md:mb-16 lg:mb-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-12 md:mb-16 lg:mb-20">
                         <div className="flex items-center gap-2.5">
                             <Spark />
                             <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">

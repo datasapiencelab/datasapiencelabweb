@@ -195,7 +195,7 @@ export const HOME_CONTENT: HomePageContent = {
         kicker: "Our Expertise.",
         heading: {
             prefix: "Transform your data Into ",
-            accent: "Growth opportunities.",
+            accent: "Growth Opportunities.",
         },
         items: [
             { number: "(01)", title: "Machine Learning & AI" },
