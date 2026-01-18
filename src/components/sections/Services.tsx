@@ -2,12 +2,25 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Spark from "../ui/Spark";
 import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
+import {
+    BrainCircuit,
+    ChartNoAxesCombined,
+    CodeXml,
+    Component,
+} from "lucide-react";
 
-const brainIconSrc = "assets/icons/brain-icon.svg";
+// const brainIconSrc = "assets/icons/brain-icon.svg";
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(max, Math.max(min, value));
 }
+
+const iconMap: Record<string, React.ElementType> = {
+    "brain-circuit": BrainCircuit,
+    "chart-no-axes-combined": ChartNoAxesCombined,
+    "code-xml": CodeXml,
+    component: Component,
+};
 
 interface ServiceItemProps {
     number: string;
@@ -174,6 +187,9 @@ export default function Services() {
         );
     }, [desktopProgress, isDesktop]);
 
+    const activeItem = servicesContent.items[activeService];
+    const ActiveIcon = iconMap[activeItem.icon] || BrainCircuit;
+
     return (
         <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">
             <div className="max-w-7xl mx-auto">
@@ -208,7 +224,7 @@ export default function Services() {
                             {/* Services Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
                                 {/* Services List */}
-                                <div className="space-y-0 lg:self-start">
+                                <div className="space-y-0 flex flex-col h-full">
                                     {servicesContent.items.map(
                                         (service, index) => (
                                             <ServiceItem
@@ -218,15 +234,14 @@ export default function Services() {
                                                 isActive={
                                                     activeService === index
                                                 }
-                                                onClick={() => {
-                                                    if (!isDesktop)
-                                                        setActiveService(index);
-                                                }}
+                                                onClick={() =>
+                                                    setActiveService(index)
+                                                }
                                             />
                                         ),
                                     )}
 
-                                    <div className="pt-6">
+                                    <div className="pt-6 mt-auto">
                                         <Button
                                             variant="primary"
                                             size="large"
@@ -238,29 +253,24 @@ export default function Services() {
                                 </div>
 
                                 {/* Service Detail Card */}
-                                <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden">
+                                <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden h-[500px] lg:h-auto">
                                     <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                                         {/* Content */}
-                                        <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between">
+                                        <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between relative z-10 h-full">
                                             <div>
-                                                <div className="w-8 h-8 mb-4">
-                                                    <img
-                                                        src={brainIconSrc}
-                                                        alt="AI Brain"
+                                                <div className="w-8 h-8 mb-4 text-[#FAFAFA]">
+                                                    <ActiveIcon
+                                                        strokeWidth={1.5}
                                                         className="w-full h-full"
                                                     />
                                                 </div>
 
                                                 <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
-                                                    {
-                                                        servicesContent
-                                                            .serviceDetail
-                                                            .description
-                                                    }
+                                                    {activeItem.description}
                                                 </p>
 
                                                 <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
-                                                    {servicesContent.serviceDetail.tags.map(
+                                                    {activeItem.tags.map(
                                                         (tag, index) => (
                                                             <ServiceTag
                                                                 key={index}
@@ -294,14 +304,11 @@ export default function Services() {
                                         </div>
 
                                         {/* Image */}
-                                        <div className="relative h-64 md:h-full">
+                                        <div className="relative h-64 md:h-full w-full">
                                             <img
-                                                src={
-                                                    servicesContent
-                                                        .serviceDetail.image
-                                                }
-                                                alt="AI Technology"
-                                                className="w-full h-full object-cover"
+                                                src={activeItem.image}
+                                                alt={activeItem.title}
+                                                className="absolute inset-0 w-full h-full object-cover"
                                             />
                                         </div>
                                     </div>

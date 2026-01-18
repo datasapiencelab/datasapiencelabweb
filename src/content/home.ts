@@ -1,6 +1,10 @@
 export type ServiceItem = {
     number: string;
     title: string;
+    icon: string;
+    description: string;
+    tags: ServiceTag[];
+    image: string;
 };
 
 export type ServiceTag = {
@@ -88,11 +92,6 @@ export type HomePageContent = {
             accent: string;
         };
         items: ServiceItem[];
-        serviceDetail: {
-            image: string;
-            description: string;
-            tags: ServiceTag[];
-        };
         timing: {
             icon: string;
             text: string;
@@ -150,10 +149,38 @@ export const HOME_CONTENT: HomePageContent = {
             line3: "efficiency, and long-term impact.",
         },
         services: [
-            { number: "(01)", title: "Machine Learning & AI" },
-            { number: "(02)", title: "Data Analytics & Visualization" },
-            { number: "(03)", title: "End-to-End Development" },
-            { number: "(04)", title: "UI/UX Strategy" },
+            {
+                number: "(01)",
+                title: "Machine Learning & AI",
+                icon: "",
+                description: "",
+                tags: [],
+                image: "",
+            },
+            {
+                number: "(02)",
+                title: "Data Analytics & Visualization",
+                icon: "",
+                description: "",
+                tags: [],
+                image: "",
+            },
+            {
+                number: "(03)",
+                title: "End-to-End Development",
+                icon: "",
+                description: "",
+                tags: [],
+                image: "",
+            },
+            {
+                number: "(04)",
+                title: "UI/UX Strategy",
+                icon: "",
+                description: "",
+                tags: [],
+                image: "",
+            },
         ],
         cta: {
             text: "Let's Build Something Great",
@@ -198,23 +225,68 @@ export const HOME_CONTENT: HomePageContent = {
             accent: "Growth Opportunities.",
         },
         items: [
-            { number: "(01)", title: "Machine Learning & AI" },
-            { number: "(02)", title: "Data Analytics & Visualization" },
-            { number: "(03)", title: "End-to-End Development" },
-            { number: "(04)", title: "UI/UX Strategy" },
+            {
+                number: "(01)",
+                title: "Machine Learning & AI",
+                icon: "brain-circuit",
+                description:
+                    "Custom AI models, automation, and chatbots that drive efficiency.",
+                tags: [
+                    { label: "ML Models" },
+                    { label: "AI Chatbot" },
+                    { label: "NLP" },
+                    { label: "Automation" },
+                    { label: "Recommendation Engine" },
+                ],
+                image: "assets/images/home/services-content-image/img1.jpg",
+            },
+            {
+                number: "(02)",
+                title: "Data Analytics & Visualization",
+                icon: "chart-no-axes-combined",
+                description:
+                    "Transform raw data into dashboards, reports, and predictive insights.",
+                tags: [
+                    { label: "Dashboards" },
+                    { label: "Predictive Insights" },
+                    { label: "Real-Time Reporting" },
+                    { label: "Data Pipeline Setup" },
+                ],
+                image: "assets/images/home/services-content-image/img2.jpg",
+            },
+            {
+                number: "(03)",
+                title: "End-to-End Development",
+                icon: "code-xml",
+                description:
+                    "Scalable apps and platforms, built for speed and growth.",
+                tags: [
+                    { label: "Website" },
+                    { label: "Web App" },
+                    { label: "Cloud & DevOps" },
+                    { label: "MVP" },
+                    { label: "Mobile App" },
+                    { label: "API & Integrations" },
+                ],
+                image: "assets/images/home/services-content-image/img3.jpg",
+            },
+            {
+                number: "(04)",
+                title: "UI/UX Strategy",
+                icon: "component",
+                description:
+                    "User-centered digital experiences, for clarity, usability, and scale.",
+                tags: [
+                    { label: "User Research" },
+                    { label: "Wireframes" },
+                    { label: "Design Systems" },
+                    { label: "Responsive Design" },
+                    { label: "Prototyping" },
+                    { label: "Usability testing" },
+                ],
+                image: "assets/images/home/services-content-image/img4.jpg",
+            },
         ],
-        serviceDetail: {
-            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-            description:
-                "Custom AI models, automation, and chatbots that drive efficiency.",
-            tags: [
-                { label: "ML Models" },
-                { label: "AI Chatbot" },
-                { label: "NLP" },
-                { label: "Automation" },
-                { label: "Recommendation Engine" },
-            ],
-        },
         timing: {
             icon: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z' stroke='%239f9fa9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 6V10L13 13' stroke='%239f9fa9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
             text: "2 - 4 Weeks",
@@ -230,6 +302,7 @@ export const HOME_CONTENT: HomePageContent = {
             "Puma",
             "Adobe",
             "Puma",
+            "Stripe",
             "Stripe",
         ],
         cta: {
