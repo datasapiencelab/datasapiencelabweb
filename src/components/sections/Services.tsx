@@ -138,7 +138,7 @@ export default function Services() {
             const nextActive = clamp(
                 Math.floor(progress * servicesContent.items.length + 1e-6),
                 0,
-                servicesContent.items.length - 1
+                servicesContent.items.length - 1,
             );
             setActiveService(nextActive);
         };
@@ -170,7 +170,7 @@ export default function Services() {
         const totalSegments = 3;
         const segmentProgress = clamp(desktopProgress * totalSegments, 0, 3);
         return Array.from({ length: totalSegments }, (_, index) =>
-            clamp(segmentProgress - index, 0, 1)
+            clamp(segmentProgress - index, 0, 1),
         );
     }, [desktopProgress, isDesktop]);
 
@@ -180,125 +180,138 @@ export default function Services() {
                 {/* Services Section (desktop: sticky scroll) */}
                 <div
                     ref={scrollAreaRef}
-                    className="relative mb-16 md:mb-20 lg:mb-24 lg:h-[400vh]"
+                    className="relative mb-16 md:mb-20 lg:mb-0 lg:h-[400vh]"
                 >
-                    <div className="lg:sticky lg:top-12 lg:max-h-[calc(100vh-6rem)]">
-                        {/* Header */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-20 lg:mb-12">
-                            <div className="flex items-center gap-2.5">
-                                <Spark />
-                                <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
-                                    {servicesContent.kicker}
-                                </span>
-                            </div>
-                            <div className="lg:col-span-2">
-                                <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium text-zinc-100 leading-tight">
-                                    <span className="font-semibold font-geist">
-                                        {servicesContent.heading.prefix}
+                    <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
+                        <div className="hidden lg:block lg:flex-1"></div>
+                        <div>
+                            {/* Header */}
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-20 lg:mb-12">
+                                <div className="flex gap-2.5 text-[#FAFAFA]">
+                                    <Spark />
+                                    <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
+                                        {servicesContent.kicker}
                                     </span>
-                                    <span className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide">
-                                        {servicesContent.heading.accent}
-                                    </span>
-                                </h2>
-                            </div>
-                        </div>
-
-                        {/* Services Content */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
-                            {/* Services List */}
-                            <div className="space-y-0 lg:self-start">
-                                {servicesContent.items.map((service, index) => (
-                                    <ServiceItem
-                                        key={index}
-                                        number={service.number}
-                                        title={service.title}
-                                        isActive={activeService === index}
-                                        onClick={() => {
-                                            if (!isDesktop)
-                                                setActiveService(index);
-                                        }}
-                                    />
-                                ))}
-
-                                <div className="pt-6">
-                                    <Button
-                                        variant="primary"
-                                        size="large"
-                                        className="w-full lg:w-auto"
-                                    >
-                                        {servicesContent.cta.text}
-                                    </Button>
+                                </div>
+                                <div className="lg:col-span-2">
+                                    <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium text-zinc-100 leading-tight">
+                                        <span className="font-semibold font-geist">
+                                            {servicesContent.heading.prefix}
+                                        </span>
+                                        <span className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide">
+                                            {servicesContent.heading.accent}
+                                        </span>
+                                    </h2>
                                 </div>
                             </div>
 
-                            {/* Service Detail Card */}
-                            <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden">
-                                <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                                    {/* Content */}
-                                    <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between">
-                                        <div>
-                                            <div className="w-8 h-8 mb-4">
-                                                <img
-                                                    src={brainIconSrc}
-                                                    alt="AI Brain"
-                                                    className="w-full h-full"
-                                                />
-                                            </div>
-
-                                            <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
-                                                {
-                                                    servicesContent
-                                                        .serviceDetail
-                                                        .description
+                            {/* Services Content */}
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+                                {/* Services List */}
+                                <div className="space-y-0 lg:self-start">
+                                    {servicesContent.items.map(
+                                        (service, index) => (
+                                            <ServiceItem
+                                                key={index}
+                                                number={service.number}
+                                                title={service.title}
+                                                isActive={
+                                                    activeService === index
                                                 }
-                                            </p>
+                                                onClick={() => {
+                                                    if (!isDesktop)
+                                                        setActiveService(index);
+                                                }}
+                                            />
+                                        ),
+                                    )}
 
-                                            <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
-                                                {servicesContent.serviceDetail.tags.map(
-                                                    (tag, index) => (
-                                                        <ServiceTag
-                                                            key={index}
-                                                            label={tag.label}
-                                                        />
-                                                    )
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-5 h-5">
-                                                <img
-                                                    src={
-                                                        servicesContent.timing
-                                                            .icon
-                                                    }
-                                                    alt="Time"
-                                                    className="w-full h-full"
-                                                />
-                                            </div>
-                                            <span className="text-base md:text-lg text-neutral-disable">
-                                                {servicesContent.timing.text}
-                                            </span>
-                                        </div>
+                                    <div className="pt-6">
+                                        <Button
+                                            variant="primary"
+                                            size="large"
+                                            className="w-full lg:w-auto"
+                                        >
+                                            {servicesContent.cta.text}
+                                        </Button>
                                     </div>
+                                </div>
 
-                                    {/* Image */}
-                                    <div className="relative h-64 md:h-full">
-                                        <img
-                                            src={
-                                                servicesContent.serviceDetail
-                                                    .image
-                                            }
-                                            alt="AI Technology"
-                                            className="w-full h-full object-cover"
-                                        />
+                                {/* Service Detail Card */}
+                                <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+                                        {/* Content */}
+                                        <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between">
+                                            <div>
+                                                <div className="w-8 h-8 mb-4">
+                                                    <img
+                                                        src={brainIconSrc}
+                                                        alt="AI Brain"
+                                                        className="w-full h-full"
+                                                    />
+                                                </div>
+
+                                                <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
+                                                    {
+                                                        servicesContent
+                                                            .serviceDetail
+                                                            .description
+                                                    }
+                                                </p>
+
+                                                <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
+                                                    {servicesContent.serviceDetail.tags.map(
+                                                        (tag, index) => (
+                                                            <ServiceTag
+                                                                key={index}
+                                                                label={
+                                                                    tag.label
+                                                                }
+                                                            />
+                                                        ),
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-5 h-5">
+                                                    <img
+                                                        src={
+                                                            servicesContent
+                                                                .timing.icon
+                                                        }
+                                                        alt="Time"
+                                                        className="w-full h-full"
+                                                    />
+                                                </div>
+                                                <span className="text-base md:text-lg text-neutral-disable">
+                                                    {
+                                                        servicesContent.timing
+                                                            .text
+                                                    }
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* Image */}
+                                        <div className="relative h-64 md:h-full">
+                                            <img
+                                                src={
+                                                    servicesContent
+                                                        .serviceDetail.image
+                                                }
+                                                alt="AI Technology"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div className="hidden lg:block lg:flex-1"></div>
 
                         {/* Separator/timeline */}
-                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-8">
+                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-0 text-neutral-tertiary">
                             <Spark />
                             <div className="flex-1 h-px bg-neutral-tertiary relative overflow-hidden">
                                 <div
@@ -328,6 +341,7 @@ export default function Services() {
                             </div>
                             <Spark />
                         </div>
+                        <div className="hidden lg:block lg:flex-1"></div>
                     </div>
                 </div>
 
@@ -335,7 +349,7 @@ export default function Services() {
                 <div>
                     {/* Partners Header */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-12 md:mb-16 lg:mb-20">
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex gap-2.5 text-neutral-inverse">
                             <Spark />
                             <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
                                 Meet Our Partners
