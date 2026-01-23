@@ -102,6 +102,63 @@ function PartnerLogo({ name, isButton = false }: PartnerLogoProps) {
     );
 }
 
+interface ServiceDetailContentProps {
+    item: (typeof HOME_CONTENT.services.items)[0];
+    timing: typeof HOME_CONTENT.services.timing;
+}
+
+function ServiceDetailContent({ item, timing }: ServiceDetailContentProps) {
+    const ActiveIcon = iconMap[item.icon] || BrainCircuit;
+
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+            {/* Content */}
+            <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between relative z-10 h-full">
+                <div>
+                    <div className="w-8 h-8 mb-4 text-[#FAFAFA]">
+                        <ActiveIcon
+                            strokeWidth={1.5}
+                            className="w-full h-full"
+                        />
+                    </div>
+
+                    <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
+                        {item.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
+                        {item.tags.map((tag, index) => (
+                            <ServiceTag key={index} label={tag.label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <div className="w-5 h-5">
+                        <img
+                            src={timing.icon}
+                            alt="Time"
+                            className="w-full h-full"
+                        />
+                    </div>
+                    <span className="text-base md:text-lg text-neutral-disable">
+                        {timing.text}
+                    </span>
+                </div>
+            </div>
+
+            {/* Image */}
+            <div className="relative h-64 md:h-full w-full">
+                <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </div>
+        </div>
+    );
+}
+
 export default function Services() {
     const [activeService, setActiveService] = useState(0);
     const [desktopProgress, setDesktopProgress] = useState(0);
@@ -227,21 +284,42 @@ export default function Services() {
                                 <div className="space-y-0 flex flex-col h-full">
                                     {servicesContent.items.map(
                                         (service, index) => (
-                                            <ServiceItem
+                                            <div
                                                 key={index}
-                                                number={service.number}
-                                                title={service.title}
-                                                isActive={
-                                                    activeService === index
-                                                }
-                                                onClick={() =>
-                                                    setActiveService(index)
-                                                }
-                                            />
+                                                className="flex flex-col"
+                                            >
+                                                <ServiceItem
+                                                    number={service.number}
+                                                    title={service.title}
+                                                    isActive={
+                                                        activeService === index
+                                                    }
+                                                    onClick={() =>
+                                                        setActiveService(index)
+                                                    }
+                                                />
+                                                {/* Mobile Accordion Content */}
+                                                <div
+                                                    className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+                                                        activeService === index
+                                                            ? "max-h-[1000px] opacity-100 mb-8"
+                                                            : "max-h-0 opacity-0"
+                                                    }`}
+                                                >
+                                                    <div className="bg-zinc-900 border border-zinc-800">
+                                                        <ServiceDetailContent
+                                                            item={service}
+                                                            timing={
+                                                                servicesContent.timing
+                                                            }
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         ),
                                     )}
 
-                                    <div className="pt-6 mt-auto">
+                                    <div className="pt-6 mt-auto hidden lg:block">
                                         <Button
                                             variant="primary"
                                             size="large"
@@ -250,68 +328,23 @@ export default function Services() {
                                             {servicesContent.cta.text}
                                         </Button>
                                     </div>
+                                    <div className="pt-6 lg:hidden">
+                                        <Button
+                                            variant="primary"
+                                            size="large"
+                                            className="w-full"
+                                        >
+                                            {servicesContent.cta.text}
+                                        </Button>
+                                    </div>
                                 </div>
 
-                                {/* Service Detail Card */}
-                                <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden h-[500px] lg:h-auto">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                                        {/* Content */}
-                                        <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between relative z-10 h-full">
-                                            <div>
-                                                <div className="w-8 h-8 mb-4 text-[#FAFAFA]">
-                                                    <ActiveIcon
-                                                        strokeWidth={1.5}
-                                                        className="w-full h-full"
-                                                    />
-                                                </div>
-
-                                                <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
-                                                    {activeItem.description}
-                                                </p>
-
-                                                <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
-                                                    {activeItem.tags.map(
-                                                        (tag, index) => (
-                                                            <ServiceTag
-                                                                key={index}
-                                                                label={
-                                                                    tag.label
-                                                                }
-                                                            />
-                                                        ),
-                                                    )}
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-5 h-5">
-                                                    <img
-                                                        src={
-                                                            servicesContent
-                                                                .timing.icon
-                                                        }
-                                                        alt="Time"
-                                                        className="w-full h-full"
-                                                    />
-                                                </div>
-                                                <span className="text-base md:text-lg text-neutral-disable">
-                                                    {
-                                                        servicesContent.timing
-                                                            .text
-                                                    }
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Image */}
-                                        <div className="relative h-64 md:h-full w-full">
-                                            <img
-                                                src={activeItem.image}
-                                                alt={activeItem.title}
-                                                className="absolute inset-0 w-full h-full object-cover"
-                                            />
-                                        </div>
-                                    </div>
+                                {/* Service Detail Card (Desktop) */}
+                                <div className="hidden lg:block lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden h-[500px] lg:h-auto">
+                                    <ServiceDetailContent
+                                        item={activeItem}
+                                        timing={servicesContent.timing}
+                                    />
                                 </div>
                             </div>
                         </div>
