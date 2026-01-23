@@ -1,8 +1,11 @@
 import Spark from "../ui/Spark";
+import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
 
 // Carl character SVG
-const carlCharacter = "assets/icons/Carl.svg";
+// Desktop and Mobile SVGs
+const desktopHeader = "assets/icons/insight&innovation-desktop.svg";
+const mobileHeader = "assets/icons/insight&innovation-mobile.svg";
 
 interface ProjectTagProps {
     children: React.ReactNode;
@@ -49,26 +52,9 @@ function ProjectCard({ title, tags, image, className = "" }: ProjectCardProps) {
                         ))}
                     </div>
                 </div>
-                <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
-                    <span className="text-brand-primary text-sm leading-5 sm:text-base sm:leading-6 font-semibold tracking-[0.5px] font-['Geist']">
-                        View Details
-                    </span>
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
-                        <svg
-                            className="w-full h-full"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                        >
-                            <path
-                                d="m8 6 4 4-4 4"
-                                stroke="#f2500d"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                    </div>
-                </button>
+                <Button variant="outline" showArrow>
+                    View Details
+                </Button>
             </div>
         </div>
     );
@@ -82,36 +68,32 @@ export default function Projects() {
             <div className="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-12 lg:gap-16">
                 {/* Header Section */}
                 <div className="w-full flex flex-col gap-4 sm:gap-8 lg:gap-12">
-                    {/* Mobile: Badge first, then title on same line */}
+                    {/* Mobile: Left aligned with kicker and svg */}
                     <div className="block sm:hidden">
-                        {/* Badge */}
-                        <div className="flex gap-1.5 items-center justify-center mb-3">
-                            <div className="w-5 h-5 flex items-center justify-center">
-                                <Spark />
+                        <div className="flex flex-col items-start gap-4">
+                            {/* Kicker */}
+                            <div className="flex gap-1.5 items-center">
+                                <div className="w-5 h-5 flex items-center justify-center">
+                                    <Spark />
+                                </div>
+                                <span className="text-xs leading-5 text-zinc-900 tracking-[0.5px] font-['Geist']">
+                                    {projects.kicker}
+                                </span>
                             </div>
-                            <span className="text-xs leading-5 text-zinc-900 tracking-[0.5px] font-['Geist']">
-                                {projects.kicker}
-                            </span>
-                        </div>
-                        {/* Mobile Title - Insight & always together, Innovation can wrap */}
-                        <div className="flex flex-wrap items-center justify-center">
-                            <h1 className="font-semibold text-[40px] leading-12 text-zinc-900 tracking-[-1px] font-['Geist']">
-                                {projects.heading.word1}
-                            </h1>
-                            <span className="font-['Engagement'] text-[60px] leading-12 text-brand-primary mx-5">
-                                {projects.heading.accent}
-                            </span>
-                            <h2 className="font-semibold text-[40px] leading-12 text-zinc-900 tracking-[-1px] font-['Geist']">
-                                {projects.heading.word2}
-                            </h2>
+                            {/* Mobile Title SVG */}
+                            <img
+                                src={mobileHeader}
+                                alt={`${projects.heading.word1} & ${projects.heading.word2}`}
+                                className="w-full h-auto"
+                            />
                         </div>
                     </div>
 
-                    {/* Desktop: Layout with Carl between Insight and Innovation */}
-                    <div className="hidden sm:flex sm:flex-col">
-                        {/* Badge Row */}
-                        <div className="w-full flex justify-end mb-4">
-                            <div className="flex gap-2.5 items-center">
+                    {/* Desktop: Centered SVG with absolute positioning for Kicker */}
+                    <div className="hidden sm:flex justify-center w-full">
+                        <div className="relative inline-block">
+                            {/* Badge/Kicker - Absolute Top Right Inside */}
+                            <div className="absolute top-0 right-0 flex gap-2.5 items-center z-10 p-2">
                                 <div className="w-6 h-6 lg:w-7 lg:h-7 flex items-center justify-center">
                                     <Spark />
                                 </div>
@@ -119,28 +101,13 @@ export default function Projects() {
                                     {projects.kicker}
                                 </span>
                             </div>
-                        </div>
 
-                        {/* Title Row - Insight, Carl, Innovation */}
-                        <div className="w-full flex items-center justify-between relative">
-                            {/* Insight */}
-                            <h1 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] 2xl:text-[144px] leading-[0.9] text-zinc-900 tracking-[-3px] sm:tracking-[-4px] md:tracking-[-6px] lg:tracking-[-8px] xl:tracking-[-10px] font-['Geist'] flex-shrink-0">
-                                {projects.heading.word1}
-                            </h1>
-
-                            {/* Carl Character - Always show between titles */}
-                            <div className="flex items-center justify-center mx-5 flex-shrink-0">
-                                <img
-                                    src={carlCharacter}
-                                    alt="Carl Character"
-                                    className="w-[60px] sm:w-[80px] md:w-[100px] lg:w-[130px] xl:w-[169px] h-auto object-contain"
-                                />
-                            </div>
-
-                            {/* Innovation */}
-                            <h2 className="font-bold text-[40px] sm:text-[56px] md:text-[72px] lg:text-[96px] xl:text-[120px] 2xl:text-[144px] leading-[0.9] text-zinc-900 tracking-[-3px] sm:tracking-[-4px] md:tracking-[-6px] lg:tracking-[-8px] xl:tracking-[-10px] font-['Geist'] flex-shrink-0">
-                                {projects.heading.word2}
-                            </h2>
+                            {/* Desktop Title SVG */}
+                            <img
+                                src={desktopHeader}
+                                alt={`${projects.heading.word1} & ${projects.heading.word2}`}
+                                className="w-full h-auto max-w-[90vw] xl:max-w-none"
+                            />
                         </div>
                     </div>
                 </div>
@@ -149,7 +116,7 @@ export default function Projects() {
                 <div className="w-full">
                     {/* Mobile: Single column */}
                     <div className="block sm:hidden">
-                        <p className="font-medium text-base leading-6 text-[#9f9fa9] tracking-[0.5px] font-['Geist'] text-center">
+                        <p className="font-medium text-base leading-6 text-[#9f9fa9] tracking-[0.5px] font-['Geist'] text-left">
                             From predictive models to scalable platforms,{" "}
                             <span className="text-zinc-900">
                                 Every solution is Fueled by Data Intelligence,
@@ -245,30 +212,13 @@ export default function Projects() {
                                                 <ProjectTag key={index}>
                                                     {tag}
                                                 </ProjectTag>
-                                            )
+                                            ),
                                         )}
                                     </div>
                                 </div>
-                                <button className="border border-brand-primary border-solid px-3 py-2 sm:px-[18px] sm:py-3 flex gap-1 sm:gap-1.5 items-center self-start sm:self-auto">
-                                    <span className="text-brand-primary text-sm leading-5 sm:text-base sm:leading-6 font-semibold tracking-[0.5px] font-['Geist']">
-                                        View Details
-                                    </span>
-                                    <div className="w-4 h-4 sm:w-5 sm:h-5 relative">
-                                        <svg
-                                            className="w-full h-full"
-                                            viewBox="0 0 20 20"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="m8 6 4 4-4 4"
-                                                stroke="#f2500d"
-                                                strokeWidth="1.5"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
+                                <Button variant="outline" showArrow>
+                                    View Details
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -276,26 +226,11 @@ export default function Projects() {
 
                 {/* CTA Button */}
                 <div className="flex justify-center">
-                    <button className="bg-brand-primary px-4 py-2.5 sm:px-[18px] sm:py-3 flex gap-1.5 items-center w-full sm:w-auto">
+                    <Button className="bg-brand-primary px-4 py-2.5 sm:px-[18px] sm:py-3 flex gap-1.5 items-center w-full sm:w-auto">
                         <span className="text-white text-base leading-6 font-semibold tracking-[0.5px] font-['Geist']">
                             View All Projects
                         </span>
-                        <div className="w-5 h-5 relative">
-                            <svg
-                                className="w-full h-full"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                            >
-                                <path
-                                    d="m8 6 4 4-4 4"
-                                    stroke="white"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </div>
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

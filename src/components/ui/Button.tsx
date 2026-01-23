@@ -4,6 +4,7 @@ interface ButtonProps {
     children: ReactNode;
     variant?: "primary" | "secondary" | "ghost" | "outline";
     size?: "small" | "medium" | "large";
+    showArrow?: boolean;
     onClick?: () => void;
     className?: string;
     fullWidth?: boolean;
@@ -14,6 +15,7 @@ export default function Button({
     children,
     variant = "primary",
     size = "medium",
+    showArrow = false,
     onClick,
     className = "",
     fullWidth = false,
@@ -45,7 +47,7 @@ export default function Button({
     return (
         <button type={type} className={classes} onClick={onClick}>
             {children}
-            {variant === "primary" && (
+            {(variant === "primary" || showArrow) && (
                 <svg
                     width="20"
                     height="20"
