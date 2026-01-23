@@ -164,7 +164,7 @@ export default function Projects() {
                     {/* Desktop: Grid layout */}
                     <div className="hidden sm:grid sm:grid-cols-3 gap-6 lg:gap-8 items-start">
                         <div className="flex gap-2.5 items-center">
-                            <span className="text-2xl lg:text-[32px] leading-8 lg:leading-9 text-zinc-800 tracking-[-1px] font-['Engagement']">
+                            <span className="text-2xl lg:text-[24px] leading-8 lg:leading-9 text-zinc-800 tracking-[-1px] font-['Engagement']">
                                 (2025)
                             </span>
                         </div>
