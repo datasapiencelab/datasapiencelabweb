@@ -245,7 +245,6 @@ export default function Services() {
     }, [desktopProgress, isDesktop]);
 
     const activeItem = servicesContent.items[activeService];
-    const ActiveIcon = iconMap[activeItem.icon] || BrainCircuit;
 
     return (
         <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">

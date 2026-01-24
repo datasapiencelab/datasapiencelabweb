@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // Arrow icon for newsletter subscription button
 const ArrowIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="rotate-[225deg] scale-y-[-100%]">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="-rotate-45">
         <path d="M1 8L15 8M15 8L8 1M15 8L8 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
@@ -183,7 +183,7 @@ const Footer: React.FC<FooterProps> = () => {
                         {/* Copyright - Spans full width on mobile, positioned right on desktop */}
                         <div className="md:col-span-1 lg:col-span-2 flex justify-start md:justify-end items-start">
                             <p className="font-['Geist'] font-normal text-zinc-400 text-sm md:text-base text-center md:text-right tracking-[0.5px] leading-relaxed max-w-md">
-                                © 2025 Data Sapience Lab. All rights reserved.
+                                © 2026 Data Sapience Lab. All rights reserved.
                             </p>
                         </div>
                     </div>

@@ -1,37 +1,6 @@
 import React, { useState } from "react";
-
-// Spark icon component
-const SparkIcon = () => (
-    <svg
-        className="w-7 h-7"
-        viewBox="0 0 28 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M14 3L16.5 10.5L24 13L16.5 15.5L14 23L11.5 15.5L4 13L11.5 10.5L14 3Z"
-            fill="#f2500d"
-        />
-    </svg>
-);
-
-// Arrow icon for button
-const ArrowIcon = () => (
-    <svg
-        className="w-5 h-5"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M4 10H16M16 10L10 4M16 10L10 16"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
+import Spark from "../ui/Spark";
+import Button from "../ui/Button";
 
 // Resize handle icon for textarea
 const ResizeHandle = () => (
@@ -61,7 +30,7 @@ const ContactForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleInputChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -86,7 +55,7 @@ const ContactForm: React.FC = () => {
 
         setIsSubmitting(false);
         alert(
-            "Thank you for your inquiry! We'll get back to you within 24 hours."
+            "Thank you for your inquiry! We'll get back to you within 24 hours.",
         );
     };
 
@@ -116,10 +85,11 @@ const ContactForm: React.FC = () => {
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
                 <div
-                    className="w-full h-full bg-repeat"
+                    className="w-full h-full bg-cover bg-center"
                     style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L24 16L40 20L24 24L20 40L16 24L0 20L16 16L20 0Z' fill='%23f2500d'/%3E%3C/svg%3E")`,
-                        backgroundSize: "40px 40px",
+                        backgroundImage:
+                            "url('/assets/images/contact/glass_building.jpg')",
+                        transform: "scalex(-1)",
                     }}
                 />
             </div>
@@ -131,9 +101,7 @@ const ContactForm: React.FC = () => {
                     <div className="gap-8 grid grid-cols-11 grid-rows-1 h-[144px] max-w-[1280px] w-full">
                         {/* Left - Journey Label */}
                         <div className="col-span-4 flex gap-2.5 items-center">
-                            <div className="w-7 h-7">
-                                <SparkIcon />
-                            </div>
+                            <Spark />
                             <div className="font-geist font-normal text-lg leading-7 text-zinc-900 tracking-[0.5px]">
                                 A simple 3-step journey
                             </div>
@@ -253,20 +221,18 @@ const ContactForm: React.FC = () => {
                                     </div>
 
                                     {/* Submit Button */}
-                                    <button
+                                    <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="bg-[#f2500d] box-border flex items-center justify-between px-[18px] py-3 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                        fullWidth
+                                        className="disabled:opacity-50 disabled:cursor-not-allowed justify-between"
                                     >
                                         <span className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
                                             {isSubmitting
                                                 ? "Sending..."
                                                 : "Send Inquiry"}
                                         </span>
-                                        <div className="w-5 h-5">
-                                            <ArrowIcon />
-                                        </div>
-                                    </button>
+                                    </Button>
                                 </form>
                             </div>
                         </div>
@@ -281,9 +247,7 @@ const ContactForm: React.FC = () => {
                     <div className="flex flex-col gap-8 items-center max-w-[1280px] w-full">
                         {/* Journey Label */}
                         <div className="flex gap-2 items-center justify-center w-full">
-                            <div className="w-7 h-7">
-                                <SparkIcon />
-                            </div>
+                            <Spark />
                             <div className="font-geist font-normal text-lg leading-7 text-center text-zinc-900 tracking-[0.5px]">
                                 A simple 3-step journey
                             </div>
@@ -389,20 +353,19 @@ const ContactForm: React.FC = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#f2500d] box-border flex items-center justify-between px-4 py-2.5 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                fullWidth
+                                className="disabled:opacity-50 disabled:cursor-not-allowed justify-between"
+                                size="small"
                             >
                                 <span className="font-geist font-semibold text-sm leading-5 text-white tracking-[0.5px]">
                                     {isSubmitting
                                         ? "Sending..."
                                         : "Send Inquiry"}
                                 </span>
-                                <div className="w-4 h-4">
-                                    <ArrowIcon />
-                                </div>
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>
@@ -415,9 +378,7 @@ const ContactForm: React.FC = () => {
                     <div className="flex flex-col gap-6 items-start w-full">
                         {/* Journey Label */}
                         <div className="flex gap-1.5 items-center w-full">
-                            <div className="w-6 h-6">
-                                <SparkIcon />
-                            </div>
+                            <Spark />
                             <div className="font-geist font-normal text-sm leading-5 text-zinc-900 tracking-[0.5px]">
                                 A simple 3-step journey
                             </div>
@@ -523,20 +484,19 @@ const ContactForm: React.FC = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#f2500d] box-border flex items-center justify-between px-3 py-2 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                fullWidth
+                                className="disabled:opacity-50 disabled:cursor-not-allowed justify-between"
+                                size="small"
                             >
                                 <span className="font-geist font-semibold text-xs leading-4 text-white tracking-[0.5px]">
                                     {isSubmitting
                                         ? "Sending..."
                                         : "Send Inquiry"}
                                 </span>
-                                <div className="w-3 h-3">
-                                    <ArrowIcon />
-                                </div>
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>

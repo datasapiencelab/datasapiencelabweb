@@ -1,22 +1,6 @@
 import React from "react";
 
-// Arrow icon for button
-const ArrowIcon = () => (
-    <svg
-        className="w-5 h-5"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M4 10H16M16 10L10 4M16 10L10 16"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
+import Button from "../ui/Button";
 
 // Social Media Icons
 const LinkedInIcon = () => (
@@ -62,7 +46,7 @@ const ContactInfo: React.FC = () => {
         {
             name: "LinkedIn",
             icon: <LinkedInIcon />,
-            url: "https://linkedin.com/company/datasapiencelab",
+            url: "https://www.linkedin.com/company/data-sapience-lab/",
         },
         {
             name: "Github",
@@ -110,17 +94,14 @@ const ContactInfo: React.FC = () => {
                                     </span>
                                 </div>
 
-                                <button
+                                <Button
                                     onClick={handleGetInTouch}
-                                    className="bg-[#f2500d] box-border flex items-center justify-between px-[18px] py-3 w-[343px] cursor-pointer hover:bg-[#d63d00] transition-colors"
+                                    className="justify-between w-[343px]"
                                 >
                                     <span className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
                                         Get in Touch
                                     </span>
-                                    <div className="w-5 h-5">
-                                        <ArrowIcon />
-                                    </div>
-                                </button>
+                                </Button>
                             </div>
 
                             {/* Divider */}
@@ -212,17 +193,14 @@ const ContactInfo: React.FC = () => {
                                 </span>
                             </div>
 
-                            <button
+                            <Button
                                 onClick={handleGetInTouch}
-                                className="bg-[#f2500d] box-border flex items-center justify-between px-[18px] py-3 w-[280px] cursor-pointer hover:bg-[#d63d00] transition-colors"
+                                className="justify-between w-[280px]"
                             >
                                 <span className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
                                     Get in Touch
                                 </span>
-                                <div className="w-5 h-5">
-                                    <ArrowIcon />
-                                </div>
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Divider */}
@@ -303,17 +281,15 @@ const ContactInfo: React.FC = () => {
                                 </span>
                             </div>
 
-                            <button
+                            <Button
                                 onClick={handleGetInTouch}
-                                className="bg-[#f2500d] box-border flex items-center justify-between px-4 py-2.5 w-full cursor-pointer hover:bg-[#d63d00] transition-colors"
+                                fullWidth
+                                className="justify-between"
                             >
                                 <span className="font-geist font-semibold text-sm leading-5 text-white tracking-[0.5px]">
                                     Get in Touch
                                 </span>
-                                <div className="w-4 h-4">
-                                    <ArrowIcon />
-                                </div>
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Divider */}

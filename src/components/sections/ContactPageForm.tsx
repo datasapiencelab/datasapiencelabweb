@@ -1,22 +1,6 @@
 import React, { useState } from "react";
 
-// Arrow icon for button
-const ArrowIcon = () => (
-    <svg
-        className="w-5 h-5"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M4 10H16M16 10L10 4M16 10L10 16"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
+import Button from "../ui/Button";
 
 // Resize handle icon for textarea
 const ResizeHandle = () => (
@@ -46,7 +30,7 @@ const ContactPageForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleInputChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -71,7 +55,7 @@ const ContactPageForm: React.FC = () => {
 
         setIsSubmitting(false);
         alert(
-            "Thank you for your inquiry! We'll get back to you within 24 hours."
+            "Thank you for your inquiry! We'll get back to you within 24 hours.",
         );
     };
 
@@ -189,20 +173,18 @@ const ContactPageForm: React.FC = () => {
                                     </div>
 
                                     {/* Submit Button */}
-                                    <button
+                                    <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="bg-[#f2500d] box-border flex items-center justify-between px-[18px] py-3 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                        fullWidth
+                                        className="disabled:opacity-50 disabled:cursor-not-allowed justify-between"
                                     >
                                         <span className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
                                             {isSubmitting
                                                 ? "Sending..."
                                                 : "Send Inquiry"}
                                         </span>
-                                        <div className="w-5 h-5">
-                                            <ArrowIcon />
-                                        </div>
-                                    </button>
+                                    </Button>
                                 </form>
                             </div>
                         </div>
@@ -313,9 +295,6 @@ const ContactPageForm: React.FC = () => {
                                         ? "Sending..."
                                         : "Send Inquiry"}
                                 </span>
-                                <div className="w-4 h-4">
-                                    <ArrowIcon />
-                                </div>
                             </button>
                         </form>
                     </div>
@@ -412,20 +391,19 @@ const ContactPageForm: React.FC = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-[#f2500d] box-border flex items-center justify-between px-3 py-2 w-full cursor-pointer hover:bg-[#d63d00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                fullWidth
+                                className="disabled:opacity-50 disabled:cursor-not-allowed justify-between"
+                                size="small"
                             >
                                 <span className="font-geist font-semibold text-xs leading-4 text-white tracking-[0.5px]">
                                     {isSubmitting
                                         ? "Sending..."
                                         : "Send Inquiry"}
                                 </span>
-                                <div className="w-3 h-3">
-                                    <ArrowIcon />
-                                </div>
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>
