@@ -7,7 +7,7 @@ import Principles from "../components/sections/Principles";
 import { Process } from "../components/sections/Process";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
 import Pricing from "../components/sections/Pricing";
-import Testimonials from "../components/sections/Testimonials";
+// import Testimonials from "../components/sections/Testimonials";
 import ContactForm from "../components/sections/ContactForm";
 import FAQ from "../components/sections/FAQ";
 import ContactInfo from "../components/sections/ContactInfo";
@@ -25,7 +25,7 @@ export default function HomePage() {
             <WhyChooseUs /> {/* Why Data Sapience Lab  */}
             <Pricing />
             <FAQ />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <ContactForm />
             <ContactInfo />
         </div>
