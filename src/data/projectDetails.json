@@ -1,0 +1,160 @@
+{
+    "linkedin-observer": {
+        "id": "linkedin-observer",
+        "slug": "linkedin-observer",
+        "title": "LinkedIn Observer",
+        "accent": "Monitor, analyze, and understand",
+        "description": {
+            "line1": "company activity on LinkedIn. LinkedIn Observer is a machine-learning–powered analytics tool designed to help businesses track industry trends, competitor behavior, and hiring patterns. All scraped and processed from one of the most secure platforms on the web.",
+            "line2": "Built to bypass LinkedIn’s strict data-access limitations, the system gathers public posts and company activity, transforming them into clean, actionable insights for operational and strategic decision-making."
+        },
+        "year": "2025",
+        "industry": "Business Firm",
+        "services": ["Machine Learning", "Data Automation"],
+        "timeline": "4 Weeks",
+        "hero": {
+            "image": "/assets/images/project_details/linkedin-observer-hero.png"
+        },
+        "challenge": {
+            "title": "How might we reliably extract structured insights from LinkedIn, a platform intentionally designed to prevent scraping, while keeping the experience seamless for the user?",
+            "description": [
+                "LinkedIn’s aggressive bot-detection systems required a custom ML driven scrapper that mimicked human behavior, handled dynamic content, and avoided rate limits."
+            ],
+            "image": ""
+        },
+        "keyFeatures": {
+            "features": [
+                {
+                    "title": "Intelligent Company Tracking",
+                    "description": "The dashboard displays each company’s LinkedIn activity at a glance, including: last visited time, last posted time, scrape status, real-time update logs. A streamlined table layout keeps large datasets readable and scannable."
+                },
+                {
+                    "title": "ML-Powered Post Extraction",
+                    "description": "Posts are collected using a machine learning model trained to detect and extract LinkedIn content reliably, even when page structure changes. Each post shows: preview text, timestamp, scrape status, direct links for deeper review."
+                },
+                {
+                    "title": "Error-Resilient Scrape Logging",
+                    "description": "Every action, success, or failure is logged in a transparent \"Crawler Logs\" view. This gives users confidence in the system, and makes troubleshooting fast and data-driven."
+                },
+                {
+                    "title": "Clean, Lightweight UI System",
+                    "description": "The interface follows a data-first approach: minimal colors, a calm visual hierarchy, and spacious tables. Complex activity data becomes easy to digest without overwhelming the user."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/linkedin-observer-gallery.png"
+        },
+        "result": {
+            "title": "With this automated LinkedIn intelligence system, the client gained a continuous stream of real-time insights without manual labor or unreliable third-party tools.",
+            "description": [
+                "Efficiency improved, trend-spotting became effortless, and the client now relies on LinkedIn Observer as a critical part of their daily decision-making workflow."
+            ]
+        }
+    },
+    "race-pace": {
+        "id": "race-pace",
+        "slug": "race-pace",
+        "title": "Race Pace",
+        "accent": "A fast, intuitive web experience",
+        "description": {
+            "line1": "for runners seeking precision. Find Race Pace is a web application I designed and developed to provide runners with instant pace calculations and training insights. The project focused on creating a clean, conversion-focused interface that works seamlessly across all devices.",
+            "line2": "Built with modern web technologies, the site prioritizes speed, accessibility, and user experience—delivering complex calculations through a simple, elegant interface that runners can trust."
+        },
+        "year": "2024",
+        "industry": "Health & Fitness",
+        "services": ["Web Development", "UI/UX Design"],
+        "timeline": "4 Weeks",
+        "hero": {
+            "image": "/assets/images/project_details/race-pace-hero.png"
+        },
+        "challenge": {
+            "title": "How might we design a website that instantly converts visitors into users, while maintaining simplicity and delivering precise calculations across all devices and contexts?",
+            "description": [
+                "The core challenge was balancing instant usability with calculation accuracy. The interface needed to be simple enough for a runner to use mid-workout, yet powerful enough to handle complex time-distance conversions reliably."
+            ],
+            "image": ""
+        },
+        "keyFeatures": {
+            "features": [
+                {
+                    "title": "Conversion-Focused Design",
+                    "description": "The homepage was designed with a single goal: get users calculating instantly. Clear value proposition, minimal friction, and prominent input fields ensure runners can start using the tool within seconds of landing."
+                },
+                {
+                    "title": "Mobile-First Responsive Layout",
+                    "description": "Recognizing that many runners access the site from their phones at the track or gym, I built a fully responsive interface that adapts seamlessly from mobile to desktop, ensuring usability across all screen sizes."
+                },
+                {
+                    "title": "Performance Optimization",
+                    "description": "The site loads in under 2 seconds and performs all calculations instantly client-side. Optimized assets, lazy loading, and efficient code ensure a snappy experience even on slower connections."
+                },
+                {
+                    "title": "Accessible & SEO-Optimized",
+                    "description": "Built with semantic HTML, ARIA labels, and proper heading structure for screen reader compatibility. Meta tags, structured data, and content optimization help runners discover the site through search engines."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/race-pace-gallery.png"
+        },
+        "result": {
+            "title": "A website that converts visitors into users, delivering value immediately while maintaining peak performance and accessibility standards.",
+            "description": [
+                "The site now serves thousands of runners monthly with a 95+ PageSpeed score and sub-2-second load times. Low bounce rates and high engagement metrics confirm that the design successfully eliminates friction and delivers immediate value to users."
+            ]
+        }
+    },
+    "nouzik": {
+        "id": "nouzik",
+        "slug": "nouzik",
+        "title": "NouZik",
+        "accent": "Discover, Search, and Manage",
+        "description": {
+            "line1": "the Latest Music Releases. NouZik is a next-generation music discovery and catalog management platform built for fans and professionals who want to stay on top of the latest releases."
+        },
+        "year": "2025",
+        "industry": "Music Search & Discovery Web App",
+        "services": ["UI/UX Strategy", "End-to-End Development"],
+        "timeline": "4 Weeks",
+        "hero": {
+            "image": "/assets/images/project_details/nouzik-hero.png"
+        },
+        "challenge": {
+            "title": "How might we create a music discovery interface that feels as intuitive as a streaming app, but with the depth and flexibility of a catalog explorer?",
+            "description": [
+                "The goal was to merge a professional data dashboard feel with consumer grade usability, ensuring that even large datasets (thousands of tracks) remain fast, scannable, and visually engaging."
+            ],
+            "image": "/assets/images/project_details/nouzik-challenge.png"
+        },
+        "keyFeatures": {
+            "features": [
+                {
+                    "title": "Advanced Music Search",
+                    "description": "Explore a rich, data-driven search experience that makes discovering new music effortless. Users can filter by artist, label, genre, release date, or format, all displayed in a clean, scannable table layout."
+                },
+                {
+                    "title": "Track Details View",
+                    "description": "The track detail card presents album art, release metadata, and direct links to major streaming platforms like Spotify, Apple Music, and YouTube, all within a compact, modern interface. Users get essential information instantly, without visual noise."
+                },
+                {
+                    "title": "Personal Dashboard",
+                    "description": "NouZik’s dashboard puts control front and center. A simple left-hand navigation gives users quick access to Home, Advanced Search, Upload, and Profile."
+                },
+                {
+                    "title": "Dark Mode Design System",
+                    "description": "NouZik features a refined dark interface built for comfort and focus. The palette of deep grays and subtle accents enhances readability, reduces glare, and maintains a professional, immersive look across every page."
+                }
+            ]
+        },
+        "gallery": {
+            "image": "/assets/images/project_details/nouzik-gallery.png"
+        },
+        "result": {
+            "title": "With our AI-driven solution, support requests dropped, product recommendations improved sales, and engagement rose quickly.",
+            "description": [
+                "The client achieved measurable growth and a scalable system that now drives consistent business results."
+            ]
+        }
+    }
+}

@@ -8,42 +8,42 @@ const logoSrc = "/assets/images/logo-transparent.png";
 const hamburgerIcons = {
     white: {
         default: {
-            mobile: "assets/icons/hamburger/Property 1=Default, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=Default, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=Default, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=Default, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
         },
         hover: {
-            mobile: "assets/icons/hamburger/Property 1=hover, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=hover, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=hover, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=hover, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
         },
         clicked: {
-            mobile: "assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
         },
     },
     black: {
         default: {
-            mobile: "assets/icons/hamburger/Property 1=Default, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=Default, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=Default, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=Default, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=Default, Type=Desktop.svg",
         },
         hover: {
-            mobile: "assets/icons/hamburger/Property 1=hover, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=hover, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=hover, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=hover, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=hover, Type=Desktop.svg",
         },
         clicked: {
-            mobile: "assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
-            tablet: "assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
+            mobile: "/assets/icons/hamburger/Property 1=clicked, Type=phone.svg",
+            tablet: "/assets/icons/hamburger/Property 1=clicked, Type=tab.svg",
             desktop:
-                "assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
+                "/assets/icons/hamburger/Property 1=clicked, Type=Desktop.svg",
         },
     },
 };
@@ -377,12 +377,12 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                                     isMenuOpen
                                         ? hamburgerIcons.white.clicked.mobile
                                         : isHovered
-                                        ? hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].hover.mobile
-                                        : hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].default.mobile
+                                          ? hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].hover.mobile
+                                          : hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].default.mobile
                                 }
                                 alt="Menu"
                                 className={`block md:hidden w-[23.23px] h-[13.22px] transition-all ${
@@ -397,12 +397,12 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                                     isMenuOpen
                                         ? hamburgerIcons.white.clicked.tablet
                                         : isHovered
-                                        ? hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].hover.tablet
-                                        : hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].default.tablet
+                                          ? hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].hover.tablet
+                                          : hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].default.tablet
                                 }
                                 alt="Menu"
                                 className={`hidden md:block xl:hidden w-[35px] h-[20px] transition-all ${
@@ -417,12 +417,12 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                                     isMenuOpen
                                         ? hamburgerIcons.white.clicked.desktop
                                         : isHovered
-                                        ? hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].hover.desktop
-                                        : hamburgerIcons[
-                                              isHomePage ? "white" : "black"
-                                          ].default.desktop
+                                          ? hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].hover.desktop
+                                          : hamburgerIcons[
+                                                isHomePage ? "white" : "black"
+                                            ].default.desktop
                                 }
                                 alt="Menu"
                                 className={`hidden xl:block w-[42.18px] h-[24px] transition-all ${
