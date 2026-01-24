@@ -20,7 +20,7 @@ export default function HomePage() {
             <AboutCTA />
             <Services />
             <Projects />
-            <Principles />
+            <Principles /> {/* Our Expertise */}
             <Process />
             <WhyChooseUs />
             <Pricing />

@@ -118,6 +118,7 @@ export type HomePageContent = {
         heading: {
             prefix: string;
             accent: string;
+            suffix: string;
         };
         cards: PrincipleCard[];
     };
@@ -353,10 +354,11 @@ export const HOME_CONTENT: HomePageContent = {
         },
     },
     principles: {
-        kicker: "Our Approach",
+        kicker: "Our Expertise",
         heading: {
-            prefix: "Guided By ",
-            accent: "Purpose & Precision",
+            prefix: "Every choice is backed by ",
+            accent: "Insights,",
+            suffix: " not guesswork.",
         },
         cards: [
             {
