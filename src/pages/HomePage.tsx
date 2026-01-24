@@ -21,7 +21,7 @@ export default function HomePage() {
             <Services />
             <Projects />
             <Principles /> {/* Our Expertise */}
-            <Process />
+            <Process /> {/* How We Execute */}
             <WhyChooseUs />
             <Pricing />
             <FAQ />
