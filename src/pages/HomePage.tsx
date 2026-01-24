@@ -22,7 +22,7 @@ export default function HomePage() {
             <Projects />
             <Principles /> {/* Our Expertise */}
             <Process /> {/* How We Execute */}
-            <WhyChooseUs />
+            <WhyChooseUs /> {/* Why Data Sapience Lab  */}
             <Pricing />
             <FAQ />
             <Testimonials />
