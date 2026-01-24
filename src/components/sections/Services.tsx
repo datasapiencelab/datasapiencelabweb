@@ -77,30 +77,30 @@ function ServiceTag({ label }: ServiceTagProps) {
     );
 }
 
-interface PartnerLogoProps {
-    name: string;
-    isButton?: boolean;
-}
+// interface PartnerLogoProps {
+//     name: string;
+//     isButton?: boolean;
+// }
 
-function PartnerLogo({ name, isButton = false }: PartnerLogoProps) {
-    if (isButton) {
-        return (
-            <div className="bg-brand-primary border border-zinc-800 aspect-[189/177] flex items-center justify-center">
-                <Button variant="primary" size="medium">
-                    Join With Us
-                </Button>
-            </div>
-        );
-    }
+// function PartnerLogo({ name, isButton = false }: PartnerLogoProps) {
+//     if (isButton) {
+//         return (
+//             <div className="bg-brand-primary border border-zinc-800 aspect-[189/177] flex items-center justify-center">
+//                 <Button variant="primary" size="medium">
+//                     Join With Us
+//                 </Button>
+//             </div>
+//         );
+//     }
 
-    return (
-        <div className="bg-zinc-900 border border-zinc-800 aspect-[189/177] flex items-center justify-center p-6 md:p-8 lg:p-10 group hover:bg-zinc-800 transition-colors">
-            <div className="text-zinc-400 font-medium text-lg group-hover:text-zinc-200 transition-colors">
-                {name}
-            </div>
-        </div>
-    );
-}
+//     return (
+//         <div className="bg-zinc-900 border border-zinc-800 aspect-[189/177] flex items-center justify-center p-6 md:p-8 lg:p-10 group hover:bg-zinc-800 transition-colors">
+//             <div className="text-zinc-400 font-medium text-lg group-hover:text-zinc-200 transition-colors">
+//                 {name}
+//             </div>
+//         </div>
+//     );
+// }
 
 interface ServiceDetailContentProps {
     item: (typeof HOME_CONTENT.services.items)[0];
@@ -247,7 +247,8 @@ export default function Services() {
     const activeItem = servicesContent.items[activeService];
 
     return (
-        <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">
+        // <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20"> {/* uncomment this and use it when partners tab is visible */}
+        <section className="relative bg-zinc-950 pt-16 md:pt-24 lg:pt-32 pb-2 md:pb-2 lg:pb-2 px-6 md:px-16 lg:px-28 z-20">
             <div className="max-w-7xl mx-auto">
                 {/* Services Section (desktop: sticky scroll) */}
                 <div
@@ -385,8 +386,7 @@ export default function Services() {
                 </div>
 
                 {/* Partners Section */}
-                <div>
-                    {/* Partners Header */}
+                {/* <div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-12 md:mb-16 lg:mb-20">
                         <div className="flex gap-2.5 text-neutral-inverse">
                             <Spark />
@@ -408,7 +408,6 @@ export default function Services() {
                         </div>
                     </div>
 
-                    {/* Partners Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
                         {servicesContent.partners.map((partner, index) => (
                             <PartnerLogo
@@ -421,7 +420,7 @@ export default function Services() {
                             />
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

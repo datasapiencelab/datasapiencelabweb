@@ -18,9 +18,9 @@ export default function HomePage() {
             <Hero />
             <AboutUs />
             <AboutCTA />
-            <Services />
+            <Services /> {/* Our Expertise */} {/* Partners */}
             <Projects />
-            <Principles /> {/* Our Expertise */}
+            <Principles /> {/* How We Stay Aligned */}
             <Process /> {/* How We Execute */}
             <WhyChooseUs /> {/* Why Data Sapience Lab  */}
             <Pricing />

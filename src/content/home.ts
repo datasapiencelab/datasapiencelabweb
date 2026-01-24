@@ -354,7 +354,7 @@ export const HOME_CONTENT: HomePageContent = {
         },
     },
     principles: {
-        kicker: "Our Expertise",
+        kicker: "How We Stay Aligned",
         heading: {
             prefix: "Every choice is backed by ",
             accent: "Insights,",
