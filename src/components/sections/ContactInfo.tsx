@@ -35,11 +35,7 @@ const FacebookIcon = () => (
 
 const ContactInfo: React.FC = () => {
     const handleGetInTouch = () => {
-        // Scroll to the inquiry form section
-        const inquirySection = document.querySelector(".inquiryFormSection");
-        if (inquirySection) {
-            inquirySection.scrollIntoView({ behavior: "smooth" });
-        }
+        window.location.href = "/contact";
     };
 
     const socialLinks = [

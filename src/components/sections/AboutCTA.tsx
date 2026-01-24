@@ -23,6 +23,9 @@ export default function AboutCTA() {
                             <div className="flex justify-center mt-3 md:mt-5">
                                 <motion.div
                                     className="bg-white rounded-full p-2 md:p-3 flex items-center gap-2 md:gap-3 shadow-lg max-w-full cursor-pointer overflow-hidden"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                     initial={false}

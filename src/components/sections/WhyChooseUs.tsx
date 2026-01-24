@@ -259,6 +259,9 @@ const WhyChooseUs: React.FC = () => {
                                 variant="primary"
                                 size="large"
                                 className="w-full h-full"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
                             >
                                 Get Your Free Project Quote
                             </Button>
@@ -506,6 +509,9 @@ const WhyChooseUs: React.FC = () => {
                                 variant="primary"
                                 size="large"
                                 className="w-full h-full"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
                             >
                                 Get Your Free Project Quote
                             </Button>
@@ -745,7 +751,12 @@ const WhyChooseUs: React.FC = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <Button variant="primary" size="large" className="w-full">
+                    <Button
+                        variant="primary"
+                        size="large"
+                        className="w-full"
+                        onClick={() => (window.location.href = "/contact")}
+                    >
                         Get Your Free Project Quote
                     </Button>
                 </div>

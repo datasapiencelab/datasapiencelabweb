@@ -138,7 +138,13 @@ const FAQ: React.FC = () => {
                                     </span>
                                 </div>
 
-                                <Button variant="primary" size="large">
+                                <Button
+                                    variant="primary"
+                                    size="large"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
+                                >
                                     Book a 30‑Minute Free Call
                                 </Button>
                             </div>
@@ -199,7 +205,13 @@ const FAQ: React.FC = () => {
                                 </span>
                             </div>
 
-                            <Button variant="primary" size="large">
+                            <Button
+                                variant="primary"
+                                size="large"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 Book a 30‑Minute Free Call
                             </Button>
                         </div>
@@ -275,7 +287,14 @@ const FAQ: React.FC = () => {
                                 </span>
                             </div>
 
-                            <Button variant="primary" size="medium" fullWidth>
+                            <Button
+                                variant="primary"
+                                size="medium"
+                                fullWidth
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 Book a 30‑Minute Free Call
                             </Button>
                         </div>

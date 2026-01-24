@@ -1,22 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Arrow icon for newsletter subscription button
 const ArrowIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="-rotate-45">
-        <path d="M1 8L15 8M15 8L8 1M15 8L8 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        className="-rotate-45"
+    >
+        <path
+            d="M1 8L15 8M15 8L8 1M15 8L8 15"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
     </svg>
 );
 
-interface FooterProps { }
+interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState("");
 
     const handleNewsletterSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (email) {
-            console.log('Newsletter subscription:', email);
-            setEmail('');
+            console.log("Newsletter subscription:", email);
+            setEmail("");
             // Add newsletter subscription logic here
         }
     };
@@ -24,7 +36,7 @@ const Footer: React.FC<FooterProps> = () => {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: "smooth" });
         }
     };
 
@@ -49,7 +61,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </h2>
                             </div>
                             <p className="font-['Geist'] font-normal text-sm md:text-base text-zinc-200 leading-relaxed tracking-[0.5px]">
-                                We transform Complex Data into Intelligent Applications, driving growth, efficiency, and long-term impact.
+                                We transform Complex Data into Intelligent
+                                Applications, driving growth, efficiency, and
+                                long-term impact.
                             </p>
                         </div>
 
@@ -58,7 +72,10 @@ const Footer: React.FC<FooterProps> = () => {
                             <h3 className="font-['Geist'] font-semibold text-lg md:text-xl text-white mb-2 tracking-[0.5px]">
                                 Subscribe to our newsletter
                             </h3>
-                            <form onSubmit={handleNewsletterSubmit} className="bg-zinc-900 border border-zinc-800 p-0.5 flex items-center">
+                            <form
+                                onSubmit={handleNewsletterSubmit}
+                                className="bg-zinc-900 border border-zinc-800 p-0.5 flex items-center"
+                            >
                                 <input
                                     type="email"
                                     value={email}
@@ -90,7 +107,7 @@ const Footer: React.FC<FooterProps> = () => {
                             <ul className="space-y-3">
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('hero')}
+                                        onClick={() => scrollToSection("hero")}
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Home
@@ -98,7 +115,7 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('about')}
+                                        onClick={() => scrollToSection("about")}
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         About
@@ -106,7 +123,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('projects')}
+                                        onClick={() =>
+                                            scrollToSection("projects")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Projects
@@ -114,7 +133,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => window.location.href = '/career'}
+                                        onClick={() =>
+                                            (window.location.href = "/career")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Career
@@ -122,7 +143,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('contact-social')}
+                                        onClick={() =>
+                                            (window.location.href = "/contact")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Contact
@@ -139,7 +162,9 @@ const Footer: React.FC<FooterProps> = () => {
                             <ul className="space-y-3">
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('services')}
+                                        onClick={() =>
+                                            scrollToSection("services")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Expertise
@@ -147,7 +172,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('pricing')}
+                                        onClick={() =>
+                                            scrollToSection("pricing")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Pricing
@@ -155,7 +182,7 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => scrollToSection('faq')}
+                                        onClick={() => scrollToSection("faq")}
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         FAQs
@@ -163,7 +190,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => window.location.href = '/privacy'}
+                                        onClick={() =>
+                                            (window.location.href = "/privacy")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Privacy Policy
@@ -171,7 +200,9 @@ const Footer: React.FC<FooterProps> = () => {
                                 </li>
                                 <li>
                                     <button
-                                        onClick={() => window.location.href = '/terms'}
+                                        onClick={() =>
+                                            (window.location.href = "/terms")
+                                        }
                                         className="font-['Geist'] font-semibold text-lg md:text-xl text-zinc-300 hover:text-white transition-colors duration-200 tracking-[0.5px] text-left"
                                     >
                                         Terms & Conditions
@@ -200,7 +231,6 @@ const Footer: React.FC<FooterProps> = () => {
                         </h2>
                     </div>
                 </div> */}
-
             </div>
         </footer>
     );

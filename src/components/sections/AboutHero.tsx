@@ -56,7 +56,13 @@ export default function AboutHero() {
 
                         {/* CTA Button */}
                         <div>
-                            <Button variant="primary" size="large">
+                            <Button
+                                variant="primary"
+                                size="large"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 {hero.cta.text}
                             </Button>
                         </div>

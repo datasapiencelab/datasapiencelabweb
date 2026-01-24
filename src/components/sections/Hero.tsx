@@ -68,17 +68,17 @@ export default function Hero() {
                     </div>
                     {/* Description on Mobile - Stuck below SVG */}
                     <div className="lg:hidden mt-6 relative w-fit">
-                         <div className="flex flex-col text-sm md:text-lg font-medium text-zinc-300 leading-6 md:leading-7 tracking-[0.5px]">
+                        <div className="flex flex-col text-sm md:text-lg font-medium text-zinc-300 leading-6 md:leading-7 tracking-[0.5px]">
                             {/* Line 1 Wrapper */}
                             <div className="relative w-full flex justify-center">
-                                 <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2">
                                     <Spark />
-                                 </div>
-                                 <p className="mb-0 text-center mx-auto pl-8 pr-8">
-                                     {hero.description.line1}
-                                 </p>
+                                </div>
+                                <p className="mb-0 text-center mx-auto pl-8 pr-8">
+                                    {hero.description.line1}
+                                </p>
                             </div>
-                            
+
                             {/* Line 2 */}
                             <p className="mb-0 whitespace-nowrap">
                                 {hero.description.line2}
@@ -86,16 +86,15 @@ export default function Hero() {
 
                             {/* Line 3 */}
                             <p className="mb-0 text-left">
-                                 {hero.description.line3}
+                                {hero.description.line3}
                             </p>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* Block 3: Bottom Info Row */}
                 <div className="w-full flex-shrink-0 pb-6 md:pb-8 lg:pb-12 mb-18 lg:mb-0">
-                     <div className="flex flex-col lg:flex-row items-end justify-between w-full gap-6">
-                        
+                    <div className="flex flex-col lg:flex-row items-end justify-between w-full gap-6">
                         {/* Left Column (Desktop) */}
                         <div
                             className="hidden lg:flex flex-col relative w-full lg:w-auto"
@@ -112,17 +111,17 @@ export default function Hero() {
                                - 3rd line left aligned to box
                                - Spark icon left aligned to box on first line
                              */}
-                             <div className="flex flex-col text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
+                            <div className="flex flex-col text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
                                 {/* Line 1 Wrapper - Centered relative to the max width established by Line 2 */}
                                 <div className="relative w-full flex justify-center">
-                                     <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                                    <div className="absolute left-0 top-1/2 -translate-y-1/2">
                                         <Spark />
-                                     </div>
-                                     <p className="mb-0 text-center mx-auto pl-8 pr-8">
-                                         {hero.description.line1}
-                                     </p>
+                                    </div>
+                                    <p className="mb-0 text-center mx-auto pl-8 pr-8">
+                                        {hero.description.line1}
+                                    </p>
                                 </div>
-                                
+
                                 {/* Line 2 - The Longest Line (implicitly sets width of container if flex column is intrinsic) */}
                                 <p className="mb-0 whitespace-nowrap">
                                     {hero.description.line2}
@@ -130,40 +129,46 @@ export default function Hero() {
 
                                 {/* Line 3 - Left Aligned */}
                                 <p className="mb-0 text-left">
-                                     {hero.description.line3}
+                                    {hero.description.line3}
                                 </p>
-                             </div>
+                            </div>
                         </div>
 
-                    {/* Services List + CTA */}
-                    <div
-                        className="flex flex-col items-end gap-4 lg:gap-6 w-full lg:w-auto flex-1 lg:flex-initial"
-                        style={{
-                            transform: contentTransform,
-                            opacity: contentOpacity,
-                            willChange: "transform, opacity",
-                        }}
-                    >
-                        <div className="flex flex-col items-end gap-2 lg:gap-3">
-                            {hero.services.map((service) => (
-                                <div
-                                    key={service.number}
-                                    className="flex items-center gap-3 text-zinc-300 text-right"
-                                >
-                                    <span className="font-engagement text-lg md:text-xl lg:text-[22px] xl:text-[24px] leading-7 md:leading-8 lg:leading-8 xl:leading-9 tracking-[-1px]">
-                                        {service.number}
-                                    </span>
-                                    <span className="text-base md:text-lg lg:text-[18px] xl:text-[20px] font-medium leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
-                                        {service.title}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                        {/* Services List + CTA */}
+                        <div
+                            className="flex flex-col items-end gap-4 lg:gap-6 w-full lg:w-auto flex-1 lg:flex-initial"
+                            style={{
+                                transform: contentTransform,
+                                opacity: contentOpacity,
+                                willChange: "transform, opacity",
+                            }}
+                        >
+                            <div className="flex flex-col items-end gap-2 lg:gap-3">
+                                {hero.services.map((service) => (
+                                    <div
+                                        key={service.number}
+                                        className="flex items-center gap-3 text-zinc-300 text-right"
+                                    >
+                                        <span className="font-engagement text-lg md:text-xl lg:text-[22px] xl:text-[24px] leading-7 md:leading-8 lg:leading-8 xl:leading-9 tracking-[-1px]">
+                                            {service.number}
+                                        </span>
+                                        <span className="text-base md:text-lg lg:text-[18px] xl:text-[20px] font-medium leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
+                                            {service.title}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
 
-                        <Button variant="primary" size="large">
-                            {hero.cta.text}
-                        </Button>
-                    </div>
+                            <Button
+                                variant="primary"
+                                size="large"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
+                                {hero.cta.text}
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

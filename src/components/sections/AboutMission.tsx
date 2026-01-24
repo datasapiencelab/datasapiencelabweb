@@ -98,7 +98,7 @@ export default function AboutMission() {
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
-                                    )
+                                    ),
                                 )}
                                 <div className="w-10 h-10 rounded-full border-2 border-zinc-800 bg-zinc-700 flex items-center justify-center text-sm font-geist">
                                     {mission.clientStats.count}
@@ -170,8 +170,12 @@ export default function AboutMission() {
                                 {mission.cta.description.part2}
                             </span>
                         </p>
-                        <Button variant="primary" size="large">
-                            Meet Our Team
+                        <Button
+                            variant="primary"
+                            size="large"
+                            onClick={() => (window.location.href = "/contact")}
+                        >
+                            {mission.cta.text}
                         </Button>
                     </div>
                 </div>

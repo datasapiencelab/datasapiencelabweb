@@ -183,6 +183,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="large"
                                     className="w-fit"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -272,6 +275,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="medium"
                                     className="w-fit"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -359,6 +365,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="medium"
                                     className="w-fit mx-auto"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -447,6 +456,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="small"
                                     className="w-full"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>

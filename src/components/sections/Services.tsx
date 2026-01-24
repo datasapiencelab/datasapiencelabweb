@@ -324,6 +324,10 @@ export default function Services() {
                                             variant="primary"
                                             size="large"
                                             className="w-full lg:w-auto"
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
+                                            }
                                         >
                                             {servicesContent.cta.text}
                                         </Button>
@@ -333,6 +337,10 @@ export default function Services() {
                                             variant="primary"
                                             size="large"
                                             className="w-full"
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
+                                            }
                                         >
                                             {servicesContent.cta.text}
                                         </Button>

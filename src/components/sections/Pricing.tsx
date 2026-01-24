@@ -199,7 +199,14 @@ const Pricing: React.FC = () => {
                                         </div>
 
                                         {/* CTA Button */}
-                                        <Button variant="primary" size="medium">
+                                        <Button
+                                            variant="primary"
+                                            size="medium"
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
+                                            }
+                                        >
                                             Let's Discuss
                                         </Button>
                                     </div>
@@ -347,7 +354,13 @@ const Pricing: React.FC = () => {
                                     </div>
 
                                     {/* CTA Button */}
-                                    <Button variant="primary" size="medium">
+                                    <Button
+                                        variant="primary"
+                                        size="medium"
+                                        onClick={() =>
+                                            (window.location.href = "/contact")
+                                        }
+                                    >
                                         Let's Discuss
                                     </Button>
                                 </div>
@@ -517,6 +530,10 @@ const Pricing: React.FC = () => {
                                             variant="primary"
                                             size="small"
                                             fullWidth
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
+                                            }
                                         >
                                             Let's Discuss
                                         </Button>

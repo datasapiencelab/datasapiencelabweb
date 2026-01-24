@@ -132,7 +132,10 @@ const Principles = () => {
 
                     {/* Learn More Button */}
                     <div className="w-full h-auto md:h-full">
-                        <Button className="bg-[#f2500d] w-full md:h-full flex items-center justify-center gap-1.5 px-[18px] py-3 md:py-6">
+                        <Button
+                            className="bg-[#f2500d] w-full md:h-full flex items-center justify-center gap-1.5 px-[18px] py-3 md:py-6"
+                            onClick={() => (window.location.href = "/contact")}
+                        >
                             <span className="font-geist font-semibold text-base md:text-xl text-white tracking-wide">
                                 Learn More
                             </span>
