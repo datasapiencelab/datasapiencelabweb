@@ -2,12 +2,25 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Spark from "../ui/Spark";
 import Button from "../ui/Button";
 import { HOME_CONTENT } from "../../content/home";
+import {
+    BrainCircuit,
+    ChartNoAxesCombined,
+    CodeXml,
+    Component,
+} from "lucide-react";
 
-const brainIconSrc = "assets/icons/brain-icon.svg";
+// const brainIconSrc = "assets/icons/brain-icon.svg";
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(max, Math.max(min, value));
 }
+
+const iconMap: Record<string, React.ElementType> = {
+    "brain-circuit": BrainCircuit,
+    "chart-no-axes-combined": ChartNoAxesCombined,
+    "code-xml": CodeXml,
+    component: Component,
+};
 
 interface ServiceItemProps {
     number: string;
@@ -64,26 +77,83 @@ function ServiceTag({ label }: ServiceTagProps) {
     );
 }
 
-interface PartnerLogoProps {
-    name: string;
-    isButton?: boolean;
+// interface PartnerLogoProps {
+//     name: string;
+//     isButton?: boolean;
+// }
+
+// function PartnerLogo({ name, isButton = false }: PartnerLogoProps) {
+//     if (isButton) {
+//         return (
+//             <div className="bg-brand-primary border border-zinc-800 aspect-[189/177] flex items-center justify-center">
+//                 <Button variant="primary" size="medium">
+//                     Join With Us
+//                 </Button>
+//             </div>
+//         );
+//     }
+
+//     return (
+//         <div className="bg-zinc-900 border border-zinc-800 aspect-[189/177] flex items-center justify-center p-6 md:p-8 lg:p-10 group hover:bg-zinc-800 transition-colors">
+//             <div className="text-zinc-400 font-medium text-lg group-hover:text-zinc-200 transition-colors">
+//                 {name}
+//             </div>
+//         </div>
+//     );
+// }
+
+interface ServiceDetailContentProps {
+    item: (typeof HOME_CONTENT.services.items)[0];
+    timing: typeof HOME_CONTENT.services.timing;
 }
 
-function PartnerLogo({ name, isButton = false }: PartnerLogoProps) {
-    if (isButton) {
-        return (
-            <div className="bg-brand-primary border border-zinc-800 aspect-[189/177] flex items-center justify-center">
-                <Button variant="primary" size="medium">
-                    Join With Us
-                </Button>
-            </div>
-        );
-    }
+function ServiceDetailContent({ item, timing }: ServiceDetailContentProps) {
+    const ActiveIcon = iconMap[item.icon] || BrainCircuit;
 
     return (
-        <div className="bg-zinc-900 border border-zinc-800 aspect-[189/177] flex items-center justify-center p-6 md:p-8 lg:p-10 group hover:bg-zinc-800 transition-colors">
-            <div className="text-zinc-400 font-medium text-lg group-hover:text-zinc-200 transition-colors">
-                {name}
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+            {/* Content */}
+            <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between relative z-10 h-full">
+                <div>
+                    <div className="w-8 h-8 mb-4 text-[#FAFAFA]">
+                        <ActiveIcon
+                            strokeWidth={1.5}
+                            className="w-full h-full"
+                        />
+                    </div>
+
+                    <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
+                        {item.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
+                        {item.tags.map((tag, index) => (
+                            <ServiceTag key={index} label={tag.label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <div className="w-5 h-5">
+                        <img
+                            src={timing.icon}
+                            alt="Time"
+                            className="w-full h-full"
+                        />
+                    </div>
+                    <span className="text-base md:text-lg text-neutral-disable">
+                        {timing.text}
+                    </span>
+                </div>
+            </div>
+
+            {/* Image */}
+            <div className="relative h-64 md:h-full w-full">
+                <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
             </div>
         </div>
     );
@@ -138,7 +208,7 @@ export default function Services() {
             const nextActive = clamp(
                 Math.floor(progress * servicesContent.items.length + 1e-6),
                 0,
-                servicesContent.items.length - 1
+                servicesContent.items.length - 1,
             );
             setActiveService(nextActive);
         };
@@ -170,135 +240,126 @@ export default function Services() {
         const totalSegments = 3;
         const segmentProgress = clamp(desktopProgress * totalSegments, 0, 3);
         return Array.from({ length: totalSegments }, (_, index) =>
-            clamp(segmentProgress - index, 0, 1)
+            clamp(segmentProgress - index, 0, 1),
         );
     }, [desktopProgress, isDesktop]);
 
+    const activeItem = servicesContent.items[activeService];
+
     return (
-        <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20">
+        // <section className="relative bg-zinc-950 py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-28 z-20"> {/* uncomment this and use it when partners tab is visible */}
+        <section className="relative bg-zinc-950 pt-16 md:pt-24 lg:pt-32 pb-2 md:pb-2 lg:pb-2 px-6 md:px-16 lg:px-28 z-20">
             <div className="max-w-7xl mx-auto">
                 {/* Services Section (desktop: sticky scroll) */}
                 <div
                     ref={scrollAreaRef}
-                    className="relative mb-16 md:mb-20 lg:mb-24 lg:h-[400vh]"
+                    className="relative mb-16 md:mb-20 lg:mb-0 lg:h-[400vh]"
                 >
-                    <div className="lg:sticky lg:top-12 lg:max-h-[calc(100vh-6rem)]">
-                        {/* Header */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-20 lg:mb-12">
-                            <div className="flex items-center gap-2.5">
-                                <Spark />
-                                <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
-                                    {servicesContent.kicker}
-                                </span>
-                            </div>
-                            <div className="lg:col-span-2">
-                                <h2 className="text-2xl md:text-4xl lg:text-h1 font-medium text-zinc-100 leading-tight">
-                                    <span>
-                                        {servicesContent.heading.prefix}
+                    <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col">
+                        <div className="hidden lg:block lg:flex-1"></div>
+                        <div>
+                            {/* Header */}
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-20 lg:mb-12">
+                                <div className="flex gap-2.5 text-[#FAFAFA]">
+                                    <Spark />
+                                    <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
+                                        {servicesContent.kicker}
                                     </span>
-                                    <span className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide">
-                                        {servicesContent.heading.accent}
-                                    </span>
-                                </h2>
-                            </div>
-                        </div>
-
-                        {/* Services Content */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
-                            {/* Services List */}
-                            <div className="space-y-0 lg:self-start">
-                                {servicesContent.items.map((service, index) => (
-                                    <ServiceItem
-                                        key={index}
-                                        number={service.number}
-                                        title={service.title}
-                                        isActive={activeService === index}
-                                        onClick={() => {
-                                            if (!isDesktop)
-                                                setActiveService(index);
-                                        }}
-                                    />
-                                ))}
-
-                                <div className="pt-6">
-                                    <Button
-                                        variant="primary"
-                                        size="large"
-                                        className="w-full lg:w-auto"
-                                    >
-                                        {servicesContent.cta.text}
-                                    </Button>
+                                </div>
+                                <div className="lg:col-span-2">
+                                    <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium text-zinc-100 leading-tight">
+                                        <span className="font-semibold font-geist">
+                                            {servicesContent.heading.prefix}
+                                        </span>
+                                        <span className="font-engagement text-brand-primary text-3xl md:text-5xl lg:text-[72px] tracking-wide">
+                                            {servicesContent.heading.accent}
+                                        </span>
+                                    </h2>
                                 </div>
                             </div>
 
-                            {/* Service Detail Card */}
-                            <div className="lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden">
-                                <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                                    {/* Content */}
-                                    <div className="p-4 md:p-6 lg:p-6 flex flex-col justify-between">
-                                        <div>
-                                            <div className="w-8 h-8 mb-4">
-                                                <img
-                                                    src={brainIconSrc}
-                                                    alt="AI Brain"
-                                                    className="w-full h-full"
-                                                />
-                                            </div>
-
-                                            <p className="text-base md:text-lg text-neutral-disable mb-4 lg:mb-6 leading-relaxed">
-                                                {
-                                                    servicesContent
-                                                        .serviceDetail
-                                                        .description
-                                                }
-                                            </p>
-
-                                            <div className="flex flex-wrap gap-3 md:gap-4 mb-4">
-                                                {servicesContent.serviceDetail.tags.map(
-                                                    (tag, index) => (
-                                                        <ServiceTag
-                                                            key={index}
-                                                            label={tag.label}
-                                                        />
-                                                    )
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-5 h-5">
-                                                <img
-                                                    src={
-                                                        servicesContent.timing
-                                                            .icon
+                            {/* Services Content */}
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+                                {/* Services List */}
+                                <div className="space-y-0 flex flex-col h-full">
+                                    {servicesContent.items.map(
+                                        (service, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex flex-col"
+                                            >
+                                                <ServiceItem
+                                                    number={service.number}
+                                                    title={service.title}
+                                                    isActive={
+                                                        activeService === index
                                                     }
-                                                    alt="Time"
-                                                    className="w-full h-full"
+                                                    onClick={() =>
+                                                        setActiveService(index)
+                                                    }
                                                 />
+                                                {/* Mobile Accordion Content */}
+                                                <div
+                                                    className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+                                                        activeService === index
+                                                            ? "max-h-[1000px] opacity-100 mb-8"
+                                                            : "max-h-0 opacity-0"
+                                                    }`}
+                                                >
+                                                    <div className="bg-zinc-900 border border-zinc-800">
+                                                        <ServiceDetailContent
+                                                            item={service}
+                                                            timing={
+                                                                servicesContent.timing
+                                                            }
+                                                        />
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span className="text-base md:text-lg text-neutral-disable">
-                                                {servicesContent.timing.text}
-                                            </span>
-                                        </div>
-                                    </div>
+                                        ),
+                                    )}
 
-                                    {/* Image */}
-                                    <div className="relative h-64 md:h-full">
-                                        <img
-                                            src={
-                                                servicesContent.serviceDetail
-                                                    .image
+                                    <div className="pt-6 mt-auto hidden lg:block">
+                                        <Button
+                                            variant="primary"
+                                            size="large"
+                                            className="w-full lg:w-auto"
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
                                             }
-                                            alt="AI Technology"
-                                            className="w-full h-full object-cover"
-                                        />
+                                        >
+                                            {servicesContent.cta.text}
+                                        </Button>
                                     </div>
+                                    <div className="pt-6 lg:hidden">
+                                        <Button
+                                            variant="primary"
+                                            size="large"
+                                            className="w-full"
+                                            onClick={() =>
+                                                (window.location.href =
+                                                    "/contact")
+                                            }
+                                        >
+                                            {servicesContent.cta.text}
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Service Detail Card (Desktop) */}
+                                <div className="hidden lg:block lg:col-span-2 bg-zinc-900 border border-zinc-800 overflow-hidden h-[500px] lg:h-auto">
+                                    <ServiceDetailContent
+                                        item={activeItem}
+                                        timing={servicesContent.timing}
+                                    />
                                 </div>
                             </div>
                         </div>
+                        <div className="hidden lg:block lg:flex-1"></div>
 
                         {/* Separator/timeline */}
-                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-8">
+                        <div className="flex items-center gap-4 mt-16 md:mt-20 lg:mt-0 text-neutral-tertiary">
                             <Spark />
                             <div className="flex-1 h-px bg-neutral-tertiary relative overflow-hidden">
                                 <div
@@ -328,14 +389,14 @@ export default function Services() {
                             </div>
                             <Spark />
                         </div>
+                        <div className="hidden lg:block lg:flex-1"></div>
                     </div>
                 </div>
 
                 {/* Partners Section */}
-                <div>
-                    {/* Partners Header */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24 mb-12 md:mb-16 lg:mb-20">
-                        <div className="flex items-center gap-2.5">
+                {/* <div>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-12 md:mb-16 lg:mb-20">
+                        <div className="flex gap-2.5 text-neutral-inverse">
                             <Spark />
                             <span className="text-base md:text-lg lg:text-body-xl text-zinc-100">
                                 Meet Our Partners
@@ -355,7 +416,6 @@ export default function Services() {
                         </div>
                     </div>
 
-                    {/* Partners Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
                         {servicesContent.partners.map((partner, index) => (
                             <PartnerLogo
@@ -368,7 +428,7 @@ export default function Services() {
                             />
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

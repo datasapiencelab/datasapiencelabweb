@@ -46,54 +46,89 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col h-full w-full px-6 md:px-16 lg:px-28 py-0">
-                <div className="flex-1 flex flex-col items-start justify-center md:justify-between min-h-0 pb-8 md:pb-12 lg:pb-16 pt-12 gap-8 md:gap-0">
-                    {/* Main Heading */}
-                    <div
-                        className="flex flex-col items-start justify-end w-full flex-initial md:flex-1 min-h-0"
-                        style={{
-                            transform: headingTransform,
-                            opacity: headingOpacity,
-                            willChange: "transform, opacity",
-                        }}
-                    >
-                        <div className="md:mb-6 lg:mb-8">
-                            <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-[120px] 2xl:text-[144px] font-bold text-white leading-none lg:leading-[0.9] xl:leading-[0.85] tracking-tight lg:tracking-[-6px] xl:tracking-[-8px] 2xl:tracking-[-10px] mb-0">
-                                {hero.title.line1}
-                            </h1>
-                            <div className="flex flex-row items-center gap-2 md:gap-4 lg:gap-6 xl:gap-9 pl-0 md:pl-8 lg:pl-16 xl:pl-20 2xl:pl-24 w-full mt-1 md:mt-2">
-                                <span className="font-engagement text-4xl md:text-6xl lg:text-8xl xl:text-[120px] 2xl:text-[144px] text-white tracking-wider leading-none lg:leading-[0.9] xl:leading-[0.85]">
-                                    {hero.title.accent1}
-                                </span>
-                                <span className="text-4xl md:text-6xl lg:text-8xl xl:text-[120px] 2xl:text-[144px] font-bold text-white leading-none lg:leading-[0.9] xl:leading-[0.85] tracking-tight lg:tracking-[-6px] xl:tracking-[-8px] 2xl:tracking-[-10px]">
-                                    {hero.title.line2}
-                                </span>
+            <div className="relative z-10 flex flex-col h-full w-full px-6 md:px-16 lg:px-28 justify-between pt-0 pb-8 md:pb-12 lg:pb-0">
+                {/* Section 1: Nav Spacer (Content height without bottom padding) */}
+                <div className="h-[48px] md:h-[66px] w-full flex-none" />
+
+                {/* Section 2: Heading SVG Block */}
+                <div
+                    className="flex flex-col items-start w-full"
+                    style={{
+                        transform: headingTransform,
+                        opacity: headingOpacity,
+                        willChange: "transform, opacity",
+                    }}
+                >
+                    <div className="w-full max-w-[1216px]">
+                        <img
+                            src="/assets/icons/HomepageHeroHeadingTxt.svg"
+                            alt="Smart Solutions For Complex Data"
+                            className="w-full h-auto"
+                        />
+                    </div>
+                    {/* Description on Mobile - Stuck below SVG */}
+                    <div className="lg:hidden mt-6 relative w-fit">
+                        <div className="flex flex-col text-sm md:text-lg font-medium text-zinc-300 leading-6 md:leading-7 tracking-[0.5px]">
+                            {/* Line 1 Wrapper */}
+                            <div className="relative w-full flex justify-center">
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                                    <Spark />
+                                </div>
+                                <p className="mb-0 text-center mx-auto pl-8 pr-8">
+                                    {hero.description.line1}
+                                </p>
                             </div>
+
+                            {/* Line 2 */}
+                            <p className="mb-0 whitespace-nowrap">
+                                {hero.description.line2}
+                            </p>
+
+                            {/* Line 3 */}
+                            <p className="mb-0 text-left">
+                                {hero.description.line3}
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    {/* Bottom Section */}
-                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8 w-full">
-                        {/* Description */}
+                {/* Block 3: Bottom Info Row */}
+                <div className="w-full flex-shrink-0 pb-6 md:pb-8 lg:pb-12 mb-18 lg:mb-0">
+                    <div className="flex flex-col lg:flex-row items-end justify-between w-full gap-6">
+                        {/* Left Column (Desktop) */}
                         <div
-                            className="flex flex-col items-center relative flex-shrink-0"
+                            className="hidden lg:flex flex-col relative w-full lg:w-auto"
                             style={{
                                 transform: headingTransform,
                                 opacity: headingOpacity,
                                 willChange: "transform, opacity",
                             }}
                         >
-                            <div className="absolute left-1 top-0.5">
-                                <Spark />
-                            </div>
-                            <div className="text-left pl-8 mb-12 md:mb-20">
-                                <p className="text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px] mb-0">
-                                    {hero.description.line1}
-                                </p>
-                                <p className="text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px] mb-0">
+                            {/* The constraints for left text:
+                               - 3 lines
+                               - 2nd line is longest -> sets width
+                               - 1st line centered to box
+                               - 3rd line left aligned to box
+                               - Spark icon left aligned to box on first line
+                             */}
+                            <div className="flex flex-col text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
+                                {/* Line 1 Wrapper - Centered relative to the max width established by Line 2 */}
+                                <div className="relative w-full flex justify-center">
+                                    <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                                        <Spark />
+                                    </div>
+                                    <p className="mb-0 text-center mx-auto pl-8 pr-8">
+                                        {hero.description.line1}
+                                    </p>
+                                </div>
+
+                                {/* Line 2 - The Longest Line (implicitly sets width of container if flex column is intrinsic) */}
+                                <p className="mb-0 whitespace-nowrap">
                                     {hero.description.line2}
                                 </p>
-                                <p className="text-sm md:text-lg lg:text-[18px] xl:text-[20px] font-medium text-zinc-300 leading-6 md:leading-7 lg:leading-7 xl:leading-8 tracking-[0.5px]">
+
+                                {/* Line 3 - Left Aligned */}
+                                <p className="mb-0 text-left">
                                     {hero.description.line3}
                                 </p>
                             </div>
@@ -124,7 +159,13 @@ export default function Hero() {
                                 ))}
                             </div>
 
-                            <Button variant="primary" size="large">
+                            <Button
+                                variant="primary"
+                                size="large"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 {hero.cta.text}
                             </Button>
                         </div>

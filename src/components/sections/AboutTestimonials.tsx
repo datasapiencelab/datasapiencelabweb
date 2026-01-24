@@ -166,7 +166,11 @@ export default function AboutTestimonials() {
                         </span>
                         . Let's explore how we can help shape your next success.
                     </p>
-                    <Button variant="primary" size="large">
+                    <Button
+                        variant="primary"
+                        size="large"
+                        onClick={() => (window.location.href = "/contact")}
+                    >
                         Write Your Story
                     </Button>
                 </div>

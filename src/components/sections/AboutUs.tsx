@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Spark from "../ui/Spark";
 import { HOME_CONTENT } from "../../content/home";
@@ -63,7 +63,7 @@ function AnimatedWord({
     const color = useTransform(
         progress,
         [startProgress, endProgress],
-        ["#a1a1aa", "#18181b"]
+        ["#a1a1aa", "#18181b"],
     );
 
     return (
@@ -88,7 +88,7 @@ export default function AboutUs() {
     const headerY = useTransform(
         scrollYProgress,
         [0.05, 0.2],
-        ["0vh", "-10vh"]
+        ["0vh", "-10vh"],
     );
 
     const headerOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 1]);
@@ -101,7 +101,7 @@ export default function AboutUs() {
     const textColorProgress = useTransform(
         scrollYProgress,
         [0.25, 0.95],
-        [0, 1]
+        [0, 1],
     );
 
     // Phase 5: Paragraph stays visible
@@ -133,10 +133,19 @@ export default function AboutUs() {
         return { ...segment, startProgress };
     });
 
+    // Control negative margin on mobile near end of scroll
+    const [shouldApplyMargin, setShouldApplyMargin] = useState(false);
+
+    useEffect(() => {
+        return scrollYProgress.on("change", (latest) => {
+            setShouldApplyMargin(latest > 0.45);
+        });
+    }, [scrollYProgress]);
+
     return (
         <section
             ref={sectionRef}
-            className="relative bg-zinc-100 z-20 h-[220vh] sm:h-[260vh] md:h-[320vh] lg:h-[350vh]"
+            className="relative bg-zinc-100 z-20 h-[180vh] sm:h-[240vh] md:h-[260vh] lg:h-[280vh]"
         >
             {/* Sticky container that holds all animated content - z-10 to stay above CTA */}
             <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center z-10">
@@ -167,7 +176,7 @@ export default function AboutUs() {
 
                 {/* Paragraph Section - centered in viewport */}
                 <motion.div
-                    className="relative px-6 md:px-16 lg:px-28"
+                    className={`relative px-6 transition-[margin-top] duration-1000 ease-in-out ${shouldApplyMargin ? "-mt-64" : ""} md:mt-0 md:px-16 lg:px-28`}
                     style={{
                         scale: paragraphScale,
                         opacity: paragraphOpacity,

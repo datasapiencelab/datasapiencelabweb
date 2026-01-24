@@ -1,23 +1,10 @@
 import React from "react";
 import { WHY_SECTION_RESOURCES } from "./whyChooseUsData";
+import Spark from "../ui/Spark";
+import Button from "../ui/Button";
 
 // Destructure resources for easier access
-const { images, colors } = WHY_SECTION_RESOURCES;
-
-// Spark icon component
-const SparkIcon = () => (
-    <svg
-        className="w-7 h-7"
-        viewBox="0 0 28 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M14 3L16.5 10.5L24 13L16.5 15.5L14 23L11.5 15.5L4 13L11.5 10.5L14 3Z"
-            fill={colors.brand}
-        />
-    </svg>
-);
+const { images } = WHY_SECTION_RESOURCES;
 
 // Send icon for chat
 const SendIcon = () => (
@@ -25,24 +12,6 @@ const SendIcon = () => (
         <path
             d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11"
             stroke="#d4d4d8"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
-
-// Arrow icon for button
-const ArrowIcon = () => (
-    <svg
-        className="w-5 h-5"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M4 10H16M16 10L10 4M16 10L10 16"
-            stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -59,8 +28,8 @@ const WhyChooseUs: React.FC = () => {
                     {/* Header Section */}
                     <div className="flex flex-col gap-4 items-center max-w-[1280px] w-full">
                         <div className="flex gap-2.5 items-start">
-                            <div className="w-7 h-7">
-                                <SparkIcon />
+                            <div className="w-7 h-7 text-neutral-inverse">
+                                <Spark />
                             </div>
                             <div className="font-geist font-normal text-lg text-zinc-100 tracking-[0.5px] leading-7">
                                 Why Data Sapience Lab
@@ -164,11 +133,11 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full">
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] border border-white/20 relative">
                                     <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[138px]">
                                         <p>
-                                            Can we update the layout before launch?
+                                            Can we update the layout before
+                                            launch?
                                         </p>
                                     </div>
                                 </div>
@@ -192,8 +161,7 @@ const WhyChooseUs: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] border border-white/20 relative">
                                     <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] w-[138px]">
                                         <p className="mb-0">
                                             Amazing, thank you! You guys are
@@ -202,8 +170,7 @@ const WhyChooseUs: React.FC = () => {
                                         <p> 🙌</p>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full border border-white/20 relative">
                                     <div className="font-geist font-normal text-[#9f9fa9] text-sm leading-5 tracking-[0.5px] whitespace-pre">
                                         Type message.....
                                     </div>
@@ -235,8 +202,8 @@ const WhyChooseUs: React.FC = () => {
                             <div className="flex flex-col gap-3 items-start w-full relative z-10">
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px]">
@@ -245,8 +212,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px]">
@@ -255,8 +222,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px]">
@@ -265,8 +232,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px]">
@@ -275,8 +242,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-lg leading-7 text-zinc-300 tracking-[0.5px]">
@@ -287,13 +254,17 @@ const WhyChooseUs: React.FC = () => {
                         </div>
 
                         {/* CTA Button - grid-area: 3 / 3 */}
-                        <div className="[grid-area:3_/_3] bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                            <div className="font-geist font-semibold text-base leading-6 not-italic text-white tracking-[0.5px] whitespace-pre">
+                        <div className="[grid-area:3_/_3]">
+                            <Button
+                                variant="primary"
+                                size="large"
+                                className="w-full h-full"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 Get Your Free Project Quote
-                            </div>
-                            <div className="w-5 h-5">
-                                <ArrowIcon />
-                            </div>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -306,8 +277,8 @@ const WhyChooseUs: React.FC = () => {
                     <div className="flex flex-col gap-4 items-center max-w-[1280px] w-full">
                         <div className="flex gap-1.5 items-center justify-center w-full">
                             <div className="flex flex-row items-center h-full">
-                                <div className="w-7 h-7">
-                                    <SparkIcon />
+                                <div className="w-7 h-7 text-neutral-inverse">
+                                    <Spark />
                                 </div>
                             </div>
                             <div className="font-geist font-normal text-lg leading-7 text-center text-zinc-100 tracking-[0.5px] whitespace-pre">
@@ -399,8 +370,8 @@ const WhyChooseUs: React.FC = () => {
                             <div className="gap-3 grid grid-cols-2 grid-rows-3 h-[108px] w-full relative z-10">
                                 <div className="flex gap-2.5 items-center">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-base leading-6 text-zinc-300 tracking-[0.5px]">
@@ -409,8 +380,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-base leading-6 text-zinc-300 tracking-[0.5px]">
@@ -419,8 +390,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-base leading-6 text-zinc-300 tracking-[0.5px]">
@@ -429,8 +400,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-base leading-6 text-zinc-300 tracking-[0.5px]">
@@ -439,8 +410,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-base leading-6 text-zinc-300 tracking-[0.5px]">
@@ -463,9 +434,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full">
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-full">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
-                                    <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] whitespace-pre">
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-start justify-start px-3 py-1.5 rounded-[13.805px] border border-white/20 relative">
+                                    <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px]">
                                         Can we update the layout before launch?
                                     </div>
                                 </div>
@@ -489,8 +459,7 @@ const WhyChooseUs: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px]">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] border border-white/20 relative">
                                     <div className="font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] whitespace-pre">
                                         <p className="mb-0">
                                             Amazing, thank you! You guys are
@@ -499,8 +468,7 @@ const WhyChooseUs: React.FC = () => {
                                         <p> 🙌</p>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full border border-white/20 relative">
                                     <div className="font-geist font-normal text-[#9f9fa9] text-sm leading-5 tracking-[0.5px] whitespace-pre">
                                         Type message.....
                                     </div>
@@ -536,13 +504,17 @@ const WhyChooseUs: React.FC = () => {
                         </div>
 
                         {/* CTA Button - grid-area: 8 / 2 / span 2 */}
-                        <div className="[grid-area:8_/_2_/_span_2] bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                            <div className="font-geist font-semibold text-base leading-6 not-italic text-white tracking-[0.5px] whitespace-pre">
+                        <div className="[grid-area:8_/_2_/_span_2]">
+                            <Button
+                                variant="primary"
+                                size="large"
+                                className="w-full h-full"
+                                onClick={() =>
+                                    (window.location.href = "/contact")
+                                }
+                            >
                                 Get Your Free Project Quote
-                            </div>
-                            <div className="w-5 h-5">
-                                <ArrowIcon />
-                            </div>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -555,8 +527,8 @@ const WhyChooseUs: React.FC = () => {
                     <div className="flex flex-col gap-1 items-center w-full">
                         <div className="flex gap-1.5 items-center justify-center w-full">
                             <div className="flex flex-row items-center h-full">
-                                <div className="w-7 h-7">
-                                    <SparkIcon />
+                                <div className="w-7 h-7 text-neutral-inverse">
+                                    <Spark />
                                 </div>
                             </div>
                             <div className="font-geist font-normal text-xs leading-5 text-center text-zinc-100 tracking-[0.5px] whitespace-pre">
@@ -615,8 +587,8 @@ const WhyChooseUs: React.FC = () => {
                             <div className="flex flex-col gap-3 items-start w-full relative z-10">
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-sm leading-5 text-zinc-300 tracking-[0.5px]">
@@ -625,8 +597,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-sm leading-5 text-zinc-300 tracking-[0.5px]">
@@ -635,8 +607,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-sm leading-5 text-zinc-300 tracking-[0.5px]">
@@ -645,8 +617,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-sm leading-5 text-zinc-300 tracking-[0.5px]">
@@ -655,8 +627,8 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2.5 items-center w-full">
                                     <div className="flex flex-row items-center h-full">
-                                        <div className="w-7 h-7">
-                                            <SparkIcon />
+                                        <div className="w-7 h-7 text-neutral-inverse">
+                                            <Spark />
                                         </div>
                                     </div>
                                     <div className="flex-1 font-geist font-normal text-sm leading-5 text-zinc-300 tracking-[0.5px]">
@@ -679,8 +651,7 @@ const WhyChooseUs: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 items-start w-full relative z-10">
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[167px] relative">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[167px] relative border border-white/20">
                                     <div className="flex-1 font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] relative z-10">
                                         Can we update the layout before launch?
                                     </div>
@@ -705,8 +676,7 @@ const WhyChooseUs: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[179px] relative">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-[13.805px] w-[179px] relative border border-white/20">
                                     <div className="flex-1 font-geist font-normal text-xs leading-5 text-zinc-200 tracking-[0.5px] relative z-10">
                                         <p className="mb-0">
                                             Amazing, thank you! You guys are
@@ -715,8 +685,7 @@ const WhyChooseUs: React.FC = () => {
                                         <p> 🙌</p>
                                     </div>
                                 </div>
-                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full relative">
-                                    <div className="absolute border border-solid border-zinc-800 inset-0 pointer-events-none rounded-[13.805px]" />
+                                <div className="bg-zinc-950 box-border flex items-center justify-between px-3 py-1.5 rounded-[13.805px] w-full relative border border-white/20">
                                     <div className="font-geist font-normal text-[#9f9fa9] text-sm leading-5 tracking-[0.5px] whitespace-pre relative z-10">
                                         Type message.....
                                     </div>
@@ -782,14 +751,14 @@ const WhyChooseUs: React.FC = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <div className="bg-[#f2500d] box-border flex gap-4 items-center justify-center p-3 w-full cursor-pointer hover:bg-[#d63d00] transition-colors">
-                        <div className="font-geist font-semibold text-base leading-6 not-italic text-white tracking-[0.5px] whitespace-pre">
-                            Get Your Free Project Quote
-                        </div>
-                        <div className="w-5 h-5">
-                            <ArrowIcon />
-                        </div>
-                    </div>
+                    <Button
+                        variant="primary"
+                        size="large"
+                        className="w-full"
+                        onClick={() => (window.location.href = "/contact")}
+                    >
+                        Get Your Free Project Quote
+                    </Button>
                 </div>
             </div>
         </div>

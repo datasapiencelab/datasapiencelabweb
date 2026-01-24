@@ -4,23 +4,27 @@ interface ButtonProps {
     children: ReactNode;
     variant?: "primary" | "secondary" | "ghost" | "outline";
     size?: "small" | "medium" | "large";
+    showArrow?: boolean;
     onClick?: () => void;
     className?: string;
     fullWidth?: boolean;
     type?: "button" | "submit" | "reset";
+    disabled?: boolean;
 }
 
 export default function Button({
     children,
     variant = "primary",
     size = "medium",
+    showArrow = false,
     onClick,
     className = "",
     fullWidth = false,
     type = "button",
+    disabled = false,
 }: ButtonProps) {
     const baseClasses =
-        "inline-flex items-center justify-center gap-1.5 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+        "inline-flex items-center justify-center gap-1.5 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variantClasses = {
         primary:
@@ -43,15 +47,20 @@ export default function Button({
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`;
 
     return (
-        <button type={type} className={classes} onClick={onClick}>
+        <button
+            type={type}
+            className={classes}
+            onClick={onClick}
+            disabled={disabled}
+        >
             {children}
-            {variant === "primary" && (
+            {(variant === "primary" || showArrow) && (
                 <svg
                     width="20"
                     height="20"
                     viewBox="0 0 20 20"
                     fill="none"
-                    className="rotate-45"
+                    className="-rotate-45"
                 >
                     <path
                         d="M4 10h12m-6-6l6 6-6 6"

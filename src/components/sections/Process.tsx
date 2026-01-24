@@ -4,42 +4,66 @@ import Button from "../ui/Button";
 
 // Icon SVG assets referenced from public/
 const LightbulbIcon = () => (
-    <img
-        className="w-full h-full"
-        src="/assets/icons/lightbulb.svg"
-        alt="Lightbulb"
-        loading="lazy"
-        decoding="async"
+    <div
+        className="w-full h-full bg-brand-primary"
+        style={{
+            maskImage: "url('/assets/icons/lightbulb.svg')",
+            WebkitMaskImage: "url('/assets/icons/lightbulb.svg')",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+        }}
     />
 );
 
 const ToolsIcon = () => (
-    <img
-        className="w-full h-full"
-        src="/assets/icons/tools.svg"
-        alt="Tools"
-        loading="lazy"
-        decoding="async"
+    <div
+        className="w-full h-full bg-brand-primary"
+        style={{
+            maskImage: "url('/assets/icons/tools.svg')",
+            WebkitMaskImage: "url('/assets/icons/tools.svg')",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+        }}
     />
 );
 
 const PuzzleIcon = () => (
-    <img
-        className="w-full h-full"
-        src="/assets/icons/puzzle.svg"
-        alt="Puzzle"
-        loading="lazy"
-        decoding="async"
+    <div
+        className="w-full h-full bg-brand-primary"
+        style={{
+            maskImage: "url('/assets/icons/puzzle.svg')",
+            WebkitMaskImage: "url('/assets/icons/puzzle.svg')",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+        }}
     />
 );
 
 const RocketIcon = () => (
-    <img
-        className="w-full h-full"
-        src="/assets/icons/rocket.svg"
-        alt="Rocket"
-        loading="lazy"
-        decoding="async"
+    <div
+        className="w-full h-full bg-brand-primary"
+        style={{
+            maskImage: "url('/assets/icons/rocket.svg')",
+            WebkitMaskImage: "url('/assets/icons/rocket.svg')",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+        }}
     />
 );
 
@@ -159,6 +183,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="large"
                                     className="w-fit"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -248,6 +275,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="medium"
                                     className="w-fit"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -335,6 +365,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="medium"
                                     className="w-fit mx-auto"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>
@@ -423,6 +456,9 @@ export const Process: React.FC = () => {
                                     variant="primary"
                                     size="small"
                                     className="w-full"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                 >
                                     Let's Build Together
                                 </Button>

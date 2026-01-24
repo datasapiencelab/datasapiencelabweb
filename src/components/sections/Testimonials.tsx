@@ -1,37 +1,6 @@
 import React from "react";
-
-// Spark icon component
-const SparkIcon = () => (
-    <svg
-        className="w-7 h-7"
-        viewBox="0 0 28 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M14 3L16.5 10.5L24 13L16.5 15.5L14 23L11.5 15.5L4 13L11.5 10.5L14 3Z"
-            fill="#f2500d"
-        />
-    </svg>
-);
-
-// Arrow icon for button
-const ArrowIcon = () => (
-    <svg
-        className="w-5 h-5"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M4 10H16M16 10L10 4M16 10L10 16"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
+import Spark from "../ui/Spark";
+import Button from "../ui/Button";
 
 // Star rating component
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
@@ -222,9 +191,7 @@ const Testimonials: React.FC = () => {
                         <div className="flex-1 flex flex-col gap-4 items-start">
                             {/* Client Success Stories Label */}
                             <div className="flex gap-2.5 items-center w-full">
-                                <div className="w-7 h-7">
-                                    <SparkIcon />
-                                </div>
+                                <Spark />
                                 <div className="font-geist font-normal text-lg leading-7 text-zinc-800 tracking-[0.5px]">
                                     Client Success Stories
                                 </div>
@@ -305,14 +272,9 @@ const Testimonials: React.FC = () => {
                                 </div>
 
                                 {/* CTA Button */}
-                                <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                                    <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
-                                        Write Your Story
-                                    </div>
-                                    <div className="w-5 h-5">
-                                        <ArrowIcon />
-                                    </div>
-                                </div>
+                                <Button variant="primary" size="large">
+                                    Write Your Story
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -326,9 +288,7 @@ const Testimonials: React.FC = () => {
                     <div className="flex flex-col gap-6 items-center max-w-[1280px] w-full">
                         {/* Client Success Stories Label */}
                         <div className="flex gap-2 items-center justify-center w-full">
-                            <div className="w-7 h-7">
-                                <SparkIcon />
-                            </div>
+                            <Spark />
                             <div className="font-geist font-normal text-lg leading-7 text-center text-zinc-800 tracking-[0.5px]">
                                 Client Success Stories
                             </div>
@@ -394,7 +354,8 @@ const Testimonials: React.FC = () => {
                                 </span>
                                 <span>
                                     {" "}
-                                    who turned their ideas into solutions with{" "}
+                                    who turned their ideas into solutions
+                                    with{" "}
                                 </span>
                                 <span className="font-engagement not-italic text-[#f2500d] text-[28px] tracking-[1px]">
                                     Data Sapience Lab
@@ -406,14 +367,9 @@ const Testimonials: React.FC = () => {
                             </div>
 
                             {/* CTA Button */}
-                            <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-[18px] py-3 cursor-pointer hover:bg-[#d63d00] transition-colors">
-                                <div className="font-geist font-semibold text-base leading-6 text-white tracking-[0.5px]">
-                                    Write Your Story
-                                </div>
-                                <div className="w-5 h-5">
-                                    <ArrowIcon />
-                                </div>
-                            </div>
+                            <Button variant="primary" size="large">
+                                Write Your Story
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -426,9 +382,7 @@ const Testimonials: React.FC = () => {
                     <div className="flex flex-col gap-6 items-start w-full">
                         {/* Client Success Stories Label */}
                         <div className="flex gap-1.5 items-center w-full">
-                            <div className="w-6 h-6">
-                                <SparkIcon />
-                            </div>
+                            <Spark />
                             <div className="font-geist font-normal text-sm leading-5 text-zinc-800 tracking-[0.5px]">
                                 Client Success Stories
                             </div>
@@ -543,7 +497,8 @@ const Testimonials: React.FC = () => {
                                 </span>
                                 <span>
                                     {" "}
-                                    who turned their ideas into solutions with{" "}
+                                    who turned their ideas into solutions
+                                    with{" "}
                                 </span>
                                 <span className="font-engagement not-italic text-[#f2500d] text-[22px] tracking-[1px]">
                                     Data Sapience Lab
@@ -555,14 +510,9 @@ const Testimonials: React.FC = () => {
                             </div>
 
                             {/* CTA Button */}
-                            <div className="bg-[#f2500d] box-border flex gap-1.5 items-center justify-center px-4 py-2.5 cursor-pointer hover:bg-[#d63d00] transition-colors w-full">
-                                <div className="font-geist font-semibold text-sm leading-5 text-white tracking-[0.5px]">
-                                    Write Your Story
-                                </div>
-                                <div className="w-4 h-4">
-                                    <ArrowIcon />
-                                </div>
-                            </div>
+                            <Button variant="primary" size="medium" fullWidth>
+                                Write Your Story
+                            </Button>
                         </div>
                     </div>
                 </div>

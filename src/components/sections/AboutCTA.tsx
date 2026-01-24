@@ -1,6 +1,6 @@
 import { useState } from "react";
+import Button from "../ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
-import Spark from "../ui/Spark";
 import { ABOUT_CONTENT } from "../../content/about";
 
 export default function AboutCTA() {
@@ -8,24 +8,10 @@ export default function AboutCTA() {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32">
+        <section className="relative bg-zinc-100 z-20 px-6 md:px-16 lg:px-28 pb-16 md:pb-24 lg:pb-32 -mt-80 lg:-mt-28">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-center gap-12 md:gap-16">
-                    {/* Description with Spark */}
-                    <div className="text-center max-w-4xl px-4">
-                        <div className="flex items-start justify-center gap-3 mb-8">
-                            <Spark />
-                            <p className="text-lg md:text-xl lg:text-2xl font-geist text-zinc-900 leading-relaxed text-left max-w-2xl">
-                                We help businesses move from
-                                <br />
-                                Raw Datasets to powerful, intuitive applications
-                                <br />
-                                designed to grow with confidence.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Team Image */}
+                    {/* Image with cta button card */}
                     <div className="relative max-w-4xl w-full">
                         <div className="bg-zinc-100 p-4 md:p-7 border-4 md:border-8 border-white">
                             <img
@@ -37,6 +23,9 @@ export default function AboutCTA() {
                             <div className="flex justify-center mt-3 md:mt-5">
                                 <motion.div
                                     className="bg-white rounded-full p-2 md:p-3 flex items-center gap-2 md:gap-3 shadow-lg max-w-full cursor-pointer overflow-hidden"
+                                    onClick={() =>
+                                        (window.location.href = "/contact")
+                                    }
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                     initial={false}
@@ -102,7 +91,27 @@ export default function AboutCTA() {
                         </div>
                     </div>
 
-                    {/* Description and CTA removed from bottom */}
+                    {/* Description and CTA */}
+                    <div className="max-w-4xl w-full flex flex-col items-center gap-6 md:gap-8">
+                        <p className="text-center text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+                            <span className="text-[#AAAAB3]">
+                                We solve the right problems, not just build
+                                products by{" "}
+                            </span>
+                            <span className="text-[#18181B]">
+                                Combining Research, Strategy , & Design
+                            </span>
+                            <span className="text-[#AAAAB3]">
+                                , we ensure your solutions are not only
+                                intuitive and scalable, but also aligned with
+                                your{" "}
+                            </span>
+                            <span className="text-[#18181B]">
+                                Business Goals.
+                            </span>
+                        </p>
+                        <Button>View Our Works</Button>
+                    </div>
                 </div>
             </div>
         </section>
