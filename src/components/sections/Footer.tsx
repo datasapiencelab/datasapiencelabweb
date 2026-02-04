@@ -218,19 +218,16 @@ const Footer: React.FC<FooterProps> = () => {
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Large Brand Text at Bottom */}
-            <div className="relative overflow-hidden">
-                {/* Brand Text */}
-                {/* <div className="px-4 md:px-12 lg:px-13 pb-8 md:pb-12">
-                    <div className="max-w-7xl mx-auto">
-                        <h2 className="font-['Geist'] font-bold text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white opacity-20 leading-tight tracking-tight text-center md:text-left">
-                            Data Sapience Lab
-                        </h2>
+                    {/* Footer Text SVG - Full Width of Container */}
+                    <div className="mt-12 md:mt-16 w-full">
+                        <img
+                            src="/assets/icons/DSL-footer text.svg"
+                            alt="Data Sapience Lab"
+                            className="w-full h-auto"
+                        />
                     </div>
-                </div> */}
+                </div>
             </div>
         </footer>
     );

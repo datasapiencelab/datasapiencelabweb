@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import Button from "../ui/Button";
 
@@ -34,6 +34,36 @@ const FacebookIcon = () => (
 );
 
 const ContactInfo: React.FC = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const desktopVideoRef = useRef<HTMLVideoElement>(null);
+    const tabletVideoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                const isVisible = entry.isIntersecting;
+                [desktopVideoRef.current, tabletVideoRef.current].forEach(
+                    (video) => {
+                        if (video) {
+                            if (isVisible) {
+                                video.play().catch(() => {});
+                            } else {
+                                video.pause();
+                            }
+                        }
+                    },
+                );
+            },
+            { threshold: 0.1 },
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     const handleGetInTouch = () => {
         window.location.href = "/contact";
     };
@@ -57,15 +87,20 @@ const ContactInfo: React.FC = () => {
     ];
 
     return (
-        <div className="relative contactSocialSection bg-white w-full z-20">
+        <div
+            ref={containerRef}
+            className="relative contactSocialSection bg-white w-full z-20"
+        >
             {/* Desktop Layout (1024px+) */}
             <div className="contactSocialSection-desktop hidden lg:block">
                 <div className="bg-white box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">
                     {/* Stay Connected With Us SVG Text */}
                     <div className="w-full flex justify-center">
-                        <div className="font-geist font-bold text-[80px] leading-[88px] text-zinc-900 tracking-[-2px] text-center">
-                            Stay Connected With Us
-                        </div>
+                        <img
+                            src="/assets/icons/Stay Connected With Us.svg"
+                            alt="Stay Connected With Us"
+                            className="w-full h-auto"
+                        />
                     </div>
 
                     {/* Main Content */}
@@ -139,12 +174,24 @@ const ContactInfo: React.FC = () => {
 
                         {/* Right Side - AI Brain Image */}
                         <div className="flex-1 bg-zinc-900 relative border border-solid border-zinc-800 min-h-[400px] overflow-hidden">
-                            <img
-                                src="/assets/images/home/hero-image.jpg"
-                                alt="AI Brain Technology"
+                            <video
+                                ref={desktopVideoRef}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                poster="/assets/images/home/hero-video-frame.jpg"
                                 className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20"></div>
+                            >
+                                <source
+                                    src="/assets/videos/hero-section.webm"
+                                    type="video/webm"
+                                />
+                                <source
+                                    src="/assets/videos/hero-section.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
                         </div>
                     </div>
                 </div>
@@ -155,21 +202,35 @@ const ContactInfo: React.FC = () => {
                 <div className="bg-white box-border flex flex-col gap-12 items-center px-8 py-24 w-full min-h-fit">
                     {/* Stay Connected With Us Heading */}
                     <div className="w-full flex justify-center">
-                        <div className="font-geist font-bold text-[48px] leading-[52px] text-zinc-900 tracking-[-1px] text-center">
-                            Stay Connected With Us
-                        </div>
+                        <img
+                            src="/assets/icons/Stay Connected With Us.svg"
+                            alt="Stay Connected With Us"
+                            className="w-full h-auto"
+                        />
                     </div>
 
                     {/* Content */}
                     <div className="flex flex-col gap-8 items-center w-full max-w-[1280px]">
                         {/* AI Brain Image */}
                         <div className="bg-zinc-900 relative border border-solid border-zinc-800 w-full h-[300px] overflow-hidden">
-                            <img
-                                src="/assets/images/home/hero-image.jpg"
-                                alt="AI Brain Technology"
+                            <video
+                                ref={tabletVideoRef}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                poster="/assets/images/home/hero-video-frame.jpg"
                                 className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/20 to-pink-500/20"></div>
+                            >
+                                <source
+                                    src="/assets/videos/hero-section.webm"
+                                    type="video/webm"
+                                />
+                                <source
+                                    src="/assets/videos/hero-section.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
                         </div>
 
                         {/* Description and CTA */}
@@ -242,10 +303,12 @@ const ContactInfo: React.FC = () => {
             <div className="contactSocialSection-mobile block md:hidden">
                 <div className="bg-white box-border flex flex-col gap-8 items-left px-4 py-16 w-full min-h-fit">
                     {/* Stay Connected With Us Heading */}
-                    <div className="w-full flex justify-left">
-                        <div className="font-geist font-bold text-2xl leading-8 text-zinc-900 tracking-[-0.25px] text-center">
-                            Stay Connected With Us
-                        </div>
+                    <div className="w-full flex justify-center">
+                        <img
+                            src="/assets/icons/Stay Connected With Us.svg"
+                            alt="Stay Connected With Us"
+                            className="w-full h-auto"
+                        />
                     </div>
 
                     {/* Content */}

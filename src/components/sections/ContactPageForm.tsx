@@ -4,14 +4,11 @@ import Button from "../ui/Button";
 
 // Resize handle icon for textarea
 const ResizeHandle = () => (
-    <svg className="w-4 h-4 text-zinc-400" viewBox="0 0 16 16" fill="none">
-        <path
-            d="M16 16L10 10M16 10L10 16M16 6L6 16M16 0L0 16"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-        />
-    </svg>
+    <img
+        src="/assets/icons/resize-handle.svg"
+        alt="resize-handle"
+        className="w-4 h-4"
+    />
 );
 
 interface FormData {

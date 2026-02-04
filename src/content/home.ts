@@ -37,6 +37,8 @@ export type HomePageContent = {
     hero: {
         video: {
             src: string;
+            fallbackSrc?: string;
+            poster?: string;
         };
         title: {
             line1: string;
@@ -137,7 +139,9 @@ export type HomePageContent = {
 export const HOME_CONTENT: HomePageContent = {
     hero: {
         video: {
-            src: "/assets/videos/hero-section.mp4",
+            src: "/assets/videos/hero-section.webm",
+            fallbackSrc: "/assets/videos/hero-section.mp4",
+            poster: "assets/images/home/hero-video-frame.jpg",
         },
         title: {
             line1: "Smart Solutions",

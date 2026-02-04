@@ -51,7 +51,7 @@ const Pricing: React.FC = () => {
                     {/* Header Section */}
                     <div className="gap-12 grid grid-cols-3 grid-rows-1 h-[145px] max-w-[1280px] w-full">
                         {/* Flexible Pricing Label */}
-                        <div className="[grid-area:1_/_1] flex gap-2.5 items-start">
+                        <div className="[grid-area:1_/_1] flex gap-2.5 items-start pt-2">
                             <div className="w-7 h-7">
                                 <Spark />
                             </div>

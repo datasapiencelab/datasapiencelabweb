@@ -4,14 +4,19 @@ import Button from "../ui/Button";
 
 // Resize handle icon for textarea
 const ResizeHandle = () => (
-    <svg className="w-4 h-4 text-zinc-400" viewBox="0 0 16 16" fill="none">
-        <path
-            d="M16 16L10 10M16 10L10 16M16 6L6 16M16 0L0 16"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-        />
-    </svg>
+    <div
+        className="w-4 h-4 bg-zinc-400"
+        style={{
+            maskImage: "url('/assets/icons/resize-handle.svg')",
+            WebkitMaskImage: "url('/assets/icons/resize-handle.svg')",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+        }}
+    />
 );
 
 interface FormData {
@@ -100,7 +105,7 @@ const ContactForm: React.FC = () => {
                     {/* Header Section */}
                     <div className="gap-8 grid grid-cols-11 grid-rows-1 h-[144px] max-w-[1280px] w-full">
                         {/* Left - Journey Label */}
-                        <div className="col-span-4 flex gap-2.5 items-center">
+                        <div className="col-span-4 flex gap-2.5 ">
                             <Spark />
                             <div className="font-geist font-normal text-lg leading-7 text-zinc-900 tracking-[0.5px]">
                                 A simple 3-step journey

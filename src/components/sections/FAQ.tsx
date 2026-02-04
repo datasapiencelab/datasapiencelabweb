@@ -89,7 +89,7 @@ const FAQ: React.FC = () => {
                 <div className="bg-zinc-950 box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">
                     <div className="flex gap-16 items-start max-w-[1280px] w-full">
                         {/* Left Column - Header */}
-                        <div className="flex-1 flex flex-col gap-4 items-start">
+                        <div className="flex-1 flex flex-col gap-4 items-start sticky top-1/3 self-start h-fit">
                             {/* FAQs Label */}
                             <div className="flex gap-2.5 items-center w-full">
                                 <div className="text-neutral-inverse">
@@ -223,9 +223,9 @@ const FAQ: React.FC = () => {
             <div className="faqSection-mobile block md:hidden">
                 <div className="bg-zinc-950 box-border flex flex-col gap-8 items-center px-4 py-16 w-full min-h-fit">
                     {/* Header Section */}
-                    <div className="flex flex-col gap-6 items-start w-full">
+                    <div className="flex flex-col gap-2 items-center w-full text-center">
                         {/* FAQs Label */}
-                        <div className="flex gap-1.5 items-center w-full">
+                        <div className="flex gap-1.5 items-center justify-center w-full">
                             <div className="text-neutral-inverse">
                                 <Spark />
                             </div>

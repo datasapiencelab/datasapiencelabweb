@@ -104,8 +104,8 @@ export const Process: React.FC = () => {
     return (
         <>
             {/* Desktop Layout (1280px+) */}
-            <section className="relative hidden xl:block bg-neutral-50 py-48 z-20">
-                <div className="max-w-[1280px] mx-auto px-28">
+            <section className="relative hidden xl:block bg-neutral-50 py-32 z-20">
+                <div className="container mx-auto px-28 max-w-[1440px]">
                     <div className="grid grid-cols-2 gap-16">
                         {/* Left Column - Header */}
                         <div className="flex flex-col gap-4 sticky top-1/3 self-start h-fit">
@@ -196,8 +196,8 @@ export const Process: React.FC = () => {
             </section>
 
             {/* Desktop Layout (1024px - 1279px) */}
-            <section className="relative hidden lg:block xl:hidden bg-neutral-50 py-40 z-20">
-                <div className="max-w-[1024px] mx-auto px-20">
+            <section className="relative hidden lg:block xl:hidden bg-neutral-50 py-24 z-20">
+                <div className="container mx-auto px-16 max-w-[1440px]">
                     <div className="grid grid-cols-2 gap-12">
                         {/* Left Column - Header */}
                         <div className="flex flex-col gap-3 sticky top-1/3 self-start h-fit">
@@ -288,8 +288,8 @@ export const Process: React.FC = () => {
             </section>
 
             {/* Tablet Layout (768px - 1023px) */}
-            <section className="relative hidden md:block lg:hidden bg-neutral-50 py-20 z-20">
-                <div className="max-w-[768px] mx-auto px-16">
+            <section className="relative hidden md:block lg:hidden bg-neutral-50 py-24 z-20">
+                <div className="container mx-auto px-8 max-w-[1440px]">
                     <div className="flex flex-col gap-12">
                         {/* Header */}
                         <div className="flex flex-col gap-3 text-center">
@@ -378,8 +378,8 @@ export const Process: React.FC = () => {
             </section>
 
             {/* Mobile Layout (< 768px) */}
-            <section className="relative block md:hidden bg-neutral-50 py-16 z-20">
-                <div className="max-w-[375px] mx-auto px-4">
+            <section className="relative block md:hidden bg-neutral-50 py-[72px] z-20">
+                <div className="container mx-auto px-4">
                     <div className="flex flex-col gap-8">
                         {/* Header */}
                         <div className="flex flex-col gap-2 text-center">
