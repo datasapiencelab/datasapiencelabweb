@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Button from "../ui/Button";
 import Spark from "../ui/Spark";
 import { HOME_CONTENT } from "../../content/home";
@@ -6,17 +6,60 @@ import { HOME_CONTENT } from "../../content/home";
 export default function Hero() {
     const { hero } = HOME_CONTENT;
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const [isHeroHidden, setIsHeroHidden] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
 
+    // IntersectionObserver to pause video when hero is not visible
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                const visible =
+                    entry.isIntersecting && entry.intersectionRatio > 0.1;
+                setIsVisible(visible);
+
+                if (videoRef.current) {
+                    if (visible) {
+                        videoRef.current.play().catch(() => {
+                            // Autoplay may be blocked, ignore
+                        });
+                    } else {
+                        videoRef.current.pause();
+                    }
+                }
+            },
+            {
+                threshold: [0, 0.1, 0.5],
+                rootMargin: "0px",
+            },
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    // Scroll progress for parallax animations
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
             const windowHeight = window.innerHeight;
+
             // Calculate scroll progress with faster transition (0 to 1) over 60% of viewport
             const progress = Math.min(scrollY / (windowHeight * 0.6), 1);
             setScrollProgress(progress);
+
+            // Hide the hero section ONLY when it is fully covered by the next section
+            // The next section starts at 100vh, so it covers the hero when scrollY >= windowHeight
+            // We adding a small buffer to ensure it doesn't flicker
+            setIsHeroHidden(scrollY >= windowHeight - 5);
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll(); // Check initial state
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -26,21 +69,44 @@ export default function Hero() {
     const contentTransform = `translateX(${scrollProgress * 200}px)`;
     const contentOpacity = 1 - scrollProgress * 1.2;
 
+    // Toggle visibility based on full scroll position
+    const heroVisibility = isHeroHidden
+        ? ("hidden" as const)
+        : ("visible" as const);
+
     return (
         <section
+            ref={sectionRef}
             id="hero"
             className="sticky top-0 w-full h-screen flex flex-col bg-black text-white overflow-hidden z-10"
+            style={{
+                opacity: 1, // Keep opacity at 1 so we wait for full cover
+                visibility: heroVisibility,
+                willChange: "visibility",
+            }}
         >
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    poster={hero.video.poster}
+                    preload="metadata"
                     className="absolute inset-0 w-full h-full object-cover blur-sm filter"
+                    style={{
+                        opacity: isVisible ? 1 : 0,
+                        transition: "opacity 0.3s ease-out",
+                    }}
                 >
-                    <source src={hero.video.src} type="video/mp4" />
+                    {/* WebM source (preferred, smaller file) */}
+                    <source src={hero.video.src} type="video/webm" />
+                    {/* MP4 fallback for older browsers */}
+                    {hero.video.fallbackSrc && (
+                        <source src={hero.video.fallbackSrc} type="video/mp4" />
+                    )}
                 </video>
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
             </div>
