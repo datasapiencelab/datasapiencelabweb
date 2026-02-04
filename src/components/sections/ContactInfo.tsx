@@ -95,7 +95,7 @@ const ContactInfo: React.FC = () => {
             <div className="contactSocialSection-desktop hidden lg:block">
                 <div className="bg-white box-border flex flex-col gap-16 items-center px-28 py-32 w-full min-h-fit">
                     {/* Stay Connected With Us SVG Text */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex justify-center max-w-[1280px]">
                         <img
                             src="/assets/icons/Stay Connected With Us.svg"
                             alt="Stay Connected With Us"
@@ -201,7 +201,7 @@ const ContactInfo: React.FC = () => {
             <div className="contactSocialSection-tablet hidden md:block lg:hidden">
                 <div className="bg-white box-border flex flex-col gap-12 items-center px-8 py-24 w-full min-h-fit">
                     {/* Stay Connected With Us Heading */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex justify-center max-w-[1280px]">
                         <img
                             src="/assets/icons/Stay Connected With Us.svg"
                             alt="Stay Connected With Us"
